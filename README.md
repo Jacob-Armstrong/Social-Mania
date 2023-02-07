@@ -1,4 +1,4 @@
-# CPSC-362 Project
+# Social Mania
 
 Tentative plan: 
 * Idle game
