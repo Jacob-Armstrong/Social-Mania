@@ -5,3 +5,4 @@ Tentative plan:
 * Followers/haters mechanic used to gain views
 * Attention multiplier based on active gameplay
 * Views used to unlock tiers(?) of upgrades
+balls
