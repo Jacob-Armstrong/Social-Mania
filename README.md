@@ -1,6 +1,6 @@
 # Social Mania
 
-Tentative plan: 
+Tentative plan:
 * Idle game
 * Followers/haters mechanic used to gain views
 * Attention multiplier based on active gameplay
