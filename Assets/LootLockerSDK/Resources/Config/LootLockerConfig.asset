@@ -15,9 +15,9 @@ MonoBehaviour:
   apiKey: dev_79aa8fd8b458414e9eec2e4062effa88
   token: 
   adminToken: 
-  domainKey: 
+  domainKey: bsbij0e3
   gameID: 0
-  game_version: 1.0.0.0
+  game_version: 0.1
   deviceID: defaultPlayerId
   platform: 0
   developmentMode: 1
