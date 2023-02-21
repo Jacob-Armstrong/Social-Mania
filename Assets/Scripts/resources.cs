@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class resources : MonoBehaviour
 {
@@ -24,6 +25,12 @@ public class resources : MonoBehaviour
     public TextMeshProUGUI textAttentionCount;
     public TextMeshProUGUI textFollowersCount;
 
+    //timeElapsed prototype
+    DateTime startTime;
+    DateTime currentTime;
+    DateTime sessionLength;
+
+
     //________________________
     // FUNCTIONS
 
@@ -38,6 +45,8 @@ public class resources : MonoBehaviour
         attDecayBase = 1.0f;
         attLoss = 0.0f;
         tickProgress = 0;
+
+        startTime = DateTime.Now; // Time session begins
     }
 
     void Update(){}
@@ -66,7 +75,10 @@ public class resources : MonoBehaviour
         if (attLoss > 0)
             generateViews(attLoss);
 
+        timeElapsed();
+
         updateDisplay();
+
     }
 
 
@@ -104,4 +116,16 @@ public class resources : MonoBehaviour
         textAttentionCount.text = "\n" + ((int)attention).ToString();
         textFollowersCount.text = "\n\n" + followers.ToString();
     }
+
+    void timeElapsed()
+    {
+        currentTime = DateTime.Now;
+
+        TimeSpan sessionLength = currentTime - startTime;
+
+        Debug.Log("Time elapsed: " + sessionLength.Hours + " hours, " + sessionLength.Minutes + " minutes, " + sessionLength + " seconds.");
+
+
+    }
+
 }
