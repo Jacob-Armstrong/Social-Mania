@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using System.Text;
 
 public class resources : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class resources : MonoBehaviour
     public TextMeshProUGUI textViewsCount;      // Controls on-screen display number
     public TextMeshProUGUI textAttentionCount;
     public TextMeshProUGUI textFollowersCount;
+    public TextMeshProUGUI textTimeElapsed;
 
     //timeElapsed prototype
     DateTime startTime;
@@ -123,9 +125,122 @@ public class resources : MonoBehaviour
 
         TimeSpan sessionLength = currentTime - startTime;
 
-        Debug.Log("Time elapsed: " + sessionLength.Hours + " hours, " + sessionLength.Minutes + " minutes, " + sessionLength + " seconds.");
+        StringBuilder sb = new StringBuilder("", 50);
 
+        sb.Insert(0, "Time elapsed: ");
 
+        if (sessionLength.Hours > 1)
+        {
+            sb.Insert(14, sessionLength.Hours + " hours");
+        }
+        else if (sessionLength.Hours == 1)
+        {
+            sb.Insert(14, sessionLength.Hours + " hour");
+        }
+
+        if (sessionLength.Hours > 0)
+        {
+            if (sessionLength.Minutes > 1)
+            {
+                sb.Append(", " + sessionLength.Minutes + " minutes");
+            }
+            else if (sessionLength.Minutes == 1)
+            {
+                sb.Append(", " + sessionLength.Minutes + " minute");
+            }
+        }
+        else if (sessionLength.Hours == 0)
+        {
+            if (sessionLength.Minutes > 1)
+            {
+                sb.Append(sessionLength.Minutes + " minutes");
+            }
+            else if (sessionLength.Minutes == 1)
+            {
+                sb.Append(sessionLength.Minutes + " minute");
+            }
+        }
+
+        if (sessionLength.Hours > 0 || sessionLength.Minutes > 0)
+        {
+            if (sessionLength.Seconds > 1)
+            {
+                sb.Append(", " + sessionLength.Seconds + " seconds");
+            }
+            else if (sessionLength.Seconds == 1)
+            {
+                sb.Append(", " + sessionLength.Seconds + " second");
+            }
+        }
+        else if (sessionLength.Hours == 0 || sessionLength.Minutes == 0)
+        {
+            if (sessionLength.Seconds > 1)
+            {
+                sb.Append(sessionLength.Seconds + " seconds");
+            }
+            else if (sessionLength.Seconds == 1)
+            {
+                sb.Append(sessionLength.Seconds + " second");
+            }
+        }
+
+        textTimeElapsed.text = sb.ToString();
+
+        /*
+        if (sessionLength.Hours > 1 && sessionLength.Minutes == 0 && sessionLength.Seconds == 0)
+        {
+            sb.Insert(14, sessionLength.Hours + " hour");
+        }
+        else if (sessionLength.Hours > 1 && sessionLength.Minutes != 0 || sessionLength.Seconds != 0)
+        {
+            sb.Insert(14, sessionLength.Hours + " hours, ");
+        }
+        else if (sessionLength.Hours == 1 && sessionLength.Minutes == 0 && sessionLength.Seconds == 0)
+        {
+            sb.Insert(14, sessionLength.Hours + " hour");
+        }
+        else if (sessionLength.Hours == 1 && sessionLength.Minutes != 0 || sessionLength.Seconds != 0)
+        {
+            sb.Insert(14, sessionLength.Hours + " hour, ");
+        }
+
+        if (sessionLength.Minutes > 1 && sessionLength.Seconds == 0) 
+        {
+            sb.Append(sessionLength.Minutes + " minutes");
+        }
+        else if (sessionLength.Minutes > 1 && sessionLength.Seconds != 0) 
+        {
+            sb.Append(sessionLength.Minutes + " minutes, ");
+        }
+        else if (sessionLength.Minutes == 1)
+        {
+            sb.Append(sessionLength.Minutes + " minute ");
+        }
+
+        if (sessionLength.Seconds > 1)
+        {
+            sb.Append(sessionLength.Seconds + " seconds");
+        }
+        else if (sessionLength.Seconds == 1)
+        {
+            sb.Append(sessionLength.Seconds + " second");
+        }
+        */
+
+        /*
+        if (sessionLength.Hours >= 1)
+        {
+            textTimeElapsed.text = "Time elapsed: " + sessionLength.Hours + " hours, " + sessionLength.Minutes + " minutes, " + sessionLength.Seconds + " seconds".ToString();
+        } else
+        if (sessionLength.Hours < 1 && sessionLength.Minutes >= 1)
+        {
+            textTimeElapsed.text = "Time elapsed: " + sessionLength.Minutes + " minutes, " + sessionLength.Seconds + " seconds".ToString();
+        }
+        else
+        if (sessionLength.Hours < 1 && sessionLength.Minutes < 1)
+        {
+            textTimeElapsed.text = "Time elapsed: " + sessionLength.Seconds + " seconds".ToString();
+        }
+        */
     }
-
 }
