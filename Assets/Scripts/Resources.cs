@@ -22,7 +22,8 @@ public class Resources : MonoBehaviour
     int tickProgress;       // Counter increases until next tick occurs, then resets
 
     // External Objects
-    public TextMeshProUGUI textViewsCount;      // Controls on-screen display number
+    // Controls on-screen display number
+    public TextMeshProUGUI textViewsCount;
     public TextMeshProUGUI textAttentionCount;
     public TextMeshProUGUI textFollowersCount;
     public TextMeshProUGUI textTimeElapsed;
@@ -30,9 +31,8 @@ public class Resources : MonoBehaviour
     //timeElapsed prototype
     DateTime startTime;
     DateTime currentTime;
-    DateTime sessionLength;
-
-
+    TimeSpan sessionLength;
+    
     //________________________
     // FUNCTIONS
 
@@ -123,7 +123,7 @@ public class Resources : MonoBehaviour
     {
         currentTime = DateTime.Now;
 
-        TimeSpan sessionLength = currentTime - startTime;
+        sessionLength = currentTime - startTime;
 
         StringBuilder sb = new StringBuilder("", 50);
 
