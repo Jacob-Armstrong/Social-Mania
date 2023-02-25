@@ -5,7 +5,7 @@ using TMPro;
 using System;
 using System.Text;
 
-public class resources : MonoBehaviour
+public class Resources : MonoBehaviour
 {
     // Major resource variables
     public int views;

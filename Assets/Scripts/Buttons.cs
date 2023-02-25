@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour
 {
 
-    public resources resources;
+    public Resources resources;
 
     public Button mainButton;
     public Button button10;
