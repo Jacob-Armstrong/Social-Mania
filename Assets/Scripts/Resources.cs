@@ -7,31 +7,22 @@ using System.Text;
 
 public class Resources : MonoBehaviour
 {
+    // References
+    TimeManager timeManager;
+    
+    // Game Objects
+    public TextMeshProUGUI textViewsCount;
+    public TextMeshProUGUI textAttentionCount;
+    public TextMeshProUGUI textFollowersCount;
+    
     // Major resource variables
-    public int views;
+    public float views;
     public int followers;
     public int haters;
     public float attention;
 
-    // Attention-specific modifiers
-    float attDecayBase;     // Base amount of decay lost per tick
-    float attDecayAmt;      // Modifier to decay loss, increase/decrease based on progression
-    float attLoss;          // Attention lost this tick
-
-    // Time variables
-    int tickProgress;       // Counter increases until next tick occurs, then resets
-
-    // External Objects
-    // Controls on-screen display number
-    public TextMeshProUGUI textViewsCount;
-    public TextMeshProUGUI textAttentionCount;
-    public TextMeshProUGUI textFollowersCount;
-    public TextMeshProUGUI textTimeElapsed;
-
-    //timeElapsed prototype
-    DateTime startTime;
-    DateTime currentTime;
-    TimeSpan sessionLength;
+    private int tickProgress;
+    public float viewGain;
     
     //________________________
     // FUNCTIONS
@@ -42,13 +33,7 @@ public class Resources : MonoBehaviour
         views = 0;
         followers = 0;
         haters = 0;
-        attention = 50;
-        attDecayAmt = 0.5f;     // This one changes based on upgrades
-        attDecayBase = 1.0f;
-        attLoss = 0.0f;
-        tickProgress = 0;
-
-        startTime = DateTime.Now; // Time session begins
+        attention = 1;
     }
 
     void Update(){}
@@ -64,27 +49,41 @@ public class Resources : MonoBehaviour
         }
         tickProgress++;
     }
-
-
+    
     // ________________________________
     // IMPORTANT FUNCTION
     // Tick runs several times per second
     // and handles passive resource generation/loss
     void tick()
     {
-        attentionDecay(attDecayAmt);
-
-        if (attLoss > 0)
-            generateViews(attLoss);
-
-        timeElapsed();
-
+        viewGains();
         updateDisplay();
-
+    }
+    
+    void viewGains()
+    {
+        viewGain = (followers/10f) * attention;
+        views += viewGain;
     }
 
+    void updateDisplay()    // Refreshes on-screen numbers (views, attention...)
+    {
+        textViewsCount.text = ((int)views).ToString();
+        textAttentionCount.text = attention.ToString("0.00") + "x";
+        textFollowersCount.text = followers.ToString();
+    }
+    
+    // temporarily deprecated attention code
+    
+    /*
+    // Attention-specific modifiers
+    float attDecayBase;     // Base amount of decay lost per tick
+    float attDecayAmt;      // Modifier to decay loss, increase/decrease based on progression
+    float attLoss;          // Attention lost this tick
+*/
 
-    void attentionDecay(float decayAmt)    // Handles passive decrease of decay
+    /*
+     void attentionDecay(float decayAmt)    // Handles passive decrease of decay
     {
         attLoss = 0;
 
@@ -98,11 +97,11 @@ public class Resources : MonoBehaviour
         // Decrease attention based on decay
         attLoss = attDecayBase * decayAmt;
         attention -= attLoss;
-
-        //Debug.Log("Attention: " + attention);
     }
+    /*
 
 
+    /*
     void generateViews(float loss)    // Converts decayed attention into views
     {
         if (loss < 1)
@@ -111,79 +110,6 @@ public class Resources : MonoBehaviour
         views += (int)loss;
         //Debug.Log("Views: " + views);
     }
-
-    void updateDisplay()    // Refreshes on-screen numbers (views, attention...)
-    {
-        textViewsCount.text = views.ToString();
-        textAttentionCount.text = "\n" + ((int)attention).ToString();
-        textFollowersCount.text = "\n\n" + followers.ToString();
-    }
-
-    void timeElapsed()
-    {
-        currentTime = DateTime.Now;
-
-        sessionLength = currentTime - startTime;
-
-        StringBuilder sb = new StringBuilder("", 50);
-
-        sb.Insert(0, "Time elapsed: ");
-
-        if (sessionLength.Hours > 1)
-        {
-            sb.Insert(14, sessionLength.Hours + " hours");
-        }
-        else if (sessionLength.Hours == 1)
-        {
-            sb.Insert(14, sessionLength.Hours + " hour");
-        }
-
-        if (sessionLength.Hours > 0)
-        {
-            if (sessionLength.Minutes > 1)
-            {
-                sb.Append(", " + sessionLength.Minutes + " minutes");
-            }
-            else if (sessionLength.Minutes == 1)
-            {
-                sb.Append(", " + sessionLength.Minutes + " minute");
-            }
-        }
-        else if (sessionLength.Hours == 0)
-        {
-            if (sessionLength.Minutes > 1)
-            {
-                sb.Append(sessionLength.Minutes + " minutes");
-            }
-            else if (sessionLength.Minutes == 1)
-            {
-                sb.Append(sessionLength.Minutes + " minute");
-            }
-        }
-
-        if (sessionLength.Hours > 0 || sessionLength.Minutes > 0)
-        {
-            if (sessionLength.Seconds > 1)
-            {
-                sb.Append(", " + sessionLength.Seconds + " seconds");
-            }
-            else if (sessionLength.Seconds == 1)
-            {
-                sb.Append(", " + sessionLength.Seconds + " second");
-            }
-        }
-        else if (sessionLength.Hours == 0 || sessionLength.Minutes == 0)
-        {
-            if (sessionLength.Seconds > 1)
-            {
-                sb.Append(sessionLength.Seconds + " seconds");
-            }
-            else if (sessionLength.Seconds == 1)
-            {
-                sb.Append(sessionLength.Seconds + " second");
-            }
-        }
-
-        textTimeElapsed.text = sb.ToString();
-    }
+    */
+    
 }

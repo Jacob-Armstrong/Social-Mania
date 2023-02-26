@@ -29,7 +29,7 @@ public class Buttons : MonoBehaviour
     public void numberGoUp()
     {
         resources.followers += 1;
-        resources.attention += 1;
+        resources.attention += .01f;
     }
 
     public void numberGoUp10()
@@ -39,7 +39,7 @@ public class Buttons : MonoBehaviour
         StartCoroutine(buttonCooldown(button10, 2f));
     }
 
-    IEnumerator buttonCooldown(Button button, float cooldown)
+    static IEnumerator buttonCooldown(Button button, float cooldown)
     {
         button.interactable = false;
         yield return new WaitForSeconds(cooldown);
