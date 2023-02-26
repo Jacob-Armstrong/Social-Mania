@@ -8,35 +8,39 @@ using System.Text;
 public class Resources : MonoBehaviour
 {
     // References
-    TimeManager timeManager;
+    [SerializeField] Upgrades upgrades;
     
     // Game Objects
     public TextMeshProUGUI textViewsCount;
     public TextMeshProUGUI textAttentionCount;
     public TextMeshProUGUI textFollowersCount;
     
-    // Major resource variables
+    // Local Variables
+    int tickProgress;
+    [SerializeField] float viewGain;
+    
+    // Major Resource Variables
     public float views;
     public int followers;
     public int haters;
-    public float attention;
-
-    private int tickProgress;
-    public float viewGain;
+    public double attention;
     
     //________________________
     // FUNCTIONS
-
+    
     void Start()
     {
         // Initialize starting values of resource variables
         views = 0;
         followers = 0;
         haters = 0;
-        attention = 1;
+        attention = 1.0d;
     }
 
-    void Update(){}
+    void Update()
+    {
+        attentionCap();
+    }
 
     void FixedUpdate()
     {
@@ -59,10 +63,18 @@ public class Resources : MonoBehaviour
         viewGains();
         updateDisplay();
     }
+
+    void attentionCap()
+    {
+        if (attention > upgrades.maxAttention)
+        {
+            attention = (float)upgrades.maxAttention;
+        }
+    }
     
     void viewGains()
     {
-        viewGain = (followers/10f) * attention;
+        viewGain = (followers/10.0f) * (float)attention;
         views += viewGain;
     }
 
