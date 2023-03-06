@@ -4,16 +4,24 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Buttons : MonoBehaviour
 {
-
+    // References
     public Resources resources;
-
+    [SerializeField] Stats stats;
+    
+    // Game Objects
     public Button mainButton;
     public Button button10;
-
+    public Button changeSceneTest;
+    
+    // Local Variables
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +52,11 @@ public class Buttons : MonoBehaviour
         button.interactable = false;
         yield return new WaitForSeconds(cooldown);
         button.interactable = true;
+    }
+
+    public void changeSceneProfile()
+    {
+        Stats.lifetimeViews = (int)resources.views;
+        SceneManager.LoadScene("Profile");
     }
 }
