@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class Upgrades : MonoBehaviour
 {
-    // References
+    /* ==== References ==== */
     [SerializeField] Resources resources;
     [SerializeField] Button attentionUpgrade1;
     
-    // Game objects
+    /* ==== Game Objects ==== */
     
-    // Local variables
+    /* ==== Local Variables ==== */
     public double maxAttention;
     public double clickMultiplier;
     

@@ -1,22 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    // References
-    
-    // Game Objects
+    /* ==== References ==== */
 
-    // Local Variables
-    public static int lifetimeViews;
+    /* ==== Game Objects ==== */
 
-    /*
-    void Awake()
-    {
-        DontDestroyOnLoad(statObject);
-    }
+    /*  ==== Local Variables ==== */
+    /* -- cool stats! -- */
+    float viewsPerSecond;
     
+    /* -- saved data -- */
+    int lifetimeViews;
+    int totalNumUpgrades;
+    DateTime totalTimePlayed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +29,4 @@ public class Stats : MonoBehaviour
     {
         
     }
-    */
 }

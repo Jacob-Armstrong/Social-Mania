@@ -9,18 +9,14 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    // References
+    /* ==== References ==== */
     public Resources resources;
-    [SerializeField] Stats stats;
-    
-    // Game Objects
+
+    /* ==== Game Objects ==== */
     public Button mainButton;
     public Button button10;
-    public Button changeSceneTest;
-    
-    // Local Variables
-    
-    
+
+    /* ==== Local Variables ==== */
     
     // Start is called before the first frame update
     void Start()
@@ -46,17 +42,14 @@ public class Buttons : MonoBehaviour
         resources.attention += 10;
         StartCoroutine(buttonCooldown(button10, 2f));
     }
-
+    
+    // Reusable Coroutine to put a cooldown with a length <cooldown> seconds on any Unity UI Button
     static IEnumerator buttonCooldown(Button button, float cooldown)
     {
         button.interactable = false;
         yield return new WaitForSeconds(cooldown);
         button.interactable = true;
     }
-
-    public void changeSceneProfile()
-    {
-        Stats.lifetimeViews = (int)resources.views;
-        SceneManager.LoadScene("Profile");
-    }
+    
+    
 }

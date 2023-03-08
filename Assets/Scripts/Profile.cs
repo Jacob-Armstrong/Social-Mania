@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class Profile : MonoBehaviour
 {
-    // References
+    /* ==== References ==== */
     
-    // Game Objects
+    /* ==== Game Objects ==== */
     public TextMeshProUGUI lifetimeViewsText;
 
-    // Local Variables
-    //int lifetimeViews;
+    /* ==== Local Variables ==== */
+    int lifetimeViews;
     
     // Start is called before the first frame update
     void Start()
     {
-        lifetimeViewsText.text = Stats.lifetimeViews.ToString();
+        
     }
 
     // Update is called once per frame
@@ -28,6 +28,6 @@ public class Profile : MonoBehaviour
 
     public void returnToMain()
     {
-        SceneManager.LoadScene("Main");
+        // code to change back to main canvas
     }
 }
