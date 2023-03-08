@@ -7,15 +7,15 @@ using System.Text;
 
 public class Resources : MonoBehaviour
 {
-    // References
+    /* ==== References ==== */
     [SerializeField] Upgrades upgrades;
     
-    // Game Objects
+    /* ==== Game Objects ==== */
     public TextMeshProUGUI textViewsCount;
     public TextMeshProUGUI textAttentionCount;
     public TextMeshProUGUI textFollowersCount;
     
-    // Local Variables
+    /* ==== Local Variables ==== */
     int tickProgress;
     [SerializeField] float viewGain;
     

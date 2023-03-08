@@ -7,16 +7,16 @@ using TMPro;
 
 public class TimeManager : MonoBehaviour
 {
-    // References
+    /* ==== References ==== */
 
-    // Game Objects
+    /* ==== Game Objects ==== */
     public TextMeshProUGUI textTimeElapsed;
 
-    // Local variables
+    /* ==== Local Variables ==== */
     DateTime startTime;
     DateTime currentTime;
-    TimeSpan sessionLength;
-    
+    TimeSpan sessionLength; // += this to totalTimePlayed in stats when game is saved pls (or something idk how timeSpan works)
+
     // Start is called before the first frame update
     void Start()
     {

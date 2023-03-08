@@ -4,16 +4,20 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class Buttons : MonoBehaviour
 {
-
+    /* ==== References ==== */
     public Resources resources;
 
+    /* ==== Game Objects ==== */
     public Button mainButton;
     public Button button10;
 
+    /* ==== Local Variables ==== */
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +42,14 @@ public class Buttons : MonoBehaviour
         resources.attention += 10;
         StartCoroutine(buttonCooldown(button10, 2f));
     }
-
+    
+    // Reusable Coroutine to put a cooldown with a length <cooldown> seconds on any Unity UI Button
     static IEnumerator buttonCooldown(Button button, float cooldown)
     {
         button.interactable = false;
         yield return new WaitForSeconds(cooldown);
         button.interactable = true;
     }
+    
+    
 }

@@ -2069,7 +2069,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources: {fileID: 2041848749}
-  canvas: {fileID: 0}
   maxAttentionUpgrade1: {fileID: 634697456}
 --- !u!1 &1421490010
 GameObject:
