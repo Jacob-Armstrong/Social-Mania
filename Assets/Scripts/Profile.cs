@@ -24,17 +24,15 @@ public class Profile : MonoBehaviour
     float lifetimeViews;
     
     TimeSpan totalTimePlayed;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        returnToMain();
+    }
+    
+    void FixedUpdate()
+    {
+        lifetimeViewsValue.text = stats.lifetimeViews.ToString();
     }
     
     public void visitProfile() // Profile button clicked
@@ -45,7 +43,7 @@ public class Profile : MonoBehaviour
         
         // Update stats
         numClicksValue.text = stats.numClicks.ToString();
-        lifetimeViewsValue.text = stats.lifetimeViews.ToString(); // potentially change updateStats() in Resources to reflect this change in real time?
+        // lifetimeViewsValue.text = stats.lifetimeViews.ToString(); // if updating views in realtime ends up being bad
     }
 
     public void returnToMain()
