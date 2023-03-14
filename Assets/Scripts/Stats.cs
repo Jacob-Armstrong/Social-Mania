@@ -16,7 +16,7 @@ public class Stats : MonoBehaviour
     /* -- saved data -- */
     public int lifetimeViews;
     public int totalNumUpgrades;
-    public DateTime totalTimePlayed;
+    public string totalTimePlayed;
     public int numClicks;
 
     // Start is called before the first frame update

@@ -4,22 +4,26 @@ using UnityEngine;
 using System;
 using System.Text;
 using TMPro;
+using Unity.VisualScripting;
 
 public class TimeManager : MonoBehaviour
 {
     /* ==== References ==== */
+    [SerializeField] Stats stats;
 
     /* ==== Game Objects ==== */
     public TextMeshProUGUI textTimeElapsed;
 
     /* ==== Local Variables ==== */
-    DateTime startTime;
+    public DateTime startTime;
     DateTime currentTime;
     TimeSpan sessionLength; // += this to totalTimePlayed in stats when game is saved pls (or something idk how timeSpan works)
 
     // Start is called before the first frame update
     void Start()
     {
+        // SET THIS TO THE FIRST TIME THEY START THE GAME INSTEAD
+        // if <database has table with string> or <user is authenticated> get timespan
         startTime = DateTime.Now; // Time session begins
     }
 
@@ -106,5 +110,6 @@ public class TimeManager : MonoBehaviour
         }
 
         textTimeElapsed.text = sb.ToString();
+        stats.totalTimePlayed = sb.ToString();
     }
 }
