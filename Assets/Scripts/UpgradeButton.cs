@@ -10,6 +10,6 @@ public class UpgradeButton : MonoBehaviour
 
     public void SetIcon(Sprite mySprite)
     {
-        myIcon.sprite = mySprite
+        myIcon.sprite = mySprite;
     }
 }
