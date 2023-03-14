@@ -35,7 +35,6 @@ public class Buttons : MonoBehaviour
     {
         resources.followers += 1;
         resources.attention += .01f;
-        StartCoroutine(buttonCooldown(mainButton, 30));
     }
 
     public void numberGoUp10()

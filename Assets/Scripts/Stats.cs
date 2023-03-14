@@ -11,12 +11,13 @@ public class Stats : MonoBehaviour
 
     /*  ==== Local Variables ==== */
     /* -- cool stats! -- */
-    float viewsPerSecond;
+    public float viewsPerSecond;
     
     /* -- saved data -- */
-    int lifetimeViews;
-    int totalNumUpgrades;
-    DateTime totalTimePlayed;
+    public int lifetimeViews;
+    public int totalNumUpgrades;
+    public DateTime totalTimePlayed;
+    public int numClicks;
 
     // Start is called before the first frame update
     void Start()

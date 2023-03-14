@@ -9,15 +9,16 @@ using UnityEngine.UI;
 public class Profile : MonoBehaviour
 {
     /* ==== References ==== */
-    [SerializeField]
-    TimeManager timeManager;
-    [SerializeField]
-    Stats stats;
+    [SerializeField] TimeManager timeManager;
+    [SerializeField] Stats stats;
+    [SerializeField] Resources resources;
     
     /* ==== Game Objects ==== */
-    public TextMeshProUGUI lifetimeViewsText;
     public GameObject mainScene;
     public GameObject profileScene;
+    
+    public TextMeshProUGUI lifetimeViewsValue;
+    public TextMeshProUGUI numClicksValue;
 
     /* ==== Local Variables ==== */
     float lifetimeViews;
@@ -35,11 +36,16 @@ public class Profile : MonoBehaviour
     {
         
     }
-
-    public void visitProfile()
+    
+    public void visitProfile() // Profile button clicked
     {
+        // Change scenes
         mainScene.SetActive(false);
         profileScene.SetActive(true);
+        
+        // Update stats
+        numClicksValue.text = stats.numClicks.ToString();
+        lifetimeViewsValue.text = stats.lifetimeViews.ToString(); // potentially change updateStats() in Resources to reflect this change in real time?
     }
 
     public void returnToMain()

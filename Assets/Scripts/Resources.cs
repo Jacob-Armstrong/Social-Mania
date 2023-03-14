@@ -9,6 +9,7 @@ public class Resources : MonoBehaviour
 {
     /* ==== References ==== */
     [SerializeField] Upgrades upgrades;
+    [SerializeField] Stats stats;
     
     /* ==== Game Objects ==== */
     public TextMeshProUGUI textViewsCount;
@@ -62,6 +63,7 @@ public class Resources : MonoBehaviour
     {
         viewGains();
         updateDisplay();
+        updateStats();
     }
 
     void attentionCap()
@@ -83,6 +85,11 @@ public class Resources : MonoBehaviour
         textViewsCount.text = ((int)views).ToString();
         textAttentionCount.text = attention.ToString("0.00") + "x";
         textFollowersCount.text = followers.ToString();
+    }
+
+    void updateStats()
+    {
+        stats.lifetimeViews = (int)views;
     }
     
     // temporarily deprecated attention code
