@@ -40,3 +40,4 @@ public class Upgrades : MonoBehaviour
         clickMultiplier = 1.5d;
     }
 }
+
