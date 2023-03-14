@@ -706,11 +706,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 0d8146fc-1f26-4af6-b673-39613e6f4dda
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Social Mania
+  organizationId: tigerfrog555
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
