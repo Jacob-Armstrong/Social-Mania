@@ -11,22 +11,31 @@ public class DataManager : MonoBehaviour
     [SerializeField] TimeManager timeManager;
     [SerializeField] Stats stats;
     [SerializeField] Resources resources;
+    [SerializeField] User user;
 
     /* ==== Game Objects ==== */
 
     /* ==== Local Variables ==== */
     const string projectId = "Social-Mania";
     static readonly string DatabaseURL = $"https://social-mania.firebaseio.com/";
+    
+    void updateData()
+    {
+        user.followers = resources.followers;
+        user.lifetimeViews = (int)resources.views;
+        user.numClicks = stats.numClicks;
+        user.timePlayed = stats.totalTimePlayed;
+    }
 
     public void postButtonPushed()
     {
-        User user = new User(resources.followers, resources.views, stats.numClicks, stats.totalTimePlayed);
-        postUser(user, "12345");
+        updateData();
+        postUser(user, "Bob Jones");
     }
 
-    public static void postUser(User user, string userId)
+    void postUser(User userObj, string userId)
     {
-        RestClient.Put<User>($"{DatabaseURL}users/{userId}.json", user).Then(response =>
+        RestClient.Put<User>($"{DatabaseURL}users/{userId}.json", userObj).Then(response =>
         {
             Debug.Log("The user was successfully uploaded to the database");
         });

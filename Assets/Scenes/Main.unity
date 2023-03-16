@@ -331,6 +331,7 @@ Transform:
   - {fileID: 562440737}
   - {fileID: 843961939}
   - {fileID: 708225159}
+  - {fileID: 1745042355}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -420,7 +421,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 708225160}
         m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
-        m_MethodName: postToDatabase
+        m_MethodName: postButtonPushed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1421,6 +1422,7 @@ MonoBehaviour:
   timeManager: {fileID: 700280364}
   stats: {fileID: 562440738}
   resources: {fileID: 2041848749}
+  user: {fileID: 1745042356}
 --- !u!1 &717294429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,6 +3669,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733035263}
   m_CullTransparentMesh: 1
+--- !u!1 &1745042354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745042355}
+  - component: {fileID: 1745042356}
+  m_Layer: 0
+  m_Name: User
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1745042355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745042354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 112182216}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1745042356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745042354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f49e5d8654beed42918ce932c109ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followers: 0
+  lifetimeViews: 0
+  numClicks: 0
+  timePlayed: 
 --- !u!1 &1887616701
 GameObject:
   m_ObjectHideFlags: 0
