@@ -6,6 +6,8 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     /* ==== References ==== */
+    [SerializeField] TimeManager timeManager;
+    [SerializeField] Resources resources;
 
     /* ==== Game Objects ==== */
 
@@ -25,9 +27,8 @@ public class Stats : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        totalTimePlayed = timeManager.sessionLength.ToString();
     }
 }

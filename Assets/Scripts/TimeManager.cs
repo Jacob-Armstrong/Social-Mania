@@ -17,7 +17,7 @@ public class TimeManager : MonoBehaviour
     /* ==== Local Variables ==== */
     public DateTime startTime;
     DateTime currentTime;
-    TimeSpan sessionLength; // += this to totalTimePlayed in stats when game is saved pls (or something idk how timeSpan works)
+    public TimeSpan sessionLength; // += this to totalTimePlayed in stats when game is saved pls (or something idk how timeSpan works)
 
     // Start is called before the first frame update
     void Start()

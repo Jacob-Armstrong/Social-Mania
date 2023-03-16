@@ -29,7 +29,7 @@ public class Resources : MonoBehaviour
     //________________________
     // FUNCTIONS
     
-    void Start()
+    void Awake()
     {
         // Initialize starting values of resource variables
         views = 0;
