@@ -57,7 +57,6 @@ public class Profile : MonoBehaviour
         stats.lifetimeViews = 0;
         stats.numClicks = 0;
         stats.totalNumUpgrades = 0;
-        stats.totalTimePlayed = "";
-        timeManager.startTime = DateTime.Now;
+        timeManager.startDate = DateTime.Now;
     }
 }

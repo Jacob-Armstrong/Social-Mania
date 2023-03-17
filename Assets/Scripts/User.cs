@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [Serializable]
-public class User : MonoBehaviour
+public class User
 {
     /* ==== References ==== */
 
@@ -18,4 +18,15 @@ public class User : MonoBehaviour
     public int lifetimeViews;
     public int numClicks;
     public string timePlayed;
+    public string startDate;
+
+    /*
+    public User()
+    {
+        followers = 0;
+        lifetimeViews = 0;
+        numClicks = 0;
+        timePlayed = "";
+    }
+    */
 }

@@ -18,7 +18,7 @@ public class Stats : MonoBehaviour
     /* -- saved data -- */
     public int lifetimeViews;
     public int totalNumUpgrades;
-    public string totalTimePlayed;
+    // public string startDate;
     public int numClicks;
 
     // Start is called before the first frame update
@@ -29,6 +29,6 @@ public class Stats : MonoBehaviour
 
     void FixedUpdate()
     {
-        totalTimePlayed = timeManager.sessionLength.ToString();
+
     }
 }
