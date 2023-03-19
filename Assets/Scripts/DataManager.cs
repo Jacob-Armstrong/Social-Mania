@@ -14,7 +14,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] TimeManager timeManager;
     [SerializeField] Stats stats;
     [SerializeField] Resources resources;
-    User loadedUser;
+    UserData loadedUser;
 
     /* ==== Game Objects ==== */
     [SerializeField] TMP_InputField saveInputField;
@@ -25,12 +25,8 @@ public class DataManager : MonoBehaviour
     static readonly string DatabaseURL = $"https://social-mania.firebaseio.com/";
     
     string userAuth;
-    
-    //wtf does this do
-    public delegate void PostUserCallback();
-    public delegate void GetUserCallback(User user);
-    
-    void saveData(User user)
+
+    void saveData(UserData user)
     {
         user.followers = resources.followers;
         user.lifetimeViews = (int)resources.views;
@@ -41,16 +37,16 @@ public class DataManager : MonoBehaviour
 
     public void postButtonPushed()
     {
-        User user = new User();
+        UserData user = new UserData();
         saveData(user);
         userAuth = saveInputField.text;
         postUser(user);
     }
 
-    void postUser(User userObj)
+    void postUser(UserData userObj)
     {
         Debug.Log("Starting save...");
-        RestClient.Put<User>($"{DatabaseURL}users/{userAuth}.json", userObj).Then(response =>
+        RestClient.Put<UserData>($"{DatabaseURL}users/{userAuth}.json", userObj).Then(response =>
         {
             Debug.Log("The user was successfully uploaded to the database");
         });
@@ -65,7 +61,7 @@ public class DataManager : MonoBehaviour
     void getUser()
     {
         Debug.Log("Starting load...");
-        RestClient.Get<User>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
+        RestClient.Get<UserData>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
         {
             Debug.Log("Load successful.");
             resources.followers = response.followers;

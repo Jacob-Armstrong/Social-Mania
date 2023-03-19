@@ -19,7 +19,6 @@ public class TimeManager : MonoBehaviour
     DateTime currentTime;
     
     public TimeSpan sessionLength; // += this to totalTimePlayed in stats when game is saved pls (or something idk how timeSpan works)
-    public bool newUser;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +27,6 @@ public class TimeManager : MonoBehaviour
         // if <database has table with string> or <user is authenticated> get timespan
         // Time session begins
         startDate = DateTime.Now;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void FixedUpdate()

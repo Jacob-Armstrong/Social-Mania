@@ -25,7 +25,7 @@ public class Profile : MonoBehaviour
     
     TimeSpan totalTimePlayed;
 
-    void Awake()
+    void Awake() // should move this to a scene handler or something, this is a band-aid for me not wanting to deactivate scenes all the time
     {
         returnToMain();
     }

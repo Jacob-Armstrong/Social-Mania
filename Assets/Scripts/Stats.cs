@@ -20,15 +20,4 @@ public class Stats : MonoBehaviour
     public int totalNumUpgrades;
     // public string startDate;
     public int numClicks;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    void FixedUpdate()
-    {
-
-    }
 }

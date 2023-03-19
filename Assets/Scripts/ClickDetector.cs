@@ -12,18 +12,6 @@ public class ClickDetector : MonoBehaviour
     [SerializeField] Button mainButton;
 
 /* ==== Local Variables ==== */
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void Awake()
     {

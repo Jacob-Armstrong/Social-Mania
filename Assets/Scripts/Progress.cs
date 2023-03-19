@@ -12,22 +12,11 @@ public class Progress : MonoBehaviour
     [SerializeField] Button maxAttentionUpgrade1;
     
     /* ==== Local Variables ==== */
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         progressObserver();
-    }
-
-    void FixedUpdate()
-    {
-        
     }
 
     // this is ugly and bad please don't track progress this way

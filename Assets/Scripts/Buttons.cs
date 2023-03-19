@@ -15,21 +15,8 @@ public class Buttons : MonoBehaviour
 
     /* ==== Game Objects ==== */
     public Button mainButton;
-    public Button button10;
 
     /* ==== Local Variables ==== */
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void numberGoUp()
     {
@@ -37,13 +24,6 @@ public class Buttons : MonoBehaviour
         resources.attention += .01f;
     }
 
-    public void numberGoUp10()
-    {
-        resources.followers += 10;
-        resources.attention += 10;
-        StartCoroutine(buttonCooldown(button10, 2f));
-    }
-    
     // Reusable Coroutine to put a cooldown with a length <cooldown> seconds on any Unity UI Button
     static IEnumerator buttonCooldown(Button button, float cooldown)
     {
