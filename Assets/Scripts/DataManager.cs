@@ -24,11 +24,17 @@ public class DataManager : MonoBehaviour
     const string ProjectId = "Social-Mania";
     static readonly string DatabaseURL = $"https://social-mania-12157807-default-rtdb.firebaseio.com/";
     
-    string userAuth;
+    public string userAuth;
 
     public void onClickGoogleSignIn()
     {
         GoogleAuthHandler.SignInWithGoogle();
+    }
+
+    public void userAuthenticated()
+    {
+        userAuth = GoogleAuthHandler.authToken;
+        Debug.Log(userAuth);
     }
 
     void saveData(UserData user)

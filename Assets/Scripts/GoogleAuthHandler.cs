@@ -10,14 +10,14 @@ using UnityEngine;
 /// </summary>
 public static class GoogleAuthHandler
 {
-    private const string
-        ClientId ="730199544360-5crkigap5jud7rqs0es2chisrkkmoqla.apps.googleusercontent.com"; //TODO: Change [CLIENT_ID] to your CLIENT_ID
+    private const string ClientId ="730199544360-5crkigap5jud7rqs0es2chisrkkmoqla.apps.googleusercontent.com"; //TODO: Change [CLIENT_ID] to your CLIENT_ID
 
-    private const string
-        ClientSecret = "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"; //TODO: Change [CLIENT_SECRET] to your CLIENT_SECRET
+    private const string ClientSecret = "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"; //TODO: Change [CLIENT_SECRET] to your CLIENT_SECRET
 
     private static string RedirectUri = "https://us-central1-social-mania-12157807.cloudfunctions.net/saveAuthToken"; // TODO: Change this to your function endpoint you can find in https://console.firebase.google.com/u/0/project/[PROJECT_ID]/functions
     private static string GetAuthTokenEndpoint = "https://us-central1-social-mania-12157807.cloudfunctions.net/getAuthToken"; // TODO: Change this to your function endpoint you can find in https://console.firebase.google.com/u/0/project/[PROJECT_ID]/functions
+
+    public static string authToken;
 
     /// <summary>
     /// Opens a webpage that prompts the user to sign in and copy the auth code 
@@ -29,6 +29,7 @@ public static class GoogleAuthHandler
             $"https://accounts.google.com/o/oauth2/v2/auth?client_id={ClientId}&redirect_uri={RedirectUri}&response_type=code&scope=email&state={guid}");
 
         WaitForCode(guid);
+        
     }
 
     private static void WaitForCode(string guid)
@@ -84,6 +85,8 @@ public static class GoogleAuthHandler
                     StringSerializationAPI.Deserialize(typeof(GoogleIdTokenResponse), response.Text) as
                         GoogleIdTokenResponse;
                 callback(data.id_token);
+                authToken = data.id_token;
+                Debug.Log("authToken set");
             }).Catch(Debug.Log);
     }
 }
