@@ -22,9 +22,14 @@ public class DataManager : MonoBehaviour
 
 /* ==== Local Variables ==== */
     const string ProjectId = "Social-Mania";
-    static readonly string DatabaseURL = $"https://social-mania.firebaseio.com/";
+    static readonly string DatabaseURL = $"https://social-mania-12157807-default-rtdb.firebaseio.com/";
     
     string userAuth;
+
+    public void onClickGoogleSignIn()
+    {
+        GoogleAuthHandler.SignInWithGoogle();
+    }
 
     void saveData(UserData user)
     {
