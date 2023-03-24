@@ -14,6 +14,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] TimeManager timeManager;
     [SerializeField] Stats stats;
     [SerializeField] Resources resources;
+    [SerializeField] Profile profile;
     UserData loadedUser;
 
     /* ==== Game Objects ==== */
@@ -22,39 +23,60 @@ public class DataManager : MonoBehaviour
 
 /* ==== Local Variables ==== */
     const string ProjectId = "Social-Mania";
-    static readonly string DatabaseURL = $"https://social-mania-12157807-default-rtdb.firebaseio.com/";
+    static readonly string DatabaseURL = "https://social-mania-12157807-default-rtdb.firebaseio.com/";
     
     public string userAuth;
-
+    
+    // "Sign in with Google" button
     public void onClickGoogleSignIn()
     {
         GoogleAuthHandler.SignInWithGoogle();
+        profile.authPopup.SetActive(true);
+        profile.returnToGameButton.interactable = false;
+        profile.googleSignInButton.interactable = false;
     }
 
+    // "Click here once you have signed in with Google!" to pull authToken from the handler
     public void userAuthenticated()
     {
         userAuth = GoogleAuthHandler.authToken;
-        Debug.Log(userAuth);
+        userAuth = userAuth.Substring(0, 10);
+        Debug.Log("User Auth: " + userAuth); // remove this once everything works
+        if (userAuth == "")
+        {
+            Debug.Log("Sign in failed -- Please make sure you are signed in properly!");
+        }
+        else
+        {
+            load();
+        }
+        profile.authPopup.SetActive(false);
+        profile.returnToGameButton.interactable = true;
+        profile.googleSignInButton.interactable = true;
+        profile.googleSignInText.text = "";
     }
 
+    // Save user data
+    public void save()
+    {
+        UserData user = new UserData();
+        saveData(user);
+        uploadToDatabase(user);
+        // if userAuth = "", save to playerPrefs for anonymous login?
+    }
+    
+    // Data to be saved (augment UserData class to change)
     void saveData(UserData user)
     {
         user.followers = resources.followers;
         user.lifetimeViews = (int)resources.views;
         user.numClicks = stats.numClicks;
-        user.timePlayed = timeManager.sessionLength.ToString();
+        user.timePlayed = timeManager.timeSinceStartDate.ToString();
         user.startDate = timeManager.startDate.ToString();
     }
-
-    public void postButtonPushed()
-    {
-        UserData user = new UserData();
-        saveData(user);
-        userAuth = saveInputField.text;
-        postUser(user);
-    }
-
-    void postUser(UserData userObj)
+    
+    // Upload UserData class to database
+    void uploadToDatabase(UserData userObj)
     {
         Debug.Log("Starting save...");
         RestClient.Put<UserData>($"{DatabaseURL}users/{userAuth}.json", userObj).Then(response =>
@@ -63,13 +85,8 @@ public class DataManager : MonoBehaviour
         });
     }
 
-    public void loadButtonPushed()
-    {
-        userAuth = loadInputField.text;
-        getUser();
-    }
-
-    void getUser()
+    // Load data from database, deconstruct response into saved data
+    public void load()
     {
         Debug.Log("Starting load...");
         RestClient.Get<UserData>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
@@ -78,11 +95,8 @@ public class DataManager : MonoBehaviour
             resources.followers = response.followers;
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;
-            timeManager.sessionLength = TimeSpan.Parse(response.timePlayed);
+            timeManager.timeSinceStartDate = TimeSpan.Parse(response.timePlayed);
             timeManager.startDate = DateTime.Parse(response.startDate);
         });
     }
-    
-    
-    
 }
