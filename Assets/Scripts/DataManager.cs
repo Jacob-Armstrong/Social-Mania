@@ -40,14 +40,14 @@ public class DataManager : MonoBehaviour
     public void userAuthenticated()
     {
         userAuth = GoogleAuthHandler.authToken;
-        userAuth = userAuth.Substring(0, 10);
-        Debug.Log("User Auth: " + userAuth); // remove this once everything works
-        if (userAuth == "")
+        if (userAuth == null)
         {
-            Debug.Log("Sign in failed -- Please make sure you are signed in properly!");
+            Debug.Log("Sign in failed -- Please make sure you are signed in properly!"); // replace with proper in-game error popup!
         }
         else
         {
+            userAuth = userAuth.Substring(0, 10);
+            Debug.Log("User Auth: " + userAuth);
             load();
         }
         profile.authPopup.SetActive(false);
