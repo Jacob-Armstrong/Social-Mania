@@ -4,4 +4,5 @@ using System;
 public class GoogleIdTokenResponse
 {
     public string id_token;
+    public string localId;
 }

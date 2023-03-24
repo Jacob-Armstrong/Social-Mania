@@ -49,7 +49,7 @@ public static class GoogleAuthHandler
                 if (success)
                 {
                     ExchangeAuthCodeWithIdToken(response.Text,
-                        idToken => { FirebaseAuthHandler.SingInWithToken(idToken, "google.com"); });
+                        idToken => { FirebaseAuthHandler.SignInWithToken(idToken, "google.com"); });
                 }
                 else
                 {
@@ -82,11 +82,10 @@ public static class GoogleAuthHandler
             response =>
             {
                 var data =
-                    StringSerializationAPI.Deserialize(typeof(GoogleIdTokenResponse), response.Text) as
-                        GoogleIdTokenResponse;
+                    StringSerializationAPI.Deserialize(typeof(GoogleIdTokenResponse), response.Text) as GoogleIdTokenResponse;
                 callback(data.id_token);
                 authToken = data.id_token;
                 Debug.Log("authToken set");
-            }).Catch(Debug.Log);
+            }).Catch(null);
     }
 }
