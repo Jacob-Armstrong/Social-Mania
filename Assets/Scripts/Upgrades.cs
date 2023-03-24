@@ -22,12 +22,6 @@ public class Upgrades : MonoBehaviour
         clickMultiplier = 1.0d;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void maxAttentionUpgrade1()
     {
         maxAttention = 2.5d;

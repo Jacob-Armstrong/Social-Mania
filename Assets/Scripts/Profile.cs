@@ -16,17 +16,19 @@ public class Profile : MonoBehaviour
     /* ==== Game Objects ==== */
     public GameObject mainScene;
     public GameObject profileScene;
-    
+    public GameObject authPopup;
+    public Button googleSignInButton;
+    public Button returnToGameButton;
+    public TextMeshProUGUI googleSignInText;
+
     public TextMeshProUGUI lifetimeViewsValue;
     public TextMeshProUGUI numClicksValue;
 
     /* ==== Local Variables ==== */
-    float lifetimeViews;
-    
-    TimeSpan totalTimePlayed;
 
-    void Awake()
+    void Awake() // should move this to a scene handler or something, this is a band-aid for me not wanting to deactivate scenes all the time
     {
+        authPopup.SetActive(false);
         returnToMain();
     }
     
@@ -57,7 +59,6 @@ public class Profile : MonoBehaviour
         stats.lifetimeViews = 0;
         stats.numClicks = 0;
         stats.totalNumUpgrades = 0;
-        stats.totalTimePlayed = "";
-        timeManager.startTime = DateTime.Now;
+        timeManager.startDate = DateTime.Now;
     }
 }

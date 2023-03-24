@@ -6,6 +6,8 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     /* ==== References ==== */
+    [SerializeField] TimeManager timeManager;
+    [SerializeField] Resources resources;
 
     /* ==== Game Objects ==== */
 
@@ -16,18 +18,6 @@ public class Stats : MonoBehaviour
     /* -- saved data -- */
     public int lifetimeViews;
     public int totalNumUpgrades;
-    public string totalTimePlayed;
+    // public string startDate;
     public int numClicks;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
