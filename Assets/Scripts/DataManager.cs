@@ -24,8 +24,9 @@ public class DataManager : MonoBehaviour
 /* ==== Local Variables ==== */
     const string ProjectId = "Social-Mania";
     static readonly string DatabaseURL = "https://social-mania-12157807-default-rtdb.firebaseio.com/";
-    
+
     public string userAuth;
+    bool signedIn;
     
     // "Sign in with Google" button
     public void onClickGoogleSignIn()
@@ -39,16 +40,16 @@ public class DataManager : MonoBehaviour
     // "Click here once you have signed in with Google!" to pull authToken from the handler
     public void userAuthenticated()
     {
-        userAuth = GoogleAuthHandler.authToken;
+        userAuth = FirebaseAuthHandler.localId;
         if (userAuth == null)
         {
             Debug.Log("Sign in failed -- Please make sure you are signed in properly!"); // replace with proper in-game error popup!
         }
         else
         {
-            userAuth = userAuth.Substring(0, 10);
             Debug.Log("User Auth: " + userAuth);
             load();
+            signedIn = true;
         }
         profile.authPopup.SetActive(false);
         profile.returnToGameButton.interactable = true;
@@ -59,10 +60,16 @@ public class DataManager : MonoBehaviour
     // Save user data
     public void save()
     {
-        UserData user = new UserData();
-        saveData(user);
-        uploadToDatabase(user);
-        // if userAuth = "", save to playerPrefs for anonymous login?
+        if (!signedIn)
+        {
+            Debug.Log("Can't save, you aren't signed in!");
+        }
+        else
+        {
+            UserData user = new UserData();
+            saveData(user);
+            uploadToDatabase(user);
+        }
     }
     
     // Data to be saved (augment UserData class to change)
