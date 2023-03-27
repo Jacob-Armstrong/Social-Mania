@@ -24,7 +24,14 @@ public class Resources : MonoBehaviour
     public float views;
     public int followers;
     public int haters;
-    public double attention;
+    public float attention;
+
+    // Attention Variables
+    [SerializeField] float attLossBase;       // Default attention loss per tick
+    [SerializeField] float attLossDelay = 5f; // Idle time in seconds before attention starts to drop off
+    public float attLossMultiplier = 1f;      // Attention loss multiplier from upgrades/random events
+    public float attFloor = 0;
+    private float attLossTimer;               // Timer variable that gets set equal to attLossDelay
     
     //________________________
     // FUNCTIONS
@@ -35,12 +42,13 @@ public class Resources : MonoBehaviour
         views = 0;
         followers = 0;
         haters = 0;
-        attention = 1.0d;
+        attention = 1.0f;
+        attLossTimer = attLossDelay;
     }
 
     void Update()
     {
-        attentionCap();
+        AttentionCap();
     }
 
     void FixedUpdate()
@@ -50,23 +58,31 @@ public class Resources : MonoBehaviour
         if (tickProgress >= 10)
         {
             tickProgress = 0;
-            tick();
+            Tick();
         }
         tickProgress++;
+
+        if (attLossTimer > 0)
+        {
+            attLossTimer -= Time.deltaTime;
+        }
     }
     
     // ________________________________
     // IMPORTANT FUNCTION
     // Tick runs several times per second
     // and handles passive resource generation/loss
-    void tick()
+    void Tick()
     {
-        viewGains();
-        updateDisplay();
-        updateStats();
+        ViewGains();
+        UpdateDisplay();
+        UpdateStats();
+
+        if(attLossTimer <= 0)
+            AttentionDecay();
     }
 
-    void attentionCap()
+    void AttentionCap()
     {
         if (attention > upgrades.maxAttention)
         {
@@ -74,22 +90,37 @@ public class Resources : MonoBehaviour
         }
     }
     
-    void viewGains()
+    void ViewGains()
     {
         viewGain = (followers/10.0f) * (float)attention;
         views += viewGain;
     }
 
-    void updateDisplay()    // Refreshes on-screen numbers (views, attention...)
+    void UpdateDisplay()    // Refreshes on-screen numbers (views, attention...)
     {
         textViewsCount.text = ((int)views).ToString();
         textAttentionCount.text = attention.ToString("0.00") + "x";
         textFollowersCount.text = followers.ToString();
     }
 
-    void updateStats()
+    void UpdateStats()
     {
         stats.lifetimeViews = (int)views;
+    }
+
+    void AttentionDecay()
+    {
+        attention -= attLossBase * attLossMultiplier;
+
+        if (attention < attFloor)
+            attention = attFloor;
+    }
+
+    public void AddFollowersAndAttention(int followerChange, float attChange)
+    {
+        followers += followerChange;
+        attention += attChange;
+        attLossTimer = attLossDelay;
     }
     
     // temporarily deprecated attention code

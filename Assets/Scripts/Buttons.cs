@@ -20,8 +20,7 @@ public class Buttons : MonoBehaviour
 
     public void numberGoUp()
     {
-        resources.followers += 1;
-        resources.attention += .01f;
+        resources.AddFollowersAndAttention(1, .01f);
     }
 
     // Reusable Coroutine to put a cooldown with a length <cooldown> seconds on any Unity UI Button

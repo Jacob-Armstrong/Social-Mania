@@ -5294,6 +5294,10 @@ MonoBehaviour:
   followers: 0
   haters: 0
   attention: 0
+  attLossBase: 0.01
+  attLossDelay: 2
+  attLossMultiplier: 1
+  attFloor: 0.5
 --- !u!1 &2101583965
 GameObject:
   m_ObjectHideFlags: 0
