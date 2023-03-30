@@ -13,4 +13,9 @@ public class NewsObject : MonoBehaviour
         myText.text = textString;
     }
 
+    public TextMeshProUGUI GetText()
+    {
+        return myText;
+    }
+
 }

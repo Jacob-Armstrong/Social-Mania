@@ -13,13 +13,31 @@ public class NewsFeedDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject newText = Instantiate(newsTemplate) as GameObject;
-        newText.SetActive(true);
+        // Read file to determine how many news stories to make
 
-        newText.GetComponent<NewsObject>().SetText("test these nuts");
 
-        newText.transform.SetParent(newsTemplate.transform.parent, false);
+        // Instantiate news story objects
+        for (int i = 0; i < 5; i++)
+        {
+            // Should make this a custom object type
+            GameObject newText = Instantiate(newsTemplate) as GameObject;
+            newsStoryList.Add(newText);
+
+            newText.SetActive(true);
+
+            newText.GetComponent<NewsObject>().SetText("this is number: " + i);
+
+            newText.transform.SetParent(newsTemplate.transform.parent, false);
+        }
+
 
     }
+
+}
+
+
+public class NewsContents
+{
+    private string description;
 
 }
