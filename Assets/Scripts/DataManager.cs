@@ -21,8 +21,6 @@ public class DataManager : MonoBehaviour
     UserData loadedUser;
 
     /* ==== Game Objects ==== */
-    [SerializeField] TMP_InputField saveInputField;
-    [SerializeField] TMP_InputField loadInputField;
 
 /* ==== Local Variables ==== */
     const string ProjectId = "Social-Mania";
@@ -44,7 +42,6 @@ public class DataManager : MonoBehaviour
     {
         GoogleAuthHandler.SignInWithGoogle();
         profile.authPopup.SetActive(true);
-        profile.usernameInput.enabled = false;
         profile.returnToGameButton.interactable = false;
         profile.googleSignInButton.interactable = false;
     }
@@ -55,13 +52,17 @@ public class DataManager : MonoBehaviour
         userAuth = FirebaseAuthHandler.localId;
         if (userAuth == null)
         {
-            Debug.Log("Sign in failed -- Please make sure you are signed in properly!"); // replace with proper in-game error popup!
+            string error = "Sign in failed -- Please make sure you are signed in properly!";
+            Debug.Log(error); // replace with proper in-game error popup!
+            profile.debugText.text = error;
         }
         else
         {
             Debug.Log("User Auth: " + userAuth);
+            profile.debugText.text = "User auth: " + userAuth;
             load();
             signedIn = true;
+            profile.debugText2.text = "Response text: " + FirebaseAuthHandler.responseText;
         }
         profile.authPopup.SetActive(false);
         profile.returnToGameButton.interactable = true;
@@ -109,9 +110,11 @@ public class DataManager : MonoBehaviour
     public void load()
     {
         Debug.Log("Starting load...");
+        profile.debugText.text = "Starting load...";
         RestClient.Get<UserData>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
         {
             Debug.Log("Load successful.");
+            profile.debugText.text = "Load successful";
             resources.followers = response.followers;
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;

@@ -22,6 +22,8 @@ public class Profile : MonoBehaviour
     public Button returnToGameButton;
     public TextMeshProUGUI googleSignInText;
     public TMP_InputField usernameInput;
+    public TextMeshProUGUI debugText;
+    public TextMeshProUGUI debugText2;
 
     public TextMeshProUGUI lifetimeViewsValue;
     public TextMeshProUGUI numClicksValue;

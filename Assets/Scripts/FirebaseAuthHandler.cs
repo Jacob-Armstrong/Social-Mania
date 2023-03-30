@@ -9,6 +9,7 @@ public static class FirebaseAuthHandler
 {
     private const string ApiKey = "AIzaSyD7l-171C5Ey5MN7JU7pwcRyyrQWXqZpN4"; //TODO: Change [API_KEY] to your API_KEY
     public static string localId;
+    public static string responseText;
     
     /// <summary>
     /// Signs in a user with their Id Token
@@ -24,8 +25,11 @@ public static class FirebaseAuthHandler
             {
                 // You now have the userId (localId) and the idToken of the user!
                 Debug.Log(response.Text);
-                var data = StringSerializationAPI.Deserialize(typeof(GoogleIdTokenResponse), response.Text) as GoogleIdTokenResponse;
+                responseText = "response!";
+                var data =
+                    StringSerializationAPI.Deserialize(typeof(GoogleIdTokenResponse), response.Text) as
+                        GoogleIdTokenResponse;
                 localId = data.localId;
-            }).Catch(Debug.Log);
+            });
     }
 }
