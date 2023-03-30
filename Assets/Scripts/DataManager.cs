@@ -137,7 +137,7 @@ public class DataManager : MonoBehaviour
 
             for (int i = 0; i < userList.Count(); i++)
             {
-                Debug.Log(i+1 + ": " + userList[i].username + " - " + userList[i].followers + " followers");
+                Debug.Log(i+1 + ": " + userList[i].username + " - " + userList[i].lifetimeViews + " lifetime views");
             }
         });
     }

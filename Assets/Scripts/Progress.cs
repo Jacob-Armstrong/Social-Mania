@@ -28,6 +28,4 @@ public class Progress : MonoBehaviour
             maxAttentionUpgrade1.interactable = resources.followers >= 50;
         }
     }
-    
-    
 }
