@@ -23,8 +23,8 @@ public class Buttons : MonoBehaviour
         resources.AddFollowersAndAttention(1, .01f);
     }
 
-    // Reusable Coroutine to put a cooldown with a length <cooldown> seconds on any Unity UI Button
-    static IEnumerator buttonCooldown(Button button, float cooldown)
+        // Reusable Coroutine to put a cooldown with a length <cooldown> seconds on any Unity UI Button
+        static IEnumerator buttonCooldown(Button button, float cooldown)
     {
         button.interactable = false;
         yield return new WaitForSeconds(cooldown);
