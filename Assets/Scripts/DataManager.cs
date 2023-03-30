@@ -5,7 +5,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 using System;
+using System.Linq;
 using System.Net.Security;
+using FullSerializer;
+using Models;
 using TMPro;
 
 public class DataManager : MonoBehaviour
@@ -24,15 +27,24 @@ public class DataManager : MonoBehaviour
 /* ==== Local Variables ==== */
     const string ProjectId = "Social-Mania";
     static readonly string DatabaseURL = "https://social-mania-12157807-default-rtdb.firebaseio.com/";
+    static readonly fsSerializer Serializer = new fsSerializer();
 
     public string userAuth;
     bool signedIn;
+
+    List<UserData> loadedUserList;
+
+    void Awake()
+    {
+        getUsers();
+    }
     
     // "Sign in with Google" button
     public void onClickGoogleSignIn()
     {
         GoogleAuthHandler.SignInWithGoogle();
         profile.authPopup.SetActive(true);
+        profile.usernameInput.enabled = false;
         profile.returnToGameButton.interactable = false;
         profile.googleSignInButton.interactable = false;
     }
@@ -75,6 +87,7 @@ public class DataManager : MonoBehaviour
     // Data to be saved (augment UserData class to change)
     void saveData(UserData user)
     {
+        user.username = profile.username;
         user.followers = resources.followers;
         user.lifetimeViews = (int)resources.views;
         user.numClicks = stats.numClicks;
@@ -102,8 +115,42 @@ public class DataManager : MonoBehaviour
             resources.followers = response.followers;
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;
-            timeManager.timeSinceStartDate = TimeSpan.Parse(response.timePlayed);
             timeManager.startDate = DateTime.Parse(response.startDate);
         });
+    }
+
+    public void getUsers()
+    {
+        Debug.Log("Updating leaderboard...");
+        RestClient.Get($"{DatabaseURL}users.json").Then(response =>
+        {
+            var responseJson = response.Text;
+            var data = fsJsonParser.Parse(responseJson);
+            object deserialized = null;
+            Serializer.TryDeserialize(data, typeof(Dictionary<string, UserData>), ref deserialized);
+
+            var usersDict = deserialized as Dictionary<string, UserData>;
+
+            Debug.Log("Ordered list:\n");
+            List<UserData> userList = usersDict.Values.ToList().OrderByDescending(userData => userData.followers).ToList();
+            loadedUserList = userList; // store this info somewhere so we don't have to keep calling the database!
+
+            for (int i = 0; i < userList.Count(); i++)
+            {
+                Debug.Log(i+1 + ": " + userList[i].username + " - " + userList[i].followers + " followers");
+            }
+        });
+    }
+
+    public bool checkValidUsername(string usernameInput)
+    {
+        foreach (UserData user in loadedUserList)
+        {
+            if (user.username == usernameInput)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

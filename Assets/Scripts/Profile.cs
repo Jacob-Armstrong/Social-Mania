@@ -12,6 +12,7 @@ public class Profile : MonoBehaviour
     [SerializeField] TimeManager timeManager;
     [SerializeField] Stats stats;
     [SerializeField] Resources resources;
+    [SerializeField] DataManager dataManager;
     
     /* ==== Game Objects ==== */
     public GameObject mainScene;
@@ -20,11 +21,14 @@ public class Profile : MonoBehaviour
     public Button googleSignInButton;
     public Button returnToGameButton;
     public TextMeshProUGUI googleSignInText;
+    public TMP_InputField usernameInput;
 
     public TextMeshProUGUI lifetimeViewsValue;
     public TextMeshProUGUI numClicksValue;
 
     /* ==== Local Variables ==== */
+
+    public string username;
 
     void Awake() // should move this to a scene handler or something, this is a band-aid for me not wanting to deactivate scenes all the time
     {
@@ -49,6 +53,19 @@ public class Profile : MonoBehaviour
     {
         profileScene.SetActive(false);
         mainScene.SetActive(true);
+    }
+
+    public void setUsername()
+    {
+        string userInput = usernameInput.text;
+        if (dataManager.checkValidUsername(userInput))
+        {
+            username = userInput;
+        }
+        else
+        {
+            Debug.Log("This username is already taken!");
+        }
     }
 
     public void hardReset()

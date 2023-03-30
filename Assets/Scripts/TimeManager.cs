@@ -16,6 +16,7 @@ public class TimeManager : MonoBehaviour
 
     /* ==== Local Variables ==== */
     public DateTime startDate;
+    public string startDateString;
     DateTime currentTime;
     
     public TimeSpan timeSinceStartDate;
@@ -29,28 +30,29 @@ public class TimeManager : MonoBehaviour
     void FixedUpdate()
     {
         timeElapsed();
+        startDateString = startDate.ToString();
     }
 
     void timeElapsed()
     {
         currentTime = DateTime.Now;
-        timeSinceStartDate = currentTime - startDate;
+        timeSinceStartDate = currentTime.Subtract(startDate);
 
         StringBuilder sb = new StringBuilder("", 50);
 
         sb.Insert(0, "Time elapsed: ");
 
-        switch(timeSinceStartDate.Hours)
+        switch(timeSinceStartDate.TotalHours)
         {
             case > 1:
-                sb.Insert(14, timeSinceStartDate.Hours + " hours");
+                sb.Insert(14, (int)timeSinceStartDate.TotalHours + " hours");
                 break;
             case 1:
-                sb.Insert(14, timeSinceStartDate.Hours + " hour");
+                sb.Insert(14, (int)timeSinceStartDate.TotalHours + " hour");
                 break;
         }
 
-        switch(timeSinceStartDate.Hours)
+        switch(timeSinceStartDate.TotalHours)
         {
             case > 0:
                 switch (timeSinceStartDate.Minutes)
