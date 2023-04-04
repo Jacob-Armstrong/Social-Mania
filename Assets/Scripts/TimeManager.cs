@@ -42,9 +42,9 @@ public class TimeManager : MonoBehaviour
 
         sb.Insert(0, "Time elapsed: ");
 
-        switch(timeSinceStartDate.TotalHours)
+        switch(timeSinceStartDate.Hours)
         {
-            case > 1:
+            case >= 2:
                 sb.Insert(14, (int)timeSinceStartDate.TotalHours + " hours");
                 break;
             case 1:
@@ -52,9 +52,9 @@ public class TimeManager : MonoBehaviour
                 break;
         }
 
-        switch(timeSinceStartDate.TotalHours)
+        switch(timeSinceStartDate.Hours)
         {
-            case > 0:
+            case >= 1:
                 switch (timeSinceStartDate.Minutes)
                 {
                     case > 1:
@@ -78,7 +78,7 @@ public class TimeManager : MonoBehaviour
                 break;
         }
 
-        if (timeSinceStartDate.Hours > 0 || timeSinceStartDate.Minutes > 0)
+        if (timeSinceStartDate.Hours >0  || timeSinceStartDate.Minutes > 0)
         {
             switch (timeSinceStartDate.Seconds)
             {

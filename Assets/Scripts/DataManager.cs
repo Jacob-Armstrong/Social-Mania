@@ -10,6 +10,7 @@ using System.Net.Security;
 using FullSerializer;
 using Models;
 using TMPro;
+using Unity.VisualScripting;
 
 public class DataManager : MonoBehaviour
 {
@@ -44,9 +45,9 @@ public class DataManager : MonoBehaviour
     {
         GoogleAuthHandler.SignInWithGoogle();
         profile.authPopup.SetActive(true);
-        profile.usernameInput.enabled = false;
         profile.returnToGameButton.interactable = false;
         profile.googleSignInButton.interactable = false;
+        profile.submitUsernameButton.interactable = false;
     }
 
     // "Click here once you have signed in with Google!" to pull authToken from the handler
@@ -63,9 +64,11 @@ public class DataManager : MonoBehaviour
             load();
             signedIn = true;
         }
+
         profile.authPopup.SetActive(false);
         profile.returnToGameButton.interactable = true;
         profile.googleSignInButton.interactable = true;
+        profile.submitUsernameButton.interactable = true;
         profile.googleSignInText.text = "";
     }
 
@@ -116,6 +119,7 @@ public class DataManager : MonoBehaviour
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;
             timeManager.startDate = DateTime.Parse(response.startDate);
+            profile.username = response.username;
         });
     }
 
@@ -138,6 +142,11 @@ public class DataManager : MonoBehaviour
             for (int i = 0; i < userList.Count(); i++)
             {
                 Debug.Log(i+1 + ": " + userList[i].username + " - " + userList[i].lifetimeViews + " lifetime views");
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                profile.leaderboardPositions[i].text = i + 1 + ": " + userList[i].username + " - " + userList[i].lifetimeViews + " views";
             }
         });
     }

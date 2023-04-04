@@ -20,11 +20,14 @@ public class Profile : MonoBehaviour
     public GameObject authPopup;
     public Button googleSignInButton;
     public Button returnToGameButton;
+    public Button submitUsernameButton;
     public TextMeshProUGUI googleSignInText;
     public TMP_InputField usernameInput;
 
     public TextMeshProUGUI lifetimeViewsValue;
     public TextMeshProUGUI numClicksValue;
+
+    public TextMeshProUGUI[] leaderboardPositions;
 
     /* ==== Local Variables ==== */
 
