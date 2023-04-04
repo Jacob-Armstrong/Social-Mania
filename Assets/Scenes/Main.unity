@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newsTemplate: {fileID: 1138856917}
+  textFile: {fileID: 4900000, guid: d9593724e4c050243bd24fc5b5c765b0, type: 3}
 --- !u!1 &39614580
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,7 +3697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1138856918
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3731,6 +3732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myText: {fileID: 812526083}
+  unlock: 0
 --- !u!114 &1138856920
 MonoBehaviour:
   m_ObjectHideFlags: 0

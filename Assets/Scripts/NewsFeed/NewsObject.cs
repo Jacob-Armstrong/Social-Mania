@@ -8,6 +8,9 @@ public class NewsObject : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI myText;
 
+    [SerializeField]
+    private int unlock;
+
     public void SetText(string textString)
     {
         myText.text = textString;
@@ -17,5 +20,13 @@ public class NewsObject : MonoBehaviour
     {
         return myText;
     }
+    public void SetRequirement(int unlockAmt)
+    {
+        unlock = unlockAmt;
+    }
 
+    public int GetRequirement()
+    {
+        return unlock;
+    }
 }
