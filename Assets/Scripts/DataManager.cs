@@ -45,9 +45,7 @@ public class DataManager : MonoBehaviour
     {
         GoogleAuthHandler.SignInWithGoogle();
         profile.authPopup.SetActive(true);
-        profile.returnToGameButton.interactable = false;
-        profile.googleSignInButton.interactable = false;
-        profile.submitUsernameButton.interactable = false;
+        profile.disableButtons();
     }
 
     // "Click here once you have signed in with Google!" to pull authToken from the handler
@@ -66,9 +64,7 @@ public class DataManager : MonoBehaviour
         }
 
         profile.authPopup.SetActive(false);
-        profile.returnToGameButton.interactable = true;
-        profile.googleSignInButton.interactable = true;
-        profile.submitUsernameButton.interactable = true;
+        profile.enableButtons();
         profile.googleSignInText.text = "";
     }
 
@@ -146,16 +142,16 @@ public class DataManager : MonoBehaviour
 
             for (int i = 0; i < 10; i++)
             {
-                profile.leaderboardPositions[i].text = i + 1 + ": " + userList[i].username + " - " + userList[i].lifetimeViews + " views";
+                profile.leaderboardPositions[i].text = /*i + 1 + ": " +*/ userList[i].username + " - " + userList[i].lifetimeViews + " views";
             }
         });
     }
 
-    public bool checkValidUsername(string usernameInput)
+    public bool checkUsernameTaken(string usernameInput)
     {
         foreach (UserData user in loadedUserList)
         {
-            if (user.username == usernameInput)
+            if (user.username.Equals(usernameInput, StringComparison.OrdinalIgnoreCase))
             {
                 return false;
             }
