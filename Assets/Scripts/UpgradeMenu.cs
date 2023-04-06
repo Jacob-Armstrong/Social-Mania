@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UpgradeMenu : MonoBehaviour
 {
-    [SerializeField] Image bg;
+    [SerializeField] GameObject content;
     [SerializeField] UpgradeButton buttonTemplate;
 
     List<UpgradeButton> buttons = new();
@@ -13,7 +13,7 @@ public class UpgradeMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < 10; ++i)
+        for(int i = 0; i < 20; ++i)
         {
             SpawnUpgrade("" + i);
         }
@@ -27,7 +27,7 @@ public class UpgradeMenu : MonoBehaviour
 
     public void SpawnUpgrade(string test)
     {
-        UpgradeButton b = Instantiate(buttonTemplate, bg.transform);
+        UpgradeButton b = Instantiate(buttonTemplate, content.transform);
         b.SetText(test);
 
         buttons.Add(b);
