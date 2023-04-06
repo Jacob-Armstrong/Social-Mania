@@ -36,7 +36,7 @@ public class DataManager : MonoBehaviour
     void Awake()
     {
         InvokeRepeating("getUsers", 0, 180); // Update leaderboard every 3 minutes
-        // add autosave after local save implemented
+        // InvokeRepeating("save", 0, 60) -- add autosave after local save implemented
     }
     
     // "Sign in with Google" button
