@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class Upgrades : MonoBehaviour
 {
-    // References
+    /* ==== References ==== */
     [SerializeField] Resources resources;
     [SerializeField] Button attentionUpgrade1;
     
-    // Game objects
+    /* ==== Game Objects ==== */
     
-    // Local variables
+    /* ==== Local Variables ==== */
     public double maxAttention;
     public double clickMultiplier;
     
@@ -20,12 +20,6 @@ public class Upgrades : MonoBehaviour
     {
         maxAttention = 2.0d;
         clickMultiplier = 1.0d;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void maxAttentionUpgrade1()
@@ -40,3 +34,4 @@ public class Upgrades : MonoBehaviour
         clickMultiplier = 1.5d;
     }
 }
+

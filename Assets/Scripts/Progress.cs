@@ -5,20 +5,13 @@ using UnityEngine.UI;
 
 public class Progress : MonoBehaviour
 {
-    // References
+    /* ==== References ==== */
     [SerializeField] Resources resources;
-    [SerializeField] GameObject canvas;
-    
-    // Game Objects
+
+    /* ==== Game Objects ==== */
     [SerializeField] Button maxAttentionUpgrade1;
     
-    // Local Variables
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /* ==== Local Variables ==== */
 
     // Update is called once per frame
     void Update()
@@ -26,11 +19,8 @@ public class Progress : MonoBehaviour
         progressObserver();
     }
 
-    void FixedUpdate()
-    {
-        
-    }
-
+    // this is ugly and bad please don't track progress this way
+    // first rule of GameObject.Find() -> don't use GameObject.Find()
     void progressObserver()
     {
         if (GameObject.Find("attentionUpgrade1") != null)
@@ -38,6 +28,4 @@ public class Progress : MonoBehaviour
             maxAttentionUpgrade1.interactable = resources.followers >= 50;
         }
     }
-    
-    
 }

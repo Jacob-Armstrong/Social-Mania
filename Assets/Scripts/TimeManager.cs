@@ -4,103 +4,101 @@ using UnityEngine;
 using System;
 using System.Text;
 using TMPro;
+using Unity.VisualScripting;
 
 public class TimeManager : MonoBehaviour
 {
-    // References
+    /* ==== References ==== */
+    [SerializeField] Stats stats;
 
-    // Game Objects
+    /* ==== Game Objects ==== */
     public TextMeshProUGUI textTimeElapsed;
 
-    // Local variables
-    DateTime startTime;
+    /* ==== Local Variables ==== */
+    public DateTime startDate;
+    public string startDateString;
     DateTime currentTime;
-    TimeSpan sessionLength;
     
+    public TimeSpan timeSinceStartDate;
+
     // Start is called before the first frame update
     void Start()
     {
-        startTime = DateTime.Now; // Time session begins
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        startDate = DateTime.Now;
     }
 
     void FixedUpdate()
     {
         timeElapsed();
+        startDateString = startDate.ToString();
     }
 
     void timeElapsed()
     {
         currentTime = DateTime.Now;
-
-        sessionLength = currentTime - startTime;
+        timeSinceStartDate = currentTime.Subtract(startDate);
 
         StringBuilder sb = new StringBuilder("", 50);
 
         sb.Insert(0, "Time elapsed: ");
 
-        switch(sessionLength.Hours)
+        switch(timeSinceStartDate.Hours)
         {
-            case > 1:
-                sb.Insert(14, sessionLength.Hours + " hours");
+            case >= 2:
+                sb.Insert(14, (int)timeSinceStartDate.TotalHours + " hours");
                 break;
             case 1:
-                sb.Insert(14, sessionLength.Hours + " hour");
+                sb.Insert(14, (int)timeSinceStartDate.TotalHours + " hour");
                 break;
         }
 
-        switch(sessionLength.Hours)
+        switch(timeSinceStartDate.Hours)
         {
-            case > 0:
-                switch (sessionLength.Minutes)
+            case >= 1:
+                switch (timeSinceStartDate.Minutes)
                 {
                     case > 1:
-                        sb.Append(", " + sessionLength.Minutes + " minutes");
+                        sb.Append(", " + timeSinceStartDate.Minutes + " minutes");
                         break;
                     case 1:
-                        sb.Append(", " + sessionLength.Minutes + " minute");
+                        sb.Append(", " + timeSinceStartDate.Minutes + " minute");
                         break;
                 }
                 break;
             case 0:
-                switch (sessionLength.Minutes)
+                switch (timeSinceStartDate.Minutes)
                 {
                     case > 1:
-                        sb.Append(sessionLength.Minutes + " minutes");
+                        sb.Append(timeSinceStartDate.Minutes + " minutes");
                         break;
                     case 1:
-                        sb.Append(sessionLength.Minutes + " minute");
+                        sb.Append(timeSinceStartDate.Minutes + " minute");
                         break;
                 }
                 break;
         }
 
-        if (sessionLength.Hours > 0 || sessionLength.Minutes > 0)
+        if (timeSinceStartDate.Hours >0  || timeSinceStartDate.Minutes > 0)
         {
-            switch (sessionLength.Seconds)
+            switch (timeSinceStartDate.Seconds)
             {
                 case > 1:
-                    sb.Append(", " + sessionLength.Seconds + " seconds");
+                    sb.Append(", " + timeSinceStartDate.Seconds + " seconds");
                     break;
                 case 1:
-                    sb.Append(", " + sessionLength.Seconds + " second");
+                    sb.Append(", " + timeSinceStartDate.Seconds + " second");
                     break;
             }
         }
-        else if (sessionLength.Hours == 0 || sessionLength.Minutes == 0)
+        else if (timeSinceStartDate.Hours == 0 || timeSinceStartDate.Minutes == 0)
         {
-            switch (sessionLength.Seconds)
+            switch (timeSinceStartDate.Seconds)
             {
                 case > 1:
-                    sb.Append(sessionLength.Seconds + " seconds");
+                    sb.Append(timeSinceStartDate.Seconds + " seconds");
                     break;
                 case 1:
-                    sb.Append(sessionLength.Seconds + " second");
+                    sb.Append(timeSinceStartDate.Seconds + " second");
                     break;
             }
         }
