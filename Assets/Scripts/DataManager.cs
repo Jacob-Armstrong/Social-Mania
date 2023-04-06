@@ -22,10 +22,8 @@ public class DataManager : MonoBehaviour
     UserData loadedUser;
 
     /* ==== Game Objects ==== */
-    [SerializeField] TMP_InputField saveInputField;
-    [SerializeField] TMP_InputField loadInputField;
 
-/* ==== Local Variables ==== */
+    /* ==== Local Variables ==== */
     const string ProjectId = "Social-Mania";
     static readonly string DatabaseURL = "https://social-mania-12157807-default-rtdb.firebaseio.com/";
     static readonly fsSerializer Serializer = new fsSerializer();
@@ -37,7 +35,8 @@ public class DataManager : MonoBehaviour
 
     void Awake()
     {
-        getUsers();
+        InvokeRepeating("getUsers", 0, 180); // Update leaderboard every 3 minutes
+        // add autosave after local save implemented
     }
     
     // "Sign in with Google" button
