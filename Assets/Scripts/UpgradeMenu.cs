@@ -13,10 +13,7 @@ public class UpgradeMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < 20; ++i)
-        {
-            SpawnUpgrade("" + i);
-        }
+        
     }
 
     // Update is called once per frame
@@ -25,10 +22,10 @@ public class UpgradeMenu : MonoBehaviour
         
     }
 
-    public void SpawnUpgrade(string test)
+    public void SpawnUpgrade(Upgrade upgrade)
     {
         UpgradeButton b = Instantiate(buttonTemplate, content.transform);
-        b.SetText(test);
+        b.Initialize(upgrade);
 
         buttons.Add(b);
     }
