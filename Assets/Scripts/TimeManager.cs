@@ -15,11 +15,17 @@ public class TimeManager : MonoBehaviour
     public TextMeshProUGUI textTimeElapsed;
 
     /* ==== Local Variables ==== */
+    /* -- Saved Data -- */
     public DateTime startDate;
+    public DateTime lastSeen;
+
+    /* -- Calculations -- */
+    //public TimeSpan timeSinceStartDate;
+
     DateTime currentTime;
     
-    public TimeSpan timeSinceStartDate;
-    public DateTime lastSeen;
+    
+    
     public TimeSpan timeSinceLastLogin;
 
     // Start is called before the first frame update
@@ -30,7 +36,8 @@ public class TimeManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        timeElapsed();
+        currentTime = DateTime.Now;
+        textTimeElapsed.text = timeElapsedFormat(currentTime, startDate);
     }
 
     public TimeSpan calculateLastSeen()
@@ -38,10 +45,13 @@ public class TimeManager : MonoBehaviour
         return (DateTime.Now - lastSeen);
     }
     
-    public void timeElapsed()
+    public string timeElapsedFormat(DateTime currentDate, DateTime previousDate)
     {
-        currentTime = DateTime.Now;
-        timeSinceStartDate = currentTime.Subtract(startDate);
+
+        TimeSpan timeSinceStartDate = currentDate.Subtract(previousDate);
+
+        //currentTime = DateTime.Now;
+        //timeSinceStartDate = currentTime.Subtract(startDate);
 
         StringBuilder sb = new StringBuilder("", 50);
 
@@ -108,6 +118,6 @@ public class TimeManager : MonoBehaviour
             }
         }
 
-        textTimeElapsed.text = sb.ToString();
+        return sb.ToString();
     }
 }

@@ -89,7 +89,6 @@ public class DataManager : MonoBehaviour
         user.followers = resources.followers;
         user.lifetimeViews = (int)resources.views;
         user.numClicks = stats.numClicks;
-        user.timePlayed = timeManager.timeSinceStartDate.ToString();
         user.startDate = timeManager.startDate.ToString();
         user.lastSeen = DateTime.Now.ToString();
     }
