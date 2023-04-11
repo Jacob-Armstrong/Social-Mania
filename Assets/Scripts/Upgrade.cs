@@ -10,6 +10,7 @@ public class Upgrade
     public string prereqId;
     public double followerCost;
     public double haterCost;
+    public double viewRequirement;
     public string buttonText;
 
     public double clickMultiplier;

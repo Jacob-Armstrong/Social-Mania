@@ -3822,6 +3822,7 @@ MonoBehaviour:
     prereqId: 
     followerCost: 10
     haterCost: 0
+    viewRequirement: 50
     buttonText: Click * 2
     clickMultiplier: 1
     attentionFloor: 0
@@ -3832,6 +3833,7 @@ MonoBehaviour:
     prereqId: 
     followerCost: 20
     haterCost: 0
+    viewRequirement: 0
     buttonText: Attention Floor +0.1
     clickMultiplier: 0
     attentionFloor: 0.1
@@ -3842,6 +3844,7 @@ MonoBehaviour:
     prereqId: 
     followerCost: 50
     haterCost: 0
+    viewRequirement: 0
     buttonText: Lower Attention Loss
     clickMultiplier: 0
     attentionFloor: 0

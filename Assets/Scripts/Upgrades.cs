@@ -56,7 +56,8 @@ public class Upgrades : MonoBehaviour
 
                 Upgrade currentUpgrade = (Upgrade)upgrades[u.Key];
 
-                if (resources.followers >= currentUpgrade.followerCost/2 &&
+                if (resources.views >= currentUpgrade.viewRequirement &&
+                    resources.followers >= currentUpgrade.followerCost/2 &&
                     resources.haters >= currentUpgrade.haterCost/2 &&
                     upgrades[currentUpgrade.prereqId] == null)
                 {
