@@ -15,33 +15,41 @@ public class NewsFeedDisplay : MonoBehaviour
     //private List<GameObject> newsStoryList = new List<GameObject>();
     public List<NewsStory> newsStoryList = new List<NewsStory>();
 
-    private string newsText;
-    private float repeatDelay = 15.0f;
+    private float repeatDelay = 10.0f;
+
+    public GameObject resourceObject;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        NewsStory story = new NewsStory();
+        string objName;
+        string content;
+        int minViews;
+        int minFollowers;
+        int minAttention;
 
-        story.content = "sweet sweet content";
-        story.minViews = 19;
-        story.minFollowers = 202;
-        story.minAttention = 33333;
-        newsStoryList.Add(story);
+        
+        content = "sweet sweet content";
+        minViews = 10;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s1 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s1);
 
+        content = "more content";
+        minViews = 50;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s2 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s2);
 
-        story.content = "yet more stuff";
-        story.minViews = 69;
-        story.minFollowers = 420;
-        story.minAttention = 666;
-        newsStoryList.Add(story);
-
-
-        story.content = "real mature bud";
-        story.minViews = 0;
-        story.minFollowers = 0;
-        story.minAttention = 0;
-        newsStoryList.Add(story);
+        content = "yet more thingys";
+        minViews = 200;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s3 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s3);
 
         InvokeRepeating("DisplayNews", 1.0f, repeatDelay);
 
@@ -88,32 +96,54 @@ public class NewsFeedDisplay : MonoBehaviour
         newText.SetActive(true);
         newText.transform.SetParent(newsTemplate.transform.parent, false);
 
-        newsText = SelectRandomNews();
+        int storyID = SelectRandomNews();
 
-        Debug.Log(newsText);
+        Debug.Log("Current views is actually: " + resourceObject.GetComponent<Resources>().views);
 
         Destroy(newText, repeatDelay);
     }
 
-    string SelectRandomNews()
+    int SelectRandomNews()
     {
-        //Random.Range(1, newsStoryList.Length);
-        
-        if (NewsRequirementsMet() == true) {
-            return "nice.";
+        // ****************
+        // WORK IN PROGRESS
+        // ****************
+
+        // Select a random news story
+        int randomID = Random.Range(1, newsStoryList.Count + 1) - 1;
+        Debug.Log("Selected number: " + randomID);
+        //Debug.Log(newsStoryList[randomID].content);
+
+        if (NewsRequirementsMet(newsStoryList[randomID]) == true) {
+            return randomID;
         }
 
         else {
             return SelectRandomNews();
         }
+        
 
     }
 
     // next, determine if displaying is valid
-    bool NewsRequirementsMet()
+    bool NewsRequirementsMet(NewsStory thisStory)
     {
+        int tempViews = 100;
 
-        return true;
+        Debug.Log("tempViews is: " + tempViews);
+        Debug.Log("thisStory minViews is: " + thisStory.minViews);
+
+        if (tempViews > thisStory.minViews)
+        {
+            Debug.Log("It was true!!!");
+            return true;
+        }
+
+        else
+        {            
+            Debug.Log("It was false");
+            return false;
+        }
     }
 
     // else, choose another story
@@ -125,6 +155,14 @@ public class NewsFeedDisplay : MonoBehaviour
         public int minViews;
         public int minFollowers;
         public int minAttention;
+
+        public NewsStory(string c, int v, int f, int a)
+        {
+                content = c;
+                minViews = v;
+                minFollowers = f;
+                minAttention = a;
+        }
     }
 
 }

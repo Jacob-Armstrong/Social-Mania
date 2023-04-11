@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newsTemplate: {fileID: 1138856917}
-  textFile: {fileID: 4900000, guid: d9593724e4c050243bd24fc5b5c765b0, type: 3}
+  resourceObject: {fileID: 2041848747}
 --- !u!114 &8917277
 MonoBehaviour:
   m_ObjectHideFlags: 0
