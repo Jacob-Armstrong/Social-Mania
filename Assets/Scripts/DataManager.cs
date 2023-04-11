@@ -91,6 +91,7 @@ public class DataManager : MonoBehaviour
         user.numClicks = stats.numClicks;
         user.timePlayed = timeManager.timeSinceStartDate.ToString();
         user.startDate = timeManager.startDate.ToString();
+        user.lastSeen = DateTime.Now.ToString();
     }
     
     // Upload UserData class to database
@@ -110,11 +111,14 @@ public class DataManager : MonoBehaviour
         RestClient.Get<UserData>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
         {
             Debug.Log("Load successful.");
+            profile.username = response.username;
             resources.followers = response.followers;
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;
             timeManager.startDate = DateTime.Parse(response.startDate);
-            profile.username = response.username;
+            timeManager.lastSeen = DateTime.Parse(response.lastSeen);
+            TimeSpan lastSeen = timeManager.calculateLastSeen();
+            Debug.Log("Time since last login: "+ lastSeen.Hours + " hours, " + lastSeen.Minutes + " minutes, " + lastSeen.Seconds + " seconds.");
         });
     }
 

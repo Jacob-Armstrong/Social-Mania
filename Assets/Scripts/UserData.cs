@@ -18,6 +18,6 @@ public class UserData
     public int numClicks;
     public string timePlayed;
     public string startDate;
-    
-    
+    public string lastSeen;
+
 }

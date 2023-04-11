@@ -16,10 +16,11 @@ public class TimeManager : MonoBehaviour
 
     /* ==== Local Variables ==== */
     public DateTime startDate;
-    public string startDateString;
     DateTime currentTime;
     
     public TimeSpan timeSinceStartDate;
+    public DateTime lastSeen;
+    public TimeSpan timeSinceLastLogin;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +31,14 @@ public class TimeManager : MonoBehaviour
     void FixedUpdate()
     {
         timeElapsed();
-        startDateString = startDate.ToString();
     }
 
-    void timeElapsed()
+    public TimeSpan calculateLastSeen()
+    {
+        return (DateTime.Now - lastSeen);
+    }
+    
+    public void timeElapsed()
     {
         currentTime = DateTime.Now;
         timeSinceStartDate = currentTime.Subtract(startDate);
