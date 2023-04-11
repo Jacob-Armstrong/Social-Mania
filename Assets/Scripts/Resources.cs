@@ -95,9 +95,9 @@ public class Resources : MonoBehaviour
 
     void UpdateDisplay()    // Refreshes on-screen numbers (views, attention...)
     {
-        textViewsCount.text = ((int)views).ToString();
+        textViewsCount.text = CalcUtils.FormatNumber(views);
         textAttentionCount.text = attention.ToString("0.00") + "x";
-        textFollowersCount.text = followers.ToString();
+        textFollowersCount.text = CalcUtils.FormatNumber(followers);
     }
 
     void UpdateStats()

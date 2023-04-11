@@ -7,12 +7,12 @@ public class Upgrades : MonoBehaviour
     /* ==== References ==== */
     [SerializeField] Resources resources;
     [SerializeField] UpgradeMenu upgradeMenu;
-    [SerializeField] Upgrade[] upgradeList;
+    [SerializeField] List<Upgrade> upgradeList;
 
     /* ==== Game Objects ==== */
 
     /* ==== Local Variables ==== */
-    private Hashtable upgrades = new();
+    List<string> purchasedUpgrades = new();
     public double maxAttention;
     public double clickMultiplier;
     public float attLossMultiplier = 1f;
@@ -25,51 +25,25 @@ public class Upgrades : MonoBehaviour
         maxAttention = 2.0d;
         clickMultiplier = 1.0d;
 
-        for(int i = 0; i < upgradeList.Length; ++i)
-        {
-            var upgrade = upgradeList[i];
-
-            if(upgrades[upgrade.id] == null) // If there isn't an id conflict, add the upgrade to the hashtable
-            {
-                upgrades.Add(upgrade.id, upgrade);
-            }
-            else
-            {
-                Debug.Log("Upgrade id conflict: " + upgrade.id);
-            }
-        }
-
         StartCoroutine(UpdateUpgradeMenu());
     }
 
     IEnumerator UpdateUpgradeMenu()
     {
-        List<string> remove = new();
-
         while (true)
         {
-            remove.Clear();
-
-            foreach (DictionaryEntry u in upgrades)
+            for(int i = 0; i < upgradeList.Count; ++i)
             {
                 yield return null;
 
-                Upgrade currentUpgrade = (Upgrade)upgrades[u.Key];
-
-                if (resources.views >= currentUpgrade.viewRequirement &&
-                    resources.followers >= currentUpgrade.followerCost/2 &&
-                    resources.haters >= currentUpgrade.haterCost/2 &&
-                    upgrades[currentUpgrade.prereqId] == null)
+                if (resources.views >= upgradeList[i].viewRequirement &&
+                    resources.followers >= upgradeList[i].followerCost/2 &&
+                    resources.haters >= upgradeList[i].haterCost/2)
                 {
-                    upgradeMenu.SpawnUpgrade(currentUpgrade);
-                    remove.Add((string)u.Key);
+                    upgradeMenu.SpawnUpgrade(upgradeList[i]);
+                    upgradeList.RemoveAt(i);
+                    --i;
                 }
-            }
-
-            foreach(string s in remove)
-            {
-                upgrades.Remove(s);
-                yield return null;
             }
 
             yield return null;
@@ -86,6 +60,8 @@ public class Upgrades : MonoBehaviour
 
         resources.followers -= upgrade.followerCost;
         resources.haters -= upgrade.haterCost;
+
+        purchasedUpgrades.Add(upgrade.id);
     }
 }
 

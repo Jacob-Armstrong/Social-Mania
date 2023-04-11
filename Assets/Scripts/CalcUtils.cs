@@ -24,7 +24,7 @@ public static class CalcUtils
 
         var n = (int)Math.Log(value, 1000);
         var m = (double)value / Mathf.Pow(1000, n);
-        var unit = "";
+        string unit;
 
         if (n < units.Count)
         {
@@ -38,7 +38,40 @@ public static class CalcUtils
             unit = Convert.ToChar(firstUnit + charA).ToString() + Convert.ToChar(secondUnit + charA).ToString();
         }
 
-        // Math.Floor(m * 100) / 100) fixes rounding errors
         return (Math.Floor(m * 100) / 100).ToString("0.##") + unit;
+    }
+
+    public static double StringToNumber(string value)
+    {
+        int i;
+
+        string num = "";
+        string unit = "";
+
+        for(i = 0; i < value.Length; ++i)
+        {
+            if(Convert.ToInt32(value[i]) >= 96)
+            {
+                unit += value[i];
+            }
+            else
+            {
+                num += value[i];
+            }
+        }
+
+        double baseNum = Convert.ToDouble(num);
+        int pow = 0;
+
+        if(unit.Length == 2)
+        {
+            Debug.Log("To Int: " + (Convert.ToInt32(unit[0]) - charA));
+
+            pow = (Convert.ToInt32(unit[0]) - charA) * 26 + Convert.ToInt32(unit[0] - charA);
+        }
+
+        Debug.Log("Num: " + num + " pow: " + pow);
+
+        return Math.Pow(baseNum, pow);
     }
 }

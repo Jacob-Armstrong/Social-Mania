@@ -3851,6 +3851,7 @@ MonoBehaviour:
     attentionLossMultiplier: 0.1
     attentionLossDelay: 0
     maxAttention: 0
+  test: 
   maxAttention: 2
   clickMultiplier: 0
   attLossMultiplier: 1
