@@ -16,8 +16,7 @@ public class UserData
     public int followers;
     public int lifetimeViews;
     public int numClicks;
-    public string timePlayed;
     public string startDate;
-    
-    
+    public string lastSeen;
+
 }

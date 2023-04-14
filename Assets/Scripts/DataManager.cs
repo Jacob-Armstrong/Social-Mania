@@ -22,10 +22,8 @@ public class DataManager : MonoBehaviour
     UserData loadedUser;
 
     /* ==== Game Objects ==== */
-    [SerializeField] TMP_InputField saveInputField;
-    [SerializeField] TMP_InputField loadInputField;
 
-/* ==== Local Variables ==== */
+    /* ==== Local Variables ==== */
     const string ProjectId = "Social-Mania";
     static readonly string DatabaseURL = "https://social-mania-12157807-default-rtdb.firebaseio.com/";
     static readonly fsSerializer Serializer = new fsSerializer();
@@ -37,7 +35,8 @@ public class DataManager : MonoBehaviour
 
     void Awake()
     {
-        getUsers();
+        InvokeRepeating("getUsers", 0, 180); // Update leaderboard every 3 minutes
+        // InvokeRepeating("save", 0, 60) -- add autosave after local save implemented
     }
     
     // "Sign in with Google" button
@@ -90,8 +89,8 @@ public class DataManager : MonoBehaviour
         user.followers = resources.followers;
         user.lifetimeViews = (int)resources.views;
         user.numClicks = stats.numClicks;
-        user.timePlayed = timeManager.timeSinceStartDate.ToString();
         user.startDate = timeManager.startDate.ToString();
+        user.lastSeen = DateTime.Now.ToString();
     }
     
     // Upload UserData class to database
@@ -111,11 +110,14 @@ public class DataManager : MonoBehaviour
         RestClient.Get<UserData>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
         {
             Debug.Log("Load successful.");
+            profile.username = response.username;
             resources.followers = response.followers;
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;
             timeManager.startDate = DateTime.Parse(response.startDate);
-            profile.username = response.username;
+            timeManager.lastSeen = DateTime.Parse(response.lastSeen);
+            TimeSpan lastSeen = timeManager.calculateLastSeen();
+            Debug.Log("Time since last login: "+ lastSeen.Hours + " hours, " + lastSeen.Minutes + " minutes, " + lastSeen.Seconds + " seconds.");
         });
     }
 
