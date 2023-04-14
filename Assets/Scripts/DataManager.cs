@@ -35,7 +35,7 @@ public class DataManager : MonoBehaviour
 
     void Awake()
     {
-        InvokeRepeating("getUsers", 0, 180); // Update leaderboard every 3 minutes
+        InvokeRepeating(nameof(getUsers), 0, 180); // Update leaderboard every 3 minutes
         // InvokeRepeating("save", 0, 60) -- add auto save after local save implemented
     }
     
@@ -112,7 +112,9 @@ public class DataManager : MonoBehaviour
             Debug.Log("Load successful.");
             
             // Load all information from database response (UserData class) into relevant player sources
+            Debug.Log("Response username: " + response.username);
             profile.username = response.username;
+            Debug.Log("Response followers: " + response.followers);
             resources.followers = response.followers;
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;
@@ -121,9 +123,10 @@ public class DataManager : MonoBehaviour
 
             // Calculate offline time, display relevant offline info
             timeManager.offlinePopup();
+            Debug.Log("Offline stuff done!");
         });
     }
-
+    
     public void getUsers()
     {
         Debug.Log("Updating leaderboard...");
@@ -137,7 +140,7 @@ public class DataManager : MonoBehaviour
             var usersDict = deserialized as Dictionary<string, UserData>;
 
             Debug.Log("Ordered list:\n");
-            List<UserData> userList = usersDict.Values.ToList().OrderByDescending(userData => userData.followers).ToList();
+            List<UserData> userList = usersDict.Values.ToList().OrderByDescending(userData => userData.lifetimeViews).ToList();
             loadedUserList = userList; // store this info somewhere so we don't have to keep calling the database!
 
             for (int i = 0; i < userList.Count(); i++)

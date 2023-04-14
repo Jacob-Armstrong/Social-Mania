@@ -24,6 +24,7 @@ public class Profile : MonoBehaviour
     public GameObject authPopup;
     public GameObject userTakenPopup;
     public GameObject userLengthPopup;
+    public GameObject offlinePopup;
     
     /* -- Buttons -- */
     public Button googleSignInButton;
@@ -123,6 +124,12 @@ public class Profile : MonoBehaviour
         enableButtons();
     }
 
+    public void closeOfflinePopup()
+    {
+        offlinePopup.SetActive(false);
+        enableButtons();
+    }
+
     public void hardReset()
     {
         resources.views = 0;
@@ -130,7 +137,6 @@ public class Profile : MonoBehaviour
         resources.attention = 1.00f;
         stats.lifetimeViews = 0;
         stats.numClicks = 0;
-        stats.totalNumUpgrades = 0;
         timeManager.startDate = DateTime.Now;
     }
 }
