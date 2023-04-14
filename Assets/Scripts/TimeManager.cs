@@ -18,102 +18,93 @@ public class TimeManager : MonoBehaviour
     /* -- Saved Data -- */
     public DateTime startDate;
     public DateTime lastSeen;
+    public TimeSpan maxOfflineUpgrade;
 
     /* -- Calculations -- */
-    //public TimeSpan timeSinceStartDate;
-
-    DateTime currentTime;
-    
-    
-    
-    public TimeSpan timeSinceLastLogin;
+    public TimeSpan offlineTime;
 
     // Start is called before the first frame update
     void Start()
     {
         startDate = DateTime.Now;
+        maxOfflineUpgrade = TimeSpan.Zero;
     }
 
     void FixedUpdate()
     {
-        currentTime = DateTime.Now;
-        textTimeElapsed.text = timeElapsedFormat(currentTime, startDate);
+        textTimeElapsed.text = "Time elapsed: " + timespanFormat(DateTime.Now.Subtract(startDate));
     }
 
-    public TimeSpan calculateLastSeen()
+    public void offlinePopup()
     {
-        return (DateTime.Now - lastSeen);
+        offlineTime = DateTime.Now - lastSeen;
+        Debug.Log("Time since last save: " + timespanFormat(offlineTime)); // replace with popup
+        // you have been offline for {2 hours, 10 minutes, 15 seconds}
+        // your max offline upgrade is {30 minutes}
+        // you have earned {40,293} views from {30 minutes} of offline time!
     }
     
-    public string timeElapsedFormat(DateTime currentDate, DateTime previousDate)
+    public string timespanFormat(TimeSpan timespan)
     {
 
-        TimeSpan timeSinceStartDate = currentDate.Subtract(previousDate);
-
-        //currentTime = DateTime.Now;
-        //timeSinceStartDate = currentTime.Subtract(startDate);
-
         StringBuilder sb = new StringBuilder("", 50);
-
-        sb.Insert(0, "Time elapsed: ");
-
-        switch(timeSinceStartDate.Hours)
+        
+        switch(timespan.Hours)
         {
             case >= 2:
-                sb.Insert(14, (int)timeSinceStartDate.TotalHours + " hours");
+                sb.Insert(0, (int)timespan.TotalHours + " hours");
                 break;
             case 1:
-                sb.Insert(14, (int)timeSinceStartDate.TotalHours + " hour");
+                sb.Insert(0, (int)timespan.TotalHours + " hour");
                 break;
         }
 
-        switch(timeSinceStartDate.Hours)
+        switch(timespan.Hours)
         {
             case >= 1:
-                switch (timeSinceStartDate.Minutes)
+                switch (timespan.Minutes)
                 {
                     case > 1:
-                        sb.Append(", " + timeSinceStartDate.Minutes + " minutes");
+                        sb.Append(", " + timespan.Minutes + " minutes");
                         break;
                     case 1:
-                        sb.Append(", " + timeSinceStartDate.Minutes + " minute");
+                        sb.Append(", " + timespan.Minutes + " minute");
                         break;
                 }
                 break;
             case 0:
-                switch (timeSinceStartDate.Minutes)
+                switch (timespan.Minutes)
                 {
                     case > 1:
-                        sb.Append(timeSinceStartDate.Minutes + " minutes");
+                        sb.Append(timespan.Minutes + " minutes");
                         break;
                     case 1:
-                        sb.Append(timeSinceStartDate.Minutes + " minute");
+                        sb.Append(timespan.Minutes + " minute");
                         break;
                 }
                 break;
         }
-
-        if (timeSinceStartDate.Hours >0  || timeSinceStartDate.Minutes > 0)
+        if (timespan.Hours >0  || timespan.Minutes > 0)
         {
-            switch (timeSinceStartDate.Seconds)
+            switch (timespan.Seconds)
             {
                 case > 1:
-                    sb.Append(", " + timeSinceStartDate.Seconds + " seconds");
+                    sb.Append(", " + timespan.Seconds + " seconds");
                     break;
                 case 1:
-                    sb.Append(", " + timeSinceStartDate.Seconds + " second");
+                    sb.Append(", " + timespan.Seconds + " second");
                     break;
             }
         }
-        else if (timeSinceStartDate.Hours == 0 || timeSinceStartDate.Minutes == 0)
+        else if (timespan.Hours == 0 || timespan.Minutes == 0)
         {
-            switch (timeSinceStartDate.Seconds)
+            switch (timespan.Seconds)
             {
                 case > 1:
-                    sb.Append(timeSinceStartDate.Seconds + " seconds");
+                    sb.Append(timespan.Seconds + " seconds");
                     break;
                 case 1:
-                    sb.Append(timeSinceStartDate.Seconds + " second");
+                    sb.Append(timespan.Seconds + " second");
                     break;
             }
         }
