@@ -13,8 +13,8 @@ public class UserData
 
     /* ==== Local Variables ==== */
     public string username;
-    public int followers;
-    public int lifetimeViews;
+    public double followers;
+    public double lifetimeViews;
     public int numClicks;
     public string startDate;
     public string lastSeen;

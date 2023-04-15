@@ -29,14 +29,14 @@ public class DataManager : MonoBehaviour
     static readonly fsSerializer Serializer = new fsSerializer();
 
     public string userAuth;
-    bool signedIn;
+    bool signedIn; // get rid of this and the implementation in save() when local save is implemented
 
     List<UserData> loadedUserList;
 
     void Awake()
     {
-        InvokeRepeating("getUsers", 0, 180); // Update leaderboard every 3 minutes
-        // InvokeRepeating("save", 0, 60) -- add autosave after local save implemented
+        InvokeRepeating(nameof(getUsers), 0, 180); // Update leaderboard every 3 minutes
+        // InvokeRepeating("save", 0, 60) -- add auto save after local save implemented
     }
     
     // "Sign in with Google" button
@@ -87,7 +87,7 @@ public class DataManager : MonoBehaviour
     {
         user.username = profile.username;
         user.followers = resources.followers;
-        user.lifetimeViews = (int)resources.views;
+        user.lifetimeViews = resources.views;
         user.numClicks = stats.numClicks;
         user.startDate = timeManager.startDate.ToString();
         user.lastSeen = DateTime.Now.ToString();
@@ -110,17 +110,23 @@ public class DataManager : MonoBehaviour
         RestClient.Get<UserData>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
         {
             Debug.Log("Load successful.");
+            
+            // Load all information from database response (UserData class) into relevant player sources
+            Debug.Log("Response username: " + response.username);
             profile.username = response.username;
+            Debug.Log("Response followers: " + response.followers);
             resources.followers = response.followers;
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;
             timeManager.startDate = DateTime.Parse(response.startDate);
             timeManager.lastSeen = DateTime.Parse(response.lastSeen);
-            TimeSpan lastSeen = timeManager.calculateLastSeen();
-            Debug.Log("Time since last login: "+ lastSeen.Hours + " hours, " + lastSeen.Minutes + " minutes, " + lastSeen.Seconds + " seconds.");
+
+            // Calculate offline time, display relevant offline info
+            timeManager.offlinePopup();
+            Debug.Log("Offline stuff done!");
         });
     }
-
+    
     public void getUsers()
     {
         Debug.Log("Updating leaderboard...");
@@ -134,17 +140,17 @@ public class DataManager : MonoBehaviour
             var usersDict = deserialized as Dictionary<string, UserData>;
 
             Debug.Log("Ordered list:\n");
-            List<UserData> userList = usersDict.Values.ToList().OrderByDescending(userData => userData.followers).ToList();
+            List<UserData> userList = usersDict.Values.ToList().OrderByDescending(userData => userData.lifetimeViews).ToList();
             loadedUserList = userList; // store this info somewhere so we don't have to keep calling the database!
 
             for (int i = 0; i < userList.Count(); i++)
             {
-                Debug.Log(i+1 + ": " + userList[i].username + " - " + userList[i].lifetimeViews + " lifetime views");
+                Debug.Log(i+1 + ": " + userList[i].username + " - " + (int)userList[i].lifetimeViews + " lifetime views");
             }
 
             for (int i = 0; i < 10; i++)
             {
-                profile.leaderboardPositions[i].text = /*i + 1 + ": " +*/ userList[i].username + " - " + userList[i].lifetimeViews + " views";
+                profile.leaderboardPositions[i].text = /*i + 1 + ": " +*/ userList[i].username + " - " + (int)userList[i].lifetimeViews + " views";
             }
         });
     }

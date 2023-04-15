@@ -18,12 +18,12 @@ public class Resources : MonoBehaviour
     
     /* ==== Local Variables ==== */
     int tickProgress;
-    [SerializeField] float viewGain;
+    [SerializeField] double viewGain;
     
     // Major Resource Variables
-    public float views;
-    public int followers;
-    public int haters;
+    public double views;
+    public double followers;
+    public double haters;
     public float attention;
 
     // Attention Variables
@@ -92,7 +92,7 @@ public class Resources : MonoBehaviour
     
     void ViewGains()
     {
-        viewGain = (followers/10.0f) * (float)attention;
+        viewGain = (followers/10.0f) * attention;
         views += viewGain;
     }
 

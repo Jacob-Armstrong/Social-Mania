@@ -17,7 +17,6 @@ public class Stats : MonoBehaviour
     
     /* -- saved data -- */
     public int lifetimeViews;
-    public int totalNumUpgrades;
-    // public string startDate;
+    
     public int numClicks;
 }
