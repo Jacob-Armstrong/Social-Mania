@@ -5845,8 +5845,19 @@ MonoBehaviour:
     attentionLossMultiplier: 0
     attentionLossDelay: 0
     maxAttention: 0
-  maxAttention: 0
-  clickMultiplier: 0
+  - id: 2
+    prereqId: 
+    followerCost: 50
+    haterCost: 0
+    viewRequirement: 0
+    buttonText: 20x click
+    clickMultiplier: 20
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+  maxAttention: 2
+  clickMultiplier: 1
   attLossMultiplier: 1
   attFloor: 0
   attLossDelay: 5

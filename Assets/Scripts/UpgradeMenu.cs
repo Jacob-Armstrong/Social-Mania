@@ -17,4 +17,20 @@ public class UpgradeMenu : MonoBehaviour
 
         buttons.Add(b);
     }
+
+    public void ResetMenu()
+    {
+        for(int i = buttons.Count - 1; i >= 0; --i)
+        {
+            RemoveButton(i);
+        }
+    }
+
+    public void RemoveButton(int index)
+    {
+        if(buttons[index] != null)
+            Destroy(buttons[index].gameObject);
+
+        buttons.RemoveAt(index);
+    }
 }
