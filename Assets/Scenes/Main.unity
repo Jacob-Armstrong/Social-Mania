@@ -3157,7 +3157,7 @@ MonoBehaviour:
   timeManager: {fileID: 700280364}
   stats: {fileID: 562440738}
   resources: {fileID: 2041848749}
-  upgrades: {fileID: 0}
+  upgrades: {fileID: 1171571889}
   profile: {fileID: 1562797024}
   userAuth: 
 --- !u!1 &708605600
@@ -7131,6 +7131,7 @@ MonoBehaviour:
   timeManager: {fileID: 700280364}
   stats: {fileID: 562440738}
   resources: {fileID: 2041848749}
+  upgrades: {fileID: 1171571889}
   dataManager: {fileID: 708225160}
   mainScene: {fileID: 1603022445}
   profileScene: {fileID: 1454000343}
