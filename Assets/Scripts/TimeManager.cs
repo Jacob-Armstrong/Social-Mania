@@ -28,7 +28,7 @@ public class TimeManager : MonoBehaviour
 
     /* -- Calculations -- */
     public TimeSpan offlineTime;
-    float offlineEarnings;
+    double offlineEarnings;
 
     // Start is called before the first frame update
     void Start()

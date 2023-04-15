@@ -87,7 +87,7 @@ public class DataManager : MonoBehaviour
     {
         user.username = profile.username;
         user.followers = resources.followers;
-        user.lifetimeViews = (int)resources.views;
+        user.lifetimeViews = resources.views;
         user.numClicks = stats.numClicks;
         user.startDate = timeManager.startDate.ToString();
         user.lastSeen = DateTime.Now.ToString();
@@ -145,12 +145,12 @@ public class DataManager : MonoBehaviour
 
             for (int i = 0; i < userList.Count(); i++)
             {
-                Debug.Log(i+1 + ": " + userList[i].username + " - " + userList[i].lifetimeViews + " lifetime views");
+                Debug.Log(i+1 + ": " + userList[i].username + " - " + (int)userList[i].lifetimeViews + " lifetime views");
             }
 
             for (int i = 0; i < 10; i++)
             {
-                profile.leaderboardPositions[i].text = /*i + 1 + ": " +*/ userList[i].username + " - " + userList[i].lifetimeViews + " views";
+                profile.leaderboardPositions[i].text = /*i + 1 + ": " +*/ userList[i].username + " - " + (int)userList[i].lifetimeViews + " views";
             }
         });
     }
