@@ -28,9 +28,6 @@ public class Resources : MonoBehaviour
 
     // Attention Variables
     [SerializeField] float attLossBase;       // Default attention loss per tick
-    [SerializeField] float attLossDelay = 5f; // Idle time in seconds before attention starts to drop off
-    public float attLossMultiplier = 1f;      // Attention loss multiplier from upgrades/random events
-    public float attFloor = 0;
     private float attLossTimer;               // Timer variable that gets set equal to attLossDelay
     
     //________________________
@@ -43,7 +40,7 @@ public class Resources : MonoBehaviour
         followers = 0;
         haters = 0;
         attention = 1.0f;
-        attLossTimer = attLossDelay;
+        attLossTimer = upgrades.attLossDelay;
     }
 
     void Update()
@@ -98,9 +95,9 @@ public class Resources : MonoBehaviour
 
     void UpdateDisplay()    // Refreshes on-screen numbers (views, attention...)
     {
-        textViewsCount.text = ((int)views).ToString();
+        textViewsCount.text = CalcUtils.FormatNumber(views);
         textAttentionCount.text = attention.ToString("0.00") + "x";
-        textFollowersCount.text = followers.ToString();
+        textFollowersCount.text = CalcUtils.FormatNumber(followers);
     }
 
     void UpdateStats()
@@ -110,56 +107,17 @@ public class Resources : MonoBehaviour
 
     void AttentionDecay()
     {
-        attention -= attLossBase * attLossMultiplier;
+        attention -= attLossBase * upgrades.attLossMultiplier;
 
-        if (attention < attFloor)
-            attention = attFloor;
+        if (attention < upgrades.attFloor)
+            attention = upgrades.attFloor;
     }
 
-    public void AddFollowersAndAttention(int followerChange, float attChange)
+    public void AddFollowersAndAttention(double followerChange, float attChange)
     {
         followers += followerChange;
         attention += attChange;
-        attLossTimer = attLossDelay;
+        attLossTimer = upgrades.attLossDelay;
     }
-    
-    // temporarily deprecated attention code
-    
-    /*
-    // Attention-specific modifiers
-    float attDecayBase;     // Base amount of decay lost per tick
-    float attDecayAmt;      // Modifier to decay loss, increase/decrease based on progression
-    float attLoss;          // Attention lost this tick
-*/
 
-    /*
-     void attentionDecay(float decayAmt)    // Handles passive decrease of decay
-    {
-        attLoss = 0;
-
-        // Check attention is above zero
-        if (attention <= 0)
-        {
-            attention = 0;
-            return;
-        }
-
-        // Decrease attention based on decay
-        attLoss = attDecayBase * decayAmt;
-        attention -= attLoss;
-    }
-    /*
-
-
-    /*
-    void generateViews(float loss)    // Converts decayed attention into views
-    {
-        if (loss < 1)
-            loss = 1;
-
-        views += (int)loss;
-        //Debug.Log("Views: " + views);
-    }
-    */
-    
 }
