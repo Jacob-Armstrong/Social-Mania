@@ -63,5 +63,42 @@ public class Upgrades : MonoBehaviour
 
         purchasedUpgrades.Add(upgrade.id);
     }
+
+    public List<string> GetPurchasedUpgrades()
+    {
+        return purchasedUpgrades;
+    }
+
+    private void LoadUpgrade(Upgrade upgrade)
+    {
+        maxAttention += upgrade.maxAttention;
+        clickMultiplier += upgrade.clickMultiplier;
+        attLossMultiplier -= upgrade.attentionLossMultiplier;
+        attLossDelay -= upgrade.attentionLossDelay;
+        attFloor += upgrade.attentionFloor;
+
+        purchasedUpgrades.Add(upgrade.id);
+    }
+
+    public void LoadPurchasedUpgrades(List<string> pUpgrades)
+    {
+        foreach(string id in pUpgrades)
+        {
+            for(int i = 0; i < upgradeList.Count; ++i)
+            {
+                if(id == upgradeList[i].id)
+                {
+                    LoadUpgrade(upgradeList[i]);
+                    upgradeList.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+    }
+
+    public void RemoveUpgrades()
+    {
+        purchasedUpgrades = new();
+    }
 }
 
