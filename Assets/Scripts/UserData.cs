@@ -18,5 +18,5 @@ public class UserData
     public int numClicks;
     public string startDate;
     public string lastSeen;
-
+    public List<string> upgradesPurchased;
 }

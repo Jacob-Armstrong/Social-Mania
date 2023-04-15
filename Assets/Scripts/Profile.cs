@@ -13,6 +13,7 @@ public class Profile : MonoBehaviour
     [SerializeField] TimeManager timeManager;
     [SerializeField] Stats stats;
     [SerializeField] Resources resources;
+    [SerializeField] Upgrades upgrades;
     [SerializeField] DataManager dataManager;
     
     /* ==== Game Objects ==== */
@@ -137,6 +138,7 @@ public class Profile : MonoBehaviour
         resources.attention = 1.00f;
         stats.lifetimeViews = 0;
         stats.numClicks = 0;
+        upgrades.RemoveUpgrades();
         timeManager.startDate = DateTime.Now;
     }
 }

@@ -5828,8 +5828,19 @@ MonoBehaviour:
     followerCost: 10
     haterCost: 0
     viewRequirement: 0
-    buttonText: 
-    clickMultiplier: 0
+    buttonText: 10x click
+    clickMultiplier: 10
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+  - id: 2
+    prereqId: 
+    followerCost: 20
+    haterCost: 0
+    viewRequirement: 0
+    buttonText: 20x click
+    clickMultiplier: 20
     attentionFloor: 0
     attentionLossMultiplier: 0
     attentionLossDelay: 0

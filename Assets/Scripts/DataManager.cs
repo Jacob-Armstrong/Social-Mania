@@ -90,6 +90,7 @@ public class DataManager : MonoBehaviour
         user.followers = resources.followers;
         user.lifetimeViews = resources.views;
         user.numClicks = stats.numClicks;
+        user.upgradesPurchased = upgrades.GetPurchasedUpgrades();
         user.startDate = timeManager.startDate.ToString();
         user.lastSeen = DateTime.Now.ToString();
     }
@@ -119,6 +120,7 @@ public class DataManager : MonoBehaviour
             resources.followers = response.followers;
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;
+            upgrades.LoadPurchasedUpgrades(response.upgradesPurchased);
             timeManager.startDate = DateTime.Parse(response.startDate);
             timeManager.lastSeen = DateTime.Parse(response.lastSeen);
 
