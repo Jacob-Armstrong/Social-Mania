@@ -92,7 +92,7 @@ public class Resources : MonoBehaviour
     
     void ViewGains()
     {
-        viewGain = (followers/10.0f) * attention;
+        viewGain = (followers/10.0d) * (double)attention;
         views += viewGain;
     }
 
