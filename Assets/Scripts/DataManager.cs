@@ -14,6 +14,7 @@ public class DataManager : MonoBehaviour
     [SerializeField] TimeManager timeManager;
     [SerializeField] Stats stats;
     [SerializeField] Resources resources;
+    [SerializeField] Upgrades upgrades;
     [SerializeField] Profile profile;
     UserData loadedUser;
 

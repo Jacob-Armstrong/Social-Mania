@@ -22,7 +22,6 @@ public class Buttons : MonoBehaviour
     public void numberGoUp()
     {
         resources.AddFollowersAndAttention(1 * upgrades.clickMultiplier, .01f);
-        Debug.Log(CalcUtils.StringToNumber("100.23aa"));
     }
 
     // Reusable Coroutine to put a cooldown with a length <cooldown> seconds on any Unity UI Button

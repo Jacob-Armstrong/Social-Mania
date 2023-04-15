@@ -38,7 +38,10 @@ public static class CalcUtils
             unit = Convert.ToChar(firstUnit + charA).ToString() + Convert.ToChar(secondUnit + charA).ToString();
         }
 
-        return (Math.Floor(m * 100) / 100).ToString("0.##") + unit;
+        if(value >= 1000)
+            return (Math.Floor(m * 100) / 100).ToString("0.##") + unit;
+        else
+            return Math.Floor(value).ToString();
     }
 
     public static double StringToNumber(string value)
@@ -65,13 +68,19 @@ public static class CalcUtils
 
         if(unit.Length == 2)
         {
-            Debug.Log("To Int: " + (Convert.ToInt32(unit[0]) - charA));
-
-            pow = (Convert.ToInt32(unit[0]) - charA) * 26 + Convert.ToInt32(unit[0] - charA);
+            pow = 3 * ((Convert.ToInt32(unit[0]) - charA) * 26 + Convert.ToInt32(unit[0] - charA) + units.Count);
+        }
+        else if(unit.Length == 1)
+        {
+            foreach(KeyValuePair<int, string> pair in units)
+            {
+                if(pair.Value == unit.ToUpper())
+                {
+                    pow = pair.Key * 3;
+                }
+            }
         }
 
-        Debug.Log("Num: " + num + " pow: " + pow);
-
-        return Math.Pow(baseNum, pow);
+        return baseNum * Math.Pow(10, pow);
     }
 }
