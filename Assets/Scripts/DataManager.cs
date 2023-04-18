@@ -111,6 +111,7 @@ public class DataManager : MonoBehaviour
     public IEnumerator load()
     {
         Debug.Log("Starting load...");
+        profile.disableButtons();
 
         string newUser = "";
         
