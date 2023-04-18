@@ -5845,7 +5845,7 @@ MonoBehaviour:
     attentionLossMultiplier: 0
     attentionLossDelay: 0
     maxAttention: 0
-  - id: 2
+  - id: 3
     prereqId: 
     followerCost: 50
     haterCost: 0
@@ -5861,6 +5861,11 @@ MonoBehaviour:
   attLossMultiplier: 1
   attFloor: 0
   attLossDelay: 5
+  d_maxAttention: 2
+  d_clickMultiplier: 1
+  d_attLossMultiplier: 1
+  d_attFloor: 0
+  d_attLossDelay: 5
 --- !u!1 &1178021965
 GameObject:
   m_ObjectHideFlags: 0

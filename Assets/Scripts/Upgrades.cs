@@ -42,8 +42,6 @@ public class Upgrades : MonoBehaviour
         {
             for(int i = 0; i < upgrades.Count; ++i)
             {
-                yield return null;
-
                 if (resources.views >= upgrades[i].viewRequirement &&
                     resources.followers >= upgrades[i].followerCost/2 &&
                     resources.haters >= upgrades[i].haterCost/2)
@@ -52,6 +50,8 @@ public class Upgrades : MonoBehaviour
                     upgrades.RemoveAt(i);
                     --i;
                 }
+
+                yield return null;
             }
 
             yield return null;
@@ -99,6 +99,8 @@ public class Upgrades : MonoBehaviour
 
     public void LoadPurchasedUpgrades(List<string> pUpgrades)
     {
+        upgradeMenu.ResetMenu();
+
         foreach(string id in pUpgrades)
         {
             for(int i = 0; i < upgrades.Count; ++i)
