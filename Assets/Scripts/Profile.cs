@@ -46,7 +46,7 @@ public class Profile : MonoBehaviour
     
     /* ==== Local Variables ==== */
 
-    public string username;
+    public string username = "";
 
     void Awake() // should move this to a scene handler or something, this is a band-aid for me not wanting to deactivate scenes all the time
     {
@@ -115,9 +115,9 @@ public class Profile : MonoBehaviour
             disableButtons();
         }
 
-        if (userInput.Length > 16)
+        if (userInput.Length > 16 || userInput.Length < 1)
         {
-            Debug.Log("That username is too long!");
+            Debug.Log("That username must be between 1 and 16 characters");
             usernameValid = false;
             userLengthPopup.SetActive(true);
             disableButtons();
@@ -155,6 +155,7 @@ public class Profile : MonoBehaviour
     public void closeOfflinePopup()
     {
         offlinePopup.SetActive(false);
+        enableButtons();
     }
 
     public void closeNewUsernamePopup()

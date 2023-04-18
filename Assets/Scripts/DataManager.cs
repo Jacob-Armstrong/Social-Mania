@@ -62,7 +62,7 @@ public class DataManager : MonoBehaviour
         {
             Debug.Log("User Auth: " + userAuth);
             profile.enableButtons();
-            load();
+            StartCoroutine(load());
             signedIn = true;
         }
 
@@ -108,14 +108,21 @@ public class DataManager : MonoBehaviour
     }
 
     // Load data from database, deconstruct response into saved data
-    public void load()
+    public IEnumerator load()
     {
         Debug.Log("Starting load...");
-        bool newUser = true;
+
+        string newUser = "";
+        
+        if (!checkUsernameTaken(profile.username))
+        {
+            profile.username = "";
+        }
+
         RestClient.Get<UserData>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
         {
             Debug.Log("Load successful.");
-            
+
             // Load all information from database response (UserData class) into relevant player sources
             Debug.Log("Response username: " + response.username);
             profile.username = response.username;
@@ -127,20 +134,25 @@ public class DataManager : MonoBehaviour
             timeManager.startDate = DateTime.Parse(response.startDate);
             timeManager.lastSeen = DateTime.Parse(response.lastSeen);
 
-            newUser = false;
-
             // Calculate offline time, display relevant offline info
             timeManager.offlinePopup();
             Debug.Log("Offline stuff done!");
+
+            newUser = "false";
+
         });
 
-        if (newUser)
+        Debug.Log("Wait 1 second...");
+        yield return new WaitForSeconds(0.5f);
+        if (profile.username == "")
         {
+            Debug.Log("Username is: {" + profile.username + "} <--- should be blank!");
+            profile.hardReset();
             newUsernamePopup.SetActive(true);
             profile.disableButtons();
         }
     }
-    
+
     public void getUsers()
     {
         Debug.Log("Updating leaderboard...");
