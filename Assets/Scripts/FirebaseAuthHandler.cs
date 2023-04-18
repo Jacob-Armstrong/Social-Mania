@@ -8,13 +8,14 @@ using UnityEngine;
 public static class FirebaseAuthHandler
 {
     private const string ApiKey = "AIzaSyD7l-171C5Ey5MN7JU7pwcRyyrQWXqZpN4"; //TODO: Change [API_KEY] to your API_KEY
-
+    public static string localId;
+    
     /// <summary>
     /// Signs in a user with their Id Token
     /// </summary>
     /// <param name="token"> Id Token </param>
     /// <param name="providerId"> Provider Id </param>
-    public static void SingInWithToken(string token, string providerId)
+    public static void SignInWithToken(string token, string providerId)
     {
         var payLoad =
             $"{{\"postBody\":\"id_token={token}&providerId={providerId}\",\"requestUri\":\"http://localhost\",\"returnIdpCredential\":true,\"returnSecureToken\":true}}";
@@ -23,6 +24,8 @@ public static class FirebaseAuthHandler
             {
                 // You now have the userId (localId) and the idToken of the user!
                 Debug.Log(response.Text);
-            }).Catch(Debug.Log);    
+                var data = StringSerializationAPI.Deserialize(typeof(GoogleIdTokenResponse), response.Text) as GoogleIdTokenResponse;
+                localId = data.localId;
+            }).Catch(Debug.Log);
     }
 }

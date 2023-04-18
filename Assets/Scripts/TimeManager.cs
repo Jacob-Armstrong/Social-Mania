@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Net.Security;
 using System.Text;
 using TMPro;
 using Unity.VisualScripting;
@@ -10,97 +11,134 @@ public class TimeManager : MonoBehaviour
 {
     /* ==== References ==== */
     [SerializeField] Stats stats;
+    [SerializeField] Resources resources;
+    [SerializeField] Profile profile;
+    // Upgrades here
 
     /* ==== Game Objects ==== */
     public TextMeshProUGUI textTimeElapsed;
+    public GameObject offlineTimePopup;
+    public TextMeshProUGUI[] offlineText;
 
     /* ==== Local Variables ==== */
+    /* -- Saved Data -- */
     public DateTime startDate;
-    DateTime currentTime;
-    
-    public TimeSpan timeSinceStartDate;
+    public DateTime lastSeen;
+    public TimeSpan maxOfflineUpgrade;
+
+    /* -- Calculations -- */
+    public TimeSpan offlineTime;
+    double offlineEarnings;
 
     // Start is called before the first frame update
     void Start()
     {
         startDate = DateTime.Now;
+        maxOfflineUpgrade += TimeSpan.FromMinutes(5);
     }
 
     void FixedUpdate()
     {
-        timeElapsed();
+        textTimeElapsed.text = "Time elapsed: " + timespanFormat(DateTime.Now.Subtract(startDate));
     }
 
-    void timeElapsed()
+    public void offlinePopup()
     {
-        currentTime = DateTime.Now;
-        timeSinceStartDate = currentTime - startDate;
+        profile.disableButtons();
+        Debug.Log("We are inside offlinePopup()");
+        // Calculate offline time
+        offlineTime = DateTime.Now - lastSeen;
+        
+        // Calculate offline earnings
+        
+        
+        Debug.Log("Time since last save: " + timespanFormat(offlineTime)); // replace with popup
+        offlineText[0].text = "You have been offline for " + timespanFormat(offlineTime) + ".";
+        offlineText[1].text = "Your max offline time is " + timespanFormat(maxOfflineUpgrade) + ".";
+        if (offlineTime > maxOfflineUpgrade)
+        {
+            offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)maxOfflineUpgrade.TotalSeconds;
+            offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(maxOfflineUpgrade) + " of offline time!";
+        }
+        else if (offlineTime < maxOfflineUpgrade)
+        {
+            offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)offlineTime.TotalSeconds;
+            offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(offlineTime) + " of offline time!";
+        }
+
+        resources.views += offlineEarnings;
+        
+        offlineTimePopup.SetActive(true);
+        // you have been offline for {2 hours, 10 minutes, 15 seconds}
+        // your max offline upgrade is {30 minutes}
+        // you have earned {40,293} views from {30 minutes} of offline time!
+    }
+    
+    public string timespanFormat(TimeSpan timespan)
+    {
 
         StringBuilder sb = new StringBuilder("", 50);
-
-        sb.Insert(0, "Time elapsed: ");
-
-        switch(timeSinceStartDate.Hours)
+        
+        switch(timespan.Hours)
         {
-            case > 1:
-                sb.Insert(14, timeSinceStartDate.Hours + " hours");
+            case >= 2:
+                sb.Insert(0, (int)timespan.TotalHours + " hours");
                 break;
             case 1:
-                sb.Insert(14, timeSinceStartDate.Hours + " hour");
+                sb.Insert(0, (int)timespan.TotalHours + " hour");
                 break;
         }
 
-        switch(timeSinceStartDate.Hours)
+        switch(timespan.Hours)
         {
-            case > 0:
-                switch (timeSinceStartDate.Minutes)
+            case >= 1:
+                switch (timespan.Minutes)
                 {
                     case > 1:
-                        sb.Append(", " + timeSinceStartDate.Minutes + " minutes");
+                        sb.Append(", " + timespan.Minutes + " minutes");
                         break;
                     case 1:
-                        sb.Append(", " + timeSinceStartDate.Minutes + " minute");
+                        sb.Append(", " + timespan.Minutes + " minute");
                         break;
                 }
                 break;
             case 0:
-                switch (timeSinceStartDate.Minutes)
+                switch (timespan.Minutes)
                 {
                     case > 1:
-                        sb.Append(timeSinceStartDate.Minutes + " minutes");
+                        sb.Append(timespan.Minutes + " minutes");
                         break;
                     case 1:
-                        sb.Append(timeSinceStartDate.Minutes + " minute");
+                        sb.Append(timespan.Minutes + " minute");
                         break;
                 }
                 break;
         }
-
-        if (timeSinceStartDate.Hours > 0 || timeSinceStartDate.Minutes > 0)
+        if (timespan.Hours >0  || timespan.Minutes > 0)
         {
-            switch (timeSinceStartDate.Seconds)
+            switch (timespan.Seconds)
             {
                 case > 1:
-                    sb.Append(", " + timeSinceStartDate.Seconds + " seconds");
+                    sb.Append(", " + timespan.Seconds + " seconds");
                     break;
                 case 1:
-                    sb.Append(", " + timeSinceStartDate.Seconds + " second");
+                    sb.Append(", " + timespan.Seconds + " second");
                     break;
             }
         }
-        else if (timeSinceStartDate.Hours == 0 || timeSinceStartDate.Minutes == 0)
+        else if (timespan.Hours == 0 || timespan.Minutes == 0)
         {
-            switch (timeSinceStartDate.Seconds)
+            switch (timespan.Seconds)
             {
                 case > 1:
-                    sb.Append(timeSinceStartDate.Seconds + " seconds");
+                    sb.Append(timespan.Seconds + " seconds");
                     break;
                 case 1:
-                    sb.Append(timeSinceStartDate.Seconds + " second");
+                    sb.Append(timespan.Seconds + " second");
                     break;
             }
         }
 
-        textTimeElapsed.text = sb.ToString();
+        return sb.ToString();
     }
 }

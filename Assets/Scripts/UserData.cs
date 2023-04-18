@@ -12,12 +12,11 @@ public class UserData
     /* ==== Game Objects ==== */
 
     /* ==== Local Variables ==== */
-    string username;
-    public int followers;
-    public int lifetimeViews;
+    public string username;
+    public double followers;
+    public double lifetimeViews;
     public int numClicks;
-    public string timePlayed;
     public string startDate;
-    
-    
+    public string lastSeen;
+    public List<string> upgradesPurchased;
 }
