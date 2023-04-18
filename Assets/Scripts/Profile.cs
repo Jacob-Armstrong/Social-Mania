@@ -26,6 +26,7 @@ public class Profile : MonoBehaviour
     public GameObject userTakenPopup;
     public GameObject userLengthPopup;
     public GameObject offlinePopup;
+    public GameObject newUsernamePopup;
     
     /* -- Buttons -- */
     public Button googleSignInButton;
@@ -40,12 +41,12 @@ public class Profile : MonoBehaviour
     
     /* -- Misc -- */
     public TMP_InputField usernameInput;
-    
+    public TMP_InputField newUsernameInput;
     
     
     /* ==== Local Variables ==== */
 
-    public string username;
+    public string username = "";
 
     void Awake() // should move this to a scene handler or something, this is a band-aid for me not wanting to deactivate scenes all the time
     {
@@ -86,9 +87,24 @@ public class Profile : MonoBehaviour
         submitUsernameButton.interactable = true;
     }
 
-    public void setUsername()
+    public void setUsername(string buttonValue)
     {
-        string userInput = usernameInput.text;
+
+        string userInput = "";
+
+        switch (buttonValue)
+        {
+            case "username":
+                userInput = usernameInput.text;
+                break;
+            case "newuser":
+                userInput = newUsernameInput.text;
+                break;
+            default:
+                Debug.Log("Set username failed");
+                break;
+        }
+
         bool usernameValid = true;
 
         if (!dataManager.checkUsernameTaken(userInput))
@@ -99,9 +115,9 @@ public class Profile : MonoBehaviour
             disableButtons();
         }
 
-        if (userInput.Length > 16)
+        if (userInput.Length > 16 || userInput.Length < 1)
         {
-            Debug.Log("That username is too long!");
+            Debug.Log("That username must be between 1 and 16 characters");
             usernameValid = false;
             userLengthPopup.SetActive(true);
             disableButtons();
@@ -110,24 +126,41 @@ public class Profile : MonoBehaviour
         if (usernameValid)
         {
             username = userInput;
+
+            if (buttonValue == "newuser")
+            {
+                closeNewUsernamePopup();
+            }
         }
     }
 
     public void closeTakenPopup()
     {
         userTakenPopup.SetActive(false);
-        enableButtons();
+        if (username != "")
+        {
+            enableButtons();
+        }
     }
 
     public void closeLengthPopup()
     {
         userLengthPopup.SetActive(false);
-        enableButtons();
+        if (username != "")
+        {
+            enableButtons();
+        }
     }
 
     public void closeOfflinePopup()
     {
         offlinePopup.SetActive(false);
+        enableButtons();
+    }
+
+    public void closeNewUsernamePopup()
+    {
+        newUsernamePopup.SetActive(false);
         enableButtons();
     }
 
@@ -139,6 +172,7 @@ public class Profile : MonoBehaviour
         stats.lifetimeViews = 0;
         stats.numClicks = 0;
         upgrades.RemoveUpgrades();
+        stats.totalNumUpgrades = 0;
         timeManager.startDate = DateTime.Now;
     }
 }

@@ -23,6 +23,7 @@ public class DataManager : MonoBehaviour
     UserData loadedUser;
 
     /* ==== Game Objects ==== */
+    public GameObject newUsernamePopup;
 
     /* ==== Local Variables ==== */
     const string ProjectId = "Social-Mania";
@@ -54,17 +55,18 @@ public class DataManager : MonoBehaviour
         userAuth = FirebaseAuthHandler.localId;
         if (userAuth == null)
         {
+            profile.enableButtons();
             Debug.Log("Sign in failed -- Please make sure you are signed in properly!"); // replace with proper in-game error popup!
         }
         else
         {
             Debug.Log("User Auth: " + userAuth);
-            load();
+            profile.enableButtons();
+            StartCoroutine(load());
             signedIn = true;
         }
 
         profile.authPopup.SetActive(false);
-        profile.enableButtons();
         profile.googleSignInText.text = "";
     }
 
@@ -106,13 +108,22 @@ public class DataManager : MonoBehaviour
     }
 
     // Load data from database, deconstruct response into saved data
-    public void load()
+    public IEnumerator load()
     {
         Debug.Log("Starting load...");
+        profile.disableButtons();
+
+        string newUser = "";
+        
+        if (!checkUsernameTaken(profile.username))
+        {
+            profile.username = "";
+        }
+
         RestClient.Get<UserData>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
         {
             Debug.Log("Load successful.");
-            
+
             // Load all information from database response (UserData class) into relevant player sources
             Debug.Log("Response username: " + response.username);
             profile.username = response.username;
@@ -127,9 +138,22 @@ public class DataManager : MonoBehaviour
             // Calculate offline time, display relevant offline info
             timeManager.offlinePopup();
             Debug.Log("Offline stuff done!");
+
+            newUser = "false";
+
         });
+
+        Debug.Log("Wait 1 second...");
+        yield return new WaitForSeconds(0.5f);
+        if (profile.username == "")
+        {
+            Debug.Log("Username is: {" + profile.username + "} <--- should be blank!");
+            profile.hardReset();
+            newUsernamePopup.SetActive(true);
+            profile.disableButtons();
+        }
     }
-    
+
     public void getUsers()
     {
         Debug.Log("Updating leaderboard...");
