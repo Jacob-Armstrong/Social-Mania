@@ -25,27 +25,26 @@ public class NewsFeedDisplay : MonoBehaviour
     {
         string objName;
         string content;
-        int minViews;
+        double minViews;
         int minFollowers;
         int minAttention;
 
-        
-        content = "sweet sweet content";
-        minViews = 10;
+        content = "This story requires no views";
+        minViews = 0.0f;
         minFollowers = 0;
         minAttention = 0;
         NewsStory s1 = new NewsStory(content, minViews, minFollowers, minAttention);
         newsStoryList.Add(s1);
 
-        content = "more content";
-        minViews = 50;
+        content = "Minimum views 100";
+        minViews = 100.0f;
         minFollowers = 0;
         minAttention = 0;
         NewsStory s2 = new NewsStory(content, minViews, minFollowers, minAttention);
         newsStoryList.Add(s2);
 
-        content = "yet more thingys";
-        minViews = 200;
+        content = "Minimum views 1000";
+        minViews = 1000.0f;
         minFollowers = 0;
         minAttention = 0;
         NewsStory s3 = new NewsStory(content, minViews, minFollowers, minAttention);
@@ -89,17 +88,22 @@ public class NewsFeedDisplay : MonoBehaviour
     // WORK IN PROGRESS
 
     // Display news objects section:
-    // first, select random news story
     void DisplayNews()
     {
+        // Create the object that will display the news story
         GameObject newText = Instantiate(newsTemplate) as GameObject;
         newText.SetActive(true);
         newText.transform.SetParent(newsTemplate.transform.parent, false);
 
+        // Select a random news story (includes checking requirements)
         int storyID = SelectRandomNews();
+
+        // Set the text of the news story
+        newText.GetComponent<NewsObject>().SetText(newsStoryList[storyID].content);
 
         Debug.Log("Current views is actually: " + resourceObject.GetComponent<Resources>().views);
 
+        // Delete object after a delay of several seconds
         Destroy(newText, repeatDelay);
     }
 
@@ -128,20 +132,21 @@ public class NewsFeedDisplay : MonoBehaviour
     // next, determine if displaying is valid
     bool NewsRequirementsMet(NewsStory thisStory)
     {
-        int tempViews = 100;
+        //int tempViews = 100;
+        //Debug.Log("tempViews is: " + tempViews);
+        //Debug.Log("thisStory minViews is: " + thisStory.minViews);
 
-        Debug.Log("tempViews is: " + tempViews);
-        Debug.Log("thisStory minViews is: " + thisStory.minViews);
+        double views = resourceObject.GetComponent<Resources>().views;
 
-        if (tempViews > thisStory.minViews)
+        if (views >= thisStory.minViews)
         {
-            Debug.Log("It was true!!!");
+            //Debug.Log("It was true!!!");
             return true;
         }
 
         else
         {            
-            Debug.Log("It was false");
+            //Debug.Log("It was false");
             return false;
         }
     }
@@ -152,11 +157,11 @@ public class NewsFeedDisplay : MonoBehaviour
     public class NewsStory
     {
         public string content;
-        public int minViews;
+        public double minViews;
         public int minFollowers;
         public int minAttention;
 
-        public NewsStory(string c, int v, int f, int a)
+        public NewsStory(string c, double v, int f, int a)
         {
                 content = c;
                 minViews = v;

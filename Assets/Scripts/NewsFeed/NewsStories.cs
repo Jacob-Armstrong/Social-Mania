@@ -6,37 +6,50 @@ public class NewsStories : MonoBehaviour
 {
     public List<NewsStory> newsStoryList = new List<NewsStory>();
 
-    // Start is called before the first frame update
     void Start()
     {
-        NewsStory story = new NewsStory();
+        string objName;
+        string content;
+        double minViews;
+        int minFollowers;
+        int minAttention;
 
-        story.content = "sweet sweet content";
-        story.minViews = 19;
-        story.minFollowers = 202;
-        story.minAttention = 33333;
-        newsStoryList.Add(story);
+        
+        content = "This story requires no views";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s1 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s1);
 
+        content = "Minimum views 100";
+        minViews = 100.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s2 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s2);
 
-        story.content = "yet more stuff";
-        story.minViews = 69;
-        story.minFollowers = 420;
-        story.minAttention = 666;
-        newsStoryList.Add(story);
-
-
-        story.content = "real mature bud";
-        story.minViews = 0;
-        story.minFollowers = 0;
-        story.minAttention = 0;
-        newsStoryList.Add(story);
+        content = "Minimum views 1000";
+        minViews = 1000.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s3 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s3);
     }
 
     public class NewsStory
     {
         public string content;
-        public int minViews;
+        public double minViews;
         public int minFollowers;
         public int minAttention;
+
+        public NewsStory(string c, double v, int f, int a)
+        {
+                content = c;
+                minViews = v;
+                minFollowers = f;
+                minAttention = a;
+        }
     }
 }
