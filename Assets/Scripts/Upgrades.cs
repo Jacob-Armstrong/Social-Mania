@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class Upgrades : MonoBehaviour
     [HideInInspector] public float attLossMultiplier = 1f;
     [HideInInspector] public float attFloor = 0;
     [HideInInspector] public float attLossDelay = 5f; // Idle time in seconds before attention starts to drop off
+    [HideInInspector] public int maxOfflineTime = 5;
+    [HideInInspector] public TimeSpan maxOfflineUpgrade = TimeSpan.FromMinutes(5);
 
     /* ==== Default Stats ==== */
     public double d_maxAttention = 2.0d;
@@ -69,16 +72,10 @@ public class Upgrades : MonoBehaviour
 
     public void PurchaseUpgrade(Upgrade upgrade)
     {
-        maxAttention += upgrade.maxAttention;
-        clickMultiplier += upgrade.clickMultiplier;
-        attLossMultiplier -= upgrade.attentionLossMultiplier;
-        attLossDelay -= upgrade.attentionLossDelay;
-        attFloor += upgrade.attentionFloor;
+        LoadUpgrade(upgrade);
 
         resources.followers -= upgrade.followerCost;
         resources.haters -= upgrade.haterCost;
-
-        purchasedUpgrades.Add(upgrade.id);
     }
 
     public List<string> GetPurchasedUpgrades()
@@ -93,6 +90,10 @@ public class Upgrades : MonoBehaviour
         attLossMultiplier -= upgrade.attentionLossMultiplier;
         attLossDelay -= upgrade.attentionLossDelay;
         attFloor += upgrade.attentionFloor;
+        maxOfflineTime += upgrade.maxOfflineTime;
+
+        if (upgrade.maxOfflineTime > 0)
+            maxOfflineUpgrade = TimeSpan.FromMinutes(maxOfflineTime);
 
         purchasedUpgrades.Add(upgrade.id);
     }
