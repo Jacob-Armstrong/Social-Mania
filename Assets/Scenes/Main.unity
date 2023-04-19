@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18230142, g: 0.22486927, b: 0.28911498, a: 1}
+  m_IndirectSpecularColor: {r: 0.1823019, g: 0.22486992, b: 0.2891162, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1500,7 +1500,7 @@ GameObject:
   - component: {fileID: 359517186}
   - component: {fileID: 359517185}
   m_Layer: 5
-  m_Name: authButton
+  m_Name: userTakenButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2513,7 +2513,7 @@ GameObject:
   - component: {fileID: 522544001}
   - component: {fileID: 522544000}
   m_Layer: 5
-  m_Name: authButton
+  m_Name: userLengthButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8246,6 +8246,8 @@ MonoBehaviour:
   googleSignInButton: {fileID: 5257743}
   returnToGameButton: {fileID: 1501906400}
   submitUsernameButton: {fileID: 1054025499}
+  updateLeaderboardButton: {fileID: 1826788063}
+  hardResetButton: {fileID: 1759003192}
   googleSignInText: {fileID: 1092703101}
   lifetimeViewsValue: {fileID: 485759661}
   numClicksValue: {fileID: 870051531}

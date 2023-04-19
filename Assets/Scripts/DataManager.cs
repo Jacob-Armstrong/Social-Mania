@@ -75,7 +75,7 @@ public class DataManager : MonoBehaviour
     {
         if (!signedIn)
         {
-            Debug.Log("Can't save, you aren't signed in!");
+            Debug.Log("Can't save, you aren't signed in!"); // REPLACE WITH LOCAL SAVE
         }
         else
         {
