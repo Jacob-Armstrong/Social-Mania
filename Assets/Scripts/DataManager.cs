@@ -118,6 +118,7 @@ public class DataManager : MonoBehaviour
         if (!checkUsernameTaken(profile.username))
         {
             profile.username = "";
+            profile.hardReset();
         }
 
         RestClient.Get<UserData>($"{DatabaseURL}users/{userAuth}.json").Then(response =>
@@ -148,7 +149,6 @@ public class DataManager : MonoBehaviour
         if (profile.username == "")
         {
             Debug.Log("Username is: {" + profile.username + "} <--- should be blank!");
-            profile.hardReset();
             newUsernamePopup.SetActive(true);
             profile.disableButtons();
         }
