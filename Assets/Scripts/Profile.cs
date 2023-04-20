@@ -44,11 +44,7 @@ public class Profile : MonoBehaviour
     /* -- Misc -- */
     public TMP_InputField usernameInput;
     public TMP_InputField newUsernameInput;
-
-    public GameObject userInputObj;
-    public GameObject userInputButtonObj;
-    
-    
+  
     /* ==== Local Variables ==== */
 
     public string username = "";
@@ -57,12 +53,6 @@ public class Profile : MonoBehaviour
     {
         authPopup.SetActive(false);
         returnToMain();
-    }
-
-    void start()
-    {
-        userInputObj.SetActive(false);
-        userInputButtonObj.SetActive(false);
     }
     
     void FixedUpdate()
@@ -76,6 +66,11 @@ public class Profile : MonoBehaviour
         // Change scenes
         mainScene.SetActive(false);
         profileScene.SetActive(true);
+        if (dataManager.userAuth == "")
+        {
+            usernameInput.gameObject.SetActive(false);
+            submitUsernameButton.gameObject.SetActive(false);
+        }
     }
 
     public void returnToMain()

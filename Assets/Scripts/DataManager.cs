@@ -46,18 +46,6 @@ public class DataManager : MonoBehaviour
 
     public void Start()
     {
-        StartCoroutine(doesLocalExist());
-        /* //yield return new WaitForSeconds(3);
-        string path = Path.Combine(Application.persistentDataPath, "SaveData.Dat");
-        if (File.Exists(path))
-        {
-            localLoad();
-        } */
-    }
-
-    IEnumerator doesLocalExist()
-    {
-        yield return new WaitForSeconds(1);
         string path = Path.Combine(Application.persistentDataPath, "SaveData.Dat");
         if (File.Exists(path))
         {
@@ -167,9 +155,6 @@ public class DataManager : MonoBehaviour
         // Calculate offline time, display relevant offline info
         timeManager.offlinePopup();
         Debug.Log("Offline stuff done!");
-
-        profile.userInputObj.SetActive(true);
-        profile.userInputButtonObj.SetActive(true);
     }
 
     // Load data from database, deconstruct response into saved data
@@ -203,6 +188,8 @@ public class DataManager : MonoBehaviour
             timeManager.offlinePopup();
             Debug.Log("Offline stuff done!");
 
+            profile.usernameInput.gameObject.SetActive(true);
+            profile.submitUsernameButton.gameObject.SetActive(true);
         });
 
         // IF LOCAL SAVE EXISTS

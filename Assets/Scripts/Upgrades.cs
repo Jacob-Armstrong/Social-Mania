@@ -29,7 +29,7 @@ public class Upgrades : MonoBehaviour
     public float d_attLossDelay = 5f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         upgrades = new List<Upgrade>(upgradeList);
         InitializeStats();
