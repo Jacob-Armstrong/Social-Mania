@@ -11,6 +11,7 @@ using FullSerializer;
 using Models;
 using TMPro;
 using Unity.VisualScripting;
+using System.IO;
 
 public class DataManager : MonoBehaviour
 {
@@ -39,6 +40,17 @@ public class DataManager : MonoBehaviour
     {
         InvokeRepeating(nameof(getUsers), 0, 180); // Update leaderboard every 3 minutes
         // InvokeRepeating("save", 0, 60) -- add auto save after local save implemented
+
+
+    }
+
+    public void Start()
+    {
+        string path = Path.Combine(Application.persistentDataPath, "SaveData.Dat");
+        if (File.Exists(path))
+        {
+            localLoad();
+        }
     }
     
     // "Sign in with Google" button
@@ -75,7 +87,10 @@ public class DataManager : MonoBehaviour
     {
         if (!signedIn)
         {
-            Debug.Log("Can't save, you aren't signed in!"); // REPLACE WITH LOCAL SAVE
+            Debug.Log("Local save"); // REPLACE WITH LOCAL SAVE
+            UserData user = new UserData();
+            saveData(user);
+            localSave(user);
         }
         else
         {
@@ -98,13 +113,43 @@ public class DataManager : MonoBehaviour
     }
     
     // Upload UserData class to database
-    void uploadToDatabase(UserData userObj)
+    void uploadToDatabase(UserData user)
     {
         Debug.Log("Starting save...");
-        RestClient.Put<UserData>($"{DatabaseURL}users/{userAuth}.json", userObj).Then(response =>
+        RestClient.Put<UserData>($"{DatabaseURL}users/{userAuth}.json", user).Then(response =>
         {
             Debug.Log("The user was successfully uploaded to the database");
         });
+    }
+
+    void localSave(UserData user)
+    {
+        string json = JsonUtility.ToJson(user);
+        string path = Path.Combine(Application.persistentDataPath, "SaveData.dat");
+        File.WriteAllText(path, json);
+    }
+
+    void localLoad()
+    {
+        string path = Path.Combine(Application.persistentDataPath, "SaveData.dat");
+        string json = File.ReadAllText(path);
+        UserData response = new UserData();
+        JsonUtility.FromJsonOverwrite(json, response);
+
+        Debug.Log("Response username: " + response.username);
+        profile.username = response.username;
+        Debug.Log("Response followers: " + response.followers);
+        resources.followers = response.followers;
+        Debug.Log("Loaded followers: " + resources.followers);
+        resources.views = response.lifetimeViews;
+        stats.numClicks = response.numClicks;
+        upgrades.LoadPurchasedUpgrades(response.upgradesPurchased);
+        timeManager.startDate = DateTime.Parse(response.startDate);
+        timeManager.lastSeen = DateTime.Parse(response.lastSeen);
+
+        // Calculate offline time, display relevant offline info
+        timeManager.offlinePopup();
+        Debug.Log("Offline stuff done!");
     }
 
     // Load data from database, deconstruct response into saved data
@@ -112,8 +157,6 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log("Starting load...");
         profile.disableButtons();
-
-        string newUser = "";
         
         if (!checkUsernameTaken(profile.username))
         {
@@ -140,11 +183,14 @@ public class DataManager : MonoBehaviour
             timeManager.offlinePopup();
             Debug.Log("Offline stuff done!");
 
-            newUser = "false";
-
         });
 
-        Debug.Log("Wait 1 second...");
+        // IF LOCAL SAVE EXISTS
+        // --------------------
+        // You are converting your save to your Google account!
+        // Do you want to delete your local data?
+        //      [Yes]                [No]
+
         yield return new WaitForSeconds(0.5f);
         if (profile.username == "")
         {
@@ -166,14 +212,13 @@ public class DataManager : MonoBehaviour
 
             var usersDict = deserialized as Dictionary<string, UserData>;
 
-            Debug.Log("Ordered list:\n");
             List<UserData> userList = usersDict.Values.ToList().OrderByDescending(userData => userData.lifetimeViews).ToList();
             loadedUserList = userList; // store this info somewhere so we don't have to keep calling the database!
 
-            for (int i = 0; i < userList.Count(); i++)
+            /* for (int i = 0; i < userList.Count(); i++)
             {
                 Debug.Log(i+1 + ": " + userList[i].username + " - " + (int)userList[i].lifetimeViews + " lifetime views");
-            }
+            } */
 
             for (int i = 0; i < 10; i++)
             {
