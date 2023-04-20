@@ -45,7 +45,6 @@ public class TimeManager : MonoBehaviour
     public void offlinePopup()
     {
         profile.disableButtons();
-        Debug.Log("We are inside offlinePopup()");
         // Calculate offline time
         offlineTime = DateTime.Now - lastSeen;
         

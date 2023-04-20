@@ -32,6 +32,8 @@ public class Profile : MonoBehaviour
     public Button googleSignInButton;
     public Button returnToGameButton;
     public Button submitUsernameButton;
+    public Button updateLeaderboardButton;
+    public Button hardResetButton;
     
     /* -- Text -- */
     public TextMeshProUGUI googleSignInText;
@@ -42,6 +44,9 @@ public class Profile : MonoBehaviour
     /* -- Misc -- */
     public TMP_InputField usernameInput;
     public TMP_InputField newUsernameInput;
+
+    public GameObject userInputObj;
+    public GameObject userInputButtonObj;
     
     
     /* ==== Local Variables ==== */
@@ -52,6 +57,12 @@ public class Profile : MonoBehaviour
     {
         authPopup.SetActive(false);
         returnToMain();
+    }
+
+    void start()
+    {
+        userInputObj.SetActive(false);
+        userInputButtonObj.SetActive(false);
     }
     
     void FixedUpdate()
@@ -78,6 +89,8 @@ public class Profile : MonoBehaviour
         returnToGameButton.interactable = false;
         googleSignInButton.interactable = false;
         submitUsernameButton.interactable = false;
+        updateLeaderboardButton.interactable = false;
+        hardResetButton.interactable = false;
     }
 
     public void enableButtons()
@@ -85,6 +98,8 @@ public class Profile : MonoBehaviour
         returnToGameButton.interactable = true;
         googleSignInButton.interactable = true;
         submitUsernameButton.interactable = true;
+        updateLeaderboardButton.interactable = true;
+        hardResetButton.interactable = true;
     }
 
     public void setUsername(string buttonValue)
