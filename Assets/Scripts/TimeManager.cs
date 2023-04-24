@@ -55,8 +55,8 @@ public class TimeManager : MonoBehaviour
         offlineText[1].text = "Your max offline time is " + timespanFormat(upgrades.maxOfflineUpgrade) + ".";
         if (offlineTime > upgrades.maxOfflineUpgrade)
         {
-            offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)maxOfflineUpgrade.TotalSeconds;
-            offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(maxOfflineUpgrade) + " of offline time!";
+            offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)upgrades.maxOfflineUpgrade.TotalSeconds;
+            offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(upgrades.maxOfflineUpgrade) + " of offline time!";
         }
         else if (offlineTime < upgrades.maxOfflineUpgrade)
         {
