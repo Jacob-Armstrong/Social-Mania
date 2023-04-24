@@ -8998,42 +8998,42 @@ MonoBehaviour:
   resources: {fileID: 2041848749}
   upgradeMenu: {fileID: 1759115022}
   upgradeList:
-  - id: 1
+  - id: offline_time_1
     prereqId: 
-    followerCost: 10
-    attentionCost: 0.5
+    followerCost: 0
+    attentionCost: 2
     viewRequirement: 0
-    buttonText: 10x click
-    clickMultiplier: 10
+    buttonText: Offline Time 1
+    clickMultiplier: 0
     attentionFloor: 0
     attentionLossMultiplier: 0
     attentionLossDelay: 0
     maxAttention: 0
-    maxOfflineTime: 0
-  - id: 2
-    prereqId: 
-    followerCost: 20
-    attentionCost: 0
+    maxOfflineTime: 5
+  - id: offline_time_2
+    prereqId: offline_time_1
+    followerCost: 0
+    attentionCost: 3.5
     viewRequirement: 0
-    buttonText: 20x click
-    clickMultiplier: 20
+    buttonText: Offline Time 2
+    clickMultiplier: 0
     attentionFloor: 0
     attentionLossMultiplier: 0
     attentionLossDelay: 0
     maxAttention: 0
-    maxOfflineTime: 0
-  - id: 3
-    prereqId: 
-    followerCost: 50
-    attentionCost: 0
+    maxOfflineTime: 30
+  - id: offline_time_3
+    prereqId: offline_time_2
+    followerCost: 0
+    attentionCost: 3.5
     viewRequirement: 0
-    buttonText: 20x click
-    clickMultiplier: 20
+    buttonText: Offline Time 3
+    clickMultiplier: 0
     attentionFloor: 0
     attentionLossMultiplier: 0
     attentionLossDelay: 0
     maxAttention: 0
-    maxOfflineTime: 0
+    maxOfflineTime: 60
   maxAttention: 2
   clickMultiplier: 1
   attLossMultiplier: 1
@@ -9045,6 +9045,7 @@ MonoBehaviour:
   d_attLossMultiplier: 1
   d_attFloor: 0
   d_attLossDelay: 5
+  d_maxOfflineTime: 0
 --- !u!1 &1178021965
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class Upgrades : MonoBehaviour
     [HideInInspector] public float attFloor = 0;
     [HideInInspector] public float attLossDelay = 5f; // Idle time in seconds before attention starts to drop off
     [HideInInspector] public int maxOfflineTime = 5;
-    [HideInInspector] public TimeSpan maxOfflineUpgrade = TimeSpan.FromMinutes(5);
+    [HideInInspector] public TimeSpan maxOfflineUpgrade = TimeSpan.FromMinutes(0);
 
     /* ==== Default Stats ==== */
     public double d_maxAttention = 2.0d;
@@ -30,6 +30,7 @@ public class Upgrades : MonoBehaviour
     public float d_attLossMultiplier = 1f;
     public float d_attFloor = 0;
     public float d_attLossDelay = 5f;
+    public int d_maxOfflineTime = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -67,6 +68,8 @@ public class Upgrades : MonoBehaviour
         attLossMultiplier = d_attLossMultiplier;
         attFloor = d_attFloor;
         attLossDelay = d_attLossDelay;
+        maxOfflineTime = d_maxOfflineTime;
+        maxOfflineUpgrade = TimeSpan.FromMinutes(maxOfflineTime);
     }
 
     public void PurchaseUpgrade(Upgrade upgrade)
@@ -84,12 +87,12 @@ public class Upgrades : MonoBehaviour
 
     private void LoadUpgrade(Upgrade upgrade)
     {
-        maxAttention += upgrade.maxAttention;
-        clickMultiplier += upgrade.clickMultiplier;
-        attLossMultiplier -= upgrade.attentionLossMultiplier;
-        attLossDelay -= upgrade.attentionLossDelay;
-        attFloor += upgrade.attentionFloor;
-        maxOfflineTime += upgrade.maxOfflineTime;
+        maxAttention = upgrade.maxAttention;
+        clickMultiplier = upgrade.clickMultiplier;
+        attLossMultiplier = upgrade.attentionLossMultiplier;
+        attLossDelay = upgrade.attentionLossDelay;
+        attFloor = upgrade.attentionFloor;
+        maxOfflineTime = upgrade.maxOfflineTime;
 
         if (upgrade.maxOfflineTime > 0)
             maxOfflineUpgrade = TimeSpan.FromMinutes(maxOfflineTime);

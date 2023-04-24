@@ -38,6 +38,7 @@ public class UpgradeButton : MonoBehaviour
     {
         upgrade = _upgrade;
         followerCost = upgrade.followerCost;
+        attentionCost = upgrade.attentionCost;
         GetComponentInChildren<TextMeshProUGUI>().text = upgrade.buttonText;
     }
 
