@@ -12,6 +12,8 @@ public class Upgrade
     public double haterCost;
     public double viewRequirement;
     public string buttonText;
+    public string header;
+    public string description;
 
     public double clickMultiplier;
     public float attentionFloor;

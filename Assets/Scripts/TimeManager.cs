@@ -34,7 +34,6 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         startDate = DateTime.Now;
-        maxOfflineUpgrade += TimeSpan.FromMinutes(5);
     }
 
     void FixedUpdate()

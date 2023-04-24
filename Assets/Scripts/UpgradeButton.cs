@@ -15,6 +15,8 @@ public class UpgradeButton : MonoBehaviour
     string upgradeId;
     double followerCost;
     double haterCost;
+    string header;
+    string description;
 
     private void Start()
     {
@@ -37,7 +39,24 @@ public class UpgradeButton : MonoBehaviour
         upgradeId = upgrade.id;
         followerCost = upgrade.followerCost;
         haterCost = upgrade.haterCost;
+        header = upgrade.header;
+        description = upgrade.description;
         GetComponentInChildren<TextMeshProUGUI>().text = upgrade.buttonText;
+    }
+
+    public string getCost()
+    {
+        return followerCost.ToString();
+    }
+    
+    public string getDescription()
+    {
+        return description;
+    }
+
+    public string getHeader()
+    {
+        return header;
     }
 
     public void ButtonClicked()
