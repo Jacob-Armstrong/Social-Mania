@@ -15,11 +15,13 @@ public class NewsFeedDisplay : MonoBehaviour
     //private List<GameObject> newsStoryList = new List<GameObject>();
     public List<NewsStory> newsStoryList = new List<NewsStory>();
 
-    private float repeatDelay = 10.0f;
+    private float repeatDelay = 20.0f;
 
     public GameObject resourceObject;
     
     public GameObject profile;
+
+    private string username;
 
     // Start is called before the first frame update
     void Start()
@@ -30,65 +32,161 @@ public class NewsFeedDisplay : MonoBehaviour
         int minFollowers;
         int minAttention;
 
-        content = "This story requires no views";
+        username = "[name unknown]";
+
+        content = "New social media influencer #USERNAME# starts online career. " +
+            "\"Is this really news?\" asks expert.";
         minViews = 0.0f;
         minFollowers = 0;
         minAttention = 0;
         NewsStory s1 = new NewsStory(content, minViews, minFollowers, minAttention);
         newsStoryList.Add(s1);
 
-        content = "Minimum views 100";
-        minViews = 100.0f;
+        
+        content = "New study reports over ten thousand videos uploaded to the internet per second " +
+            "\"I don't care, I'm going to make it!\" says moron.";
+        minViews = 0.0f;
         minFollowers = 0;
         minAttention = 0;
         NewsStory s2 = new NewsStory(content, minViews, minFollowers, minAttention);
         newsStoryList.Add(s2);
 
-        content = "Minimum views 1000";
-        minViews = 1000.0f;
+        content = "BREAKING NEWS: social media influencer uploads new video.";
+        minViews = 0.0f;
         minFollowers = 0;
         minAttention = 0;
         NewsStory s3 = new NewsStory(content, minViews, minFollowers, minAttention);
         newsStoryList.Add(s3);
 
+        content = "Massively popular news website claims it has made news tickers obsolete. " +
+            "In other news, massively popular news website is wrong and stupid.";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s4 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s4);
+        
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s5 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s5);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s6 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s6);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s7 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s7);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s8 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s8);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s9 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s9);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s10 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s10);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s11 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s11);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s12 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s12);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s13 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s13);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s14 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s14);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s15 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s15);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s16 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s16);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s17 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s17);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s18 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s18);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s19 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s19);
+
+        content = "blank";
+        minViews = 0.0f;
+        minFollowers = 0;
+        minAttention = 0;
+        NewsStory s20 = new NewsStory(content, minViews, minFollowers, minAttention);
+        newsStoryList.Add(s20);
+        
+
+
+
+        // Repeating function which actually creates the news stories
         InvokeRepeating("DisplayNews", 1.0f, repeatDelay);
-
-        // Read file to determine how many news stories to make
-        //string text = textFile.text;
-        //string[] textArr = text.Split('~');
-
-        // Reference text array to display news stories
-        // Requirements to unlock are on odd numbers
-        // News story content is on the following even number
-
-
-        // Create news story objects
-        /*
-        for (int i = 1; i < textArr.Length; i+=2)
-        {
-            GameObject newText = Instantiate(newsTemplate) as GameObject;
-            newText.SetActive(false);
-            textArr[i+1] = textArr[i+1].Replace("[NAME]", "[SOMETHING_ELSE]");
-            newText.GetComponent<NewsObject>().SetRequirement(int.Parse(textArr[i]));
-            newText.GetComponent<NewsObject>().SetText(textArr[i+1]);
-
-            newText.transform.SetParent(newsTemplate.transform.parent, false);
-
-            newsStoryList.Add(newText);
-        }
-        */
-
-        // TO REFERENCE NEWS STORIES
-        // Reference a story:       newsStoryList[i]
-        // Unlock requirements:     newsStoryList[i].GetComponent<NewsObject>().GetRequirement()
-        // Display it with:         newsStoryList[i].SetActive(true)
     }
 
 
-    // *****************
-    // WORK IN PROGRESS
 
-    // Display news objects section:
     void DisplayNews()
     {
         // Create the object that will display the news story
@@ -99,8 +197,19 @@ public class NewsFeedDisplay : MonoBehaviour
         // Select a random news story (includes checking requirements)
         int storyID = SelectRandomNews();
 
+        // Replace placeholder username with actual
+        string originalText = newsStoryList[storyID].content;
+        if (profile.GetComponent<Profile>().username != "")
+        {
+            username = profile.GetComponent<Profile>().username;
+        }
+        newsStoryList[storyID].content = newsStoryList[storyID].content.Replace("#USERNAME#", username);
+
         // Set the text of the news story
         newText.GetComponent<NewsObject>().SetText(newsStoryList[storyID].content);
+
+        // Replace text with original (necessary for username to change dynamically)
+        newsStoryList[storyID].content = originalText;
 
         Debug.Log("Current views is actually: " + resourceObject.GetComponent<Resources>().views);
 
@@ -110,19 +219,18 @@ public class NewsFeedDisplay : MonoBehaviour
 
     int SelectRandomNews()
     {
-        // ****************
-        // WORK IN PROGRESS
-        // ****************
-
         // Select a random news story
         int randomID = Random.Range(1, newsStoryList.Count + 1) - 1;
         Debug.Log("Selected number: " + randomID);
-        //Debug.Log(newsStoryList[randomID].content);
 
+        // Check if the requirements are met
         if (NewsRequirementsMet(newsStoryList[randomID]) == true) {
+
+            // If yes, return the ID
             return randomID;
         }
 
+        // If not, recursively call this function again
         else {
             return SelectRandomNews();
         }
@@ -133,21 +241,15 @@ public class NewsFeedDisplay : MonoBehaviour
     // next, determine if displaying is valid
     bool NewsRequirementsMet(NewsStory thisStory)
     {
-        //int tempViews = 100;
-        //Debug.Log("tempViews is: " + tempViews);
-        //Debug.Log("thisStory minViews is: " + thisStory.minViews);
-
         double views = resourceObject.GetComponent<Resources>().views;
 
         if (views >= thisStory.minViews)
         {
-            //Debug.Log("It was true!!!");
             return true;
         }
 
         else
         {            
-            //Debug.Log("It was false");
             return false;
         }
     }
