@@ -9,7 +9,7 @@ public class Upgrade
     public string id;
     public string prereqId;
     public double followerCost;
-    public double haterCost;
+    public float attentionCost;
     public double viewRequirement;
     public string buttonText;
 

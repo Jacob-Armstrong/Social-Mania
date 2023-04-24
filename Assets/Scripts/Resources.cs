@@ -23,7 +23,6 @@ public class Resources : MonoBehaviour
     // Major Resource Variables
     public double views;
     public double followers;
-    public double haters;
     public float attention;
 
     // Attention Variables
@@ -38,7 +37,6 @@ public class Resources : MonoBehaviour
         // Initialize starting values of resource variables
         views = 0;
         followers = 0;
-        haters = 0;
         attention = 1.0f;
         attLossTimer = upgrades.attLossDelay;
     }

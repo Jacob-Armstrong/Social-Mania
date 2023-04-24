@@ -46,8 +46,7 @@ public class Upgrades : MonoBehaviour
             for(int i = 0; i < upgrades.Count; ++i)
             {
                 if (resources.views >= upgrades[i].viewRequirement &&
-                    resources.followers >= upgrades[i].followerCost/2 &&
-                    resources.haters >= upgrades[i].haterCost/2)
+                    resources.followers >= upgrades[i].followerCost/2)
                 {
                     upgradeMenu.SpawnUpgrade(upgrades[i]);
                     upgrades.RemoveAt(i);
@@ -75,7 +74,7 @@ public class Upgrades : MonoBehaviour
         LoadUpgrade(upgrade);
 
         resources.followers -= upgrade.followerCost;
-        resources.haters -= upgrade.haterCost;
+        resources.attention -= upgrade.attentionCost;
     }
 
     public List<string> GetPurchasedUpgrades()

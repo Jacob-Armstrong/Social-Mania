@@ -5827,7 +5827,7 @@ MonoBehaviour:
   - id: 1
     prereqId: 
     followerCost: 10
-    haterCost: 0
+    attentionCost: 0.5
     viewRequirement: 0
     buttonText: 10x click
     clickMultiplier: 10
@@ -5839,7 +5839,7 @@ MonoBehaviour:
   - id: 2
     prereqId: 
     followerCost: 20
-    haterCost: 0
+    attentionCost: 0
     viewRequirement: 0
     buttonText: 20x click
     clickMultiplier: 20
@@ -5851,7 +5851,7 @@ MonoBehaviour:
   - id: 3
     prereqId: 
     followerCost: 50
-    haterCost: 0
+    attentionCost: 0
     viewRequirement: 0
     buttonText: 20x click
     clickMultiplier: 20
@@ -9528,7 +9528,6 @@ MonoBehaviour:
   viewGain: 0
   views: 0
   followers: 0
-  haters: 0
   attention: 0
   attLossBase: 0.01
 --- !u!1 &2071697097
