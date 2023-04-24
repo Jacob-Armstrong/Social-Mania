@@ -107,10 +107,8 @@ public class Resources : MonoBehaviour
 
     void AttentionDecay()
     {
-        attention -= attLossBase * upgrades.attLossMultiplier;
-
-        if (attention < upgrades.attFloor)
-            attention = upgrades.attFloor;
+        if(attention > upgrades.attFloor)
+            attention -= attLossBase * upgrades.attLossMultiplier;
     }
 
     public void AddFollowersAndAttention(double followerChange, float attChange)
