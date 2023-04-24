@@ -13,6 +13,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] Stats stats;
     [SerializeField] Resources resources;
     [SerializeField] Profile profile;
+    [SerializeField] Upgrades upgrades;
     // Upgrades here
 
     /* ==== Game Objects ==== */
@@ -24,7 +25,6 @@ public class TimeManager : MonoBehaviour
     /* -- Saved Data -- */
     public DateTime startDate;
     public DateTime lastSeen;
-    public TimeSpan maxOfflineUpgrade;
 
     /* -- Calculations -- */
     public TimeSpan offlineTime;
@@ -34,7 +34,6 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         startDate = DateTime.Now;
-        maxOfflineUpgrade += TimeSpan.FromMinutes(5);
     }
 
     void FixedUpdate()
@@ -53,13 +52,13 @@ public class TimeManager : MonoBehaviour
         
         Debug.Log("Time since last save: " + timespanFormat(offlineTime)); // replace with popup
         offlineText[0].text = "You have been offline for " + timespanFormat(offlineTime) + ".";
-        offlineText[1].text = "Your max offline time is " + timespanFormat(maxOfflineUpgrade) + ".";
-        if (offlineTime > maxOfflineUpgrade)
+        offlineText[1].text = "Your max offline time is " + timespanFormat(upgrades.maxOfflineUpgrade) + ".";
+        if (offlineTime > upgrades.maxOfflineUpgrade)
         {
             offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)maxOfflineUpgrade.TotalSeconds;
             offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(maxOfflineUpgrade) + " of offline time!";
         }
-        else if (offlineTime < maxOfflineUpgrade)
+        else if (offlineTime < upgrades.maxOfflineUpgrade)
         {
             offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)offlineTime.TotalSeconds;
             offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(offlineTime) + " of offline time!";

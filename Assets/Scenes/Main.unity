@@ -4640,6 +4640,7 @@ MonoBehaviour:
   stats: {fileID: 562440738}
   resources: {fileID: 2041848749}
   profile: {fileID: 1562797024}
+  upgrades: {fileID: 1171571889}
   textTimeElapsed: {fileID: 914306806}
   offlineTimePopup: {fileID: 703295401}
   offlineText:
@@ -8999,7 +9000,7 @@ MonoBehaviour:
   - id: 1
     prereqId: 
     followerCost: 10
-    haterCost: 0
+    attentionCost: 0.5
     viewRequirement: 0
     buttonText: 10x click
     clickMultiplier: 10
@@ -9007,10 +9008,11 @@ MonoBehaviour:
     attentionLossMultiplier: 0
     attentionLossDelay: 0
     maxAttention: 0
+    maxOfflineTime: 0
   - id: 2
     prereqId: 
     followerCost: 20
-    haterCost: 0
+    attentionCost: 0
     viewRequirement: 0
     buttonText: 20x click
     clickMultiplier: 20
@@ -9018,10 +9020,11 @@ MonoBehaviour:
     attentionLossMultiplier: 0
     attentionLossDelay: 0
     maxAttention: 0
+    maxOfflineTime: 0
   - id: 3
     prereqId: 
     followerCost: 50
-    haterCost: 0
+    attentionCost: 0
     viewRequirement: 0
     buttonText: 20x click
     clickMultiplier: 20
@@ -9029,11 +9032,13 @@ MonoBehaviour:
     attentionLossMultiplier: 0
     attentionLossDelay: 0
     maxAttention: 0
+    maxOfflineTime: 0
   maxAttention: 2
   clickMultiplier: 1
   attLossMultiplier: 1
   attFloor: 0
   attLossDelay: 5
+  maxOfflineTime: 5
   d_maxAttention: 2
   d_clickMultiplier: 1
   d_attLossMultiplier: 1
@@ -15618,7 +15623,6 @@ MonoBehaviour:
   viewGain: 0
   views: 0
   followers: 0
-  haters: 0
   attention: 0
   attLossBase: 0.01
 --- !u!1 &2071697097
