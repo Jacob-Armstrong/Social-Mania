@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.Text;
+using UnityEngine.UI;
 
 public class Resources : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class Resources : MonoBehaviour
     public TextMeshProUGUI textViewsCount;
     public TextMeshProUGUI textAttentionCount;
     public TextMeshProUGUI textFollowersCount;
-    
+    public Slider slider;
+
     /* ==== Local Variables ==== */
     int tickProgress;
     [SerializeField] double viewGain;
@@ -98,6 +100,7 @@ public class Resources : MonoBehaviour
         textViewsCount.text = CalcUtils.FormatNumber(views);
         textAttentionCount.text = attention.ToString("0.00") + "x";
         textFollowersCount.text = CalcUtils.FormatNumber(followers);
+        slider.value = attention;
     }
 
     void UpdateStats()
