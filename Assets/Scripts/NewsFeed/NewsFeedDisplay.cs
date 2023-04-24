@@ -19,6 +19,7 @@ public class NewsFeedDisplay : MonoBehaviour
 
     public GameObject resourceObject;
     
+    public GameObject profile;
 
     // Start is called before the first frame update
     void Start()
@@ -169,5 +170,4 @@ public class NewsFeedDisplay : MonoBehaviour
                 minAttention = a;
         }
     }
-
 }
