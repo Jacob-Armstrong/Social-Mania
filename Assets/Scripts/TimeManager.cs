@@ -44,23 +44,24 @@ public class TimeManager : MonoBehaviour
     public void offlinePopup()
     {
         profile.disableButtons();
-        Debug.Log("We are inside offlinePopup()");
         // Calculate offline time
         offlineTime = DateTime.Now - lastSeen;
         
         // Calculate offline earnings
-        offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)offlineTime.TotalSeconds;
+        
         
         Debug.Log("Time since last save: " + timespanFormat(offlineTime)); // replace with popup
         offlineText[0].text = "You have been offline for " + timespanFormat(offlineTime) + ".";
         offlineText[1].text = "Your max offline time is " + timespanFormat(upgrades.maxOfflineUpgrade) + ".";
         if (offlineTime > upgrades.maxOfflineUpgrade)
         {
-            offlineText[2].text = "You have earned " + offlineEarnings + " views from " + timespanFormat(upgrades.maxOfflineUpgrade) + " of offline time!";
+            offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)maxOfflineUpgrade.TotalSeconds;
+            offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(maxOfflineUpgrade) + " of offline time!";
         }
         else if (offlineTime < upgrades.maxOfflineUpgrade)
         {
-            offlineText[2].text = "You have earned " + offlineEarnings + " views from " + timespanFormat(offlineTime) + " of offline time!";
+            offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)offlineTime.TotalSeconds;
+            offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(offlineTime) + " of offline time!";
         }
 
         resources.views += offlineEarnings;
