@@ -36,4 +36,9 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         TooltipPopup.hideInfo();
     }
+
+    void OnDestroy()
+    {
+        TooltipPopup.hideInfo();
+    }
 }
