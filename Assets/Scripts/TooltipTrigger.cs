@@ -3,22 +3,33 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-
-    //public TooltipPopup tooltipPopup;
+    
     UpgradeButton upgradeButton;
+    public string otherDescription;
 
     void Update()
     {
-        //tooltipPopup = GetComponent<TooltipPopup>();
-        upgradeButton = GetComponentInParent<UpgradeButton>();
+        if (GetComponentInParent<UpgradeButton>())
+        {
+            upgradeButton = GetComponentInParent<UpgradeButton>();
+        }
     }
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        TooltipPopup.displayInfo(upgradeButton);
+        if (otherDescription != "")
+        {
+            TooltipPopup.displayInfo(otherDescription);
+        }
+
+        if (upgradeButton)
+        {
+            TooltipPopup.displayInfo(upgradeButton);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

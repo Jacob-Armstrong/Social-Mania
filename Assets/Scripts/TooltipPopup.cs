@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -46,7 +47,8 @@ public class TooltipPopup : MonoBehaviour
         {
             newPos.x += rightEdgeToScreenEdgeDistance;
         }
-
+        */
+        
         float leftEdgeToScreenEdgeDistance = 0 - (newPos.x - popupObject.rect.width * popupCanvas.scaleFactor / 2) + padding;
         if (leftEdgeToScreenEdgeDistance > 0)
         {
@@ -58,7 +60,7 @@ public class TooltipPopup : MonoBehaviour
         {
             newPos.y += topEdgeToScreenEdgeDistance;
         }
-        */
+        
 
         popupObject.transform.position = newPos;
     }
@@ -71,6 +73,13 @@ public class TooltipPopup : MonoBehaviour
         sb.Append(upgradeButton.getTooltipInfoText());
         tooltipPopup.infoText.text = sb.ToString();
 
+        tooltipPopup.popupCanvasObject.SetActive(true);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(tooltipPopup.popupObject);
+    }
+
+    public static void displayInfo(string buttonDescription)
+    {
+        tooltipPopup.infoText.text = buttonDescription;
         tooltipPopup.popupCanvasObject.SetActive(true);
         LayoutRebuilder.ForceRebuildLayoutImmediate(tooltipPopup.popupObject);
     }
