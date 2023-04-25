@@ -9002,7 +9002,7 @@ MonoBehaviour:
     prereqId: 
     followerCost: 0
     attentionCost: 2
-    viewRequirement: 0
+    viewRequirement: 10
     buttonText: Offline Time 1
     clickMultiplier: 0
     attentionFloor: 0
@@ -9014,7 +9014,7 @@ MonoBehaviour:
     prereqId: offline_time_1
     followerCost: 0
     attentionCost: 3.5
-    viewRequirement: 0
+    viewRequirement: 25
     buttonText: Offline Time 2
     clickMultiplier: 0
     attentionFloor: 0
@@ -9026,7 +9026,7 @@ MonoBehaviour:
     prereqId: offline_time_2
     followerCost: 0
     attentionCost: 3.5
-    viewRequirement: 0
+    viewRequirement: 100
     buttonText: Offline Time 3
     clickMultiplier: 0
     attentionFloor: 0

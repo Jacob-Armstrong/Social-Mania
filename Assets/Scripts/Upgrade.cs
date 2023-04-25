@@ -17,6 +17,6 @@ public class Upgrade
     public float attentionFloor;
     public float attentionLossMultiplier;
     public float attentionLossDelay;
-    public float maxAttention;
+    public double maxAttention;
     public int maxOfflineTime;
 }

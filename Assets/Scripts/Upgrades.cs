@@ -87,12 +87,12 @@ public class Upgrades : MonoBehaviour
 
     private void LoadUpgrade(Upgrade upgrade)
     {
-        maxAttention = upgrade.maxAttention;
-        clickMultiplier = upgrade.clickMultiplier;
-        attLossMultiplier = upgrade.attentionLossMultiplier;
-        attLossDelay = upgrade.attentionLossDelay;
-        attFloor = upgrade.attentionFloor;
-        maxOfflineTime = upgrade.maxOfflineTime;
+        maxAttention = Math.Max(upgrade.maxAttention, maxAttention);
+        clickMultiplier = Math.Max(upgrade.clickMultiplier, clickMultiplier);
+        attLossMultiplier = Mathf.Min(upgrade.attentionLossMultiplier, attLossMultiplier);
+        attLossDelay = Mathf.Max(upgrade.attentionLossDelay, attLossDelay);
+        attFloor = Mathf.Max(upgrade.attentionFloor, attFloor);
+        maxOfflineTime = Mathf.Max(upgrade.maxOfflineTime, maxOfflineTime);
 
         if (upgrade.maxOfflineTime > 0)
             maxOfflineUpgrade = TimeSpan.FromMinutes(maxOfflineTime);
