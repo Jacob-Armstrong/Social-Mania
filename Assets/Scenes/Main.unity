@@ -4065,9 +4065,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1247.8307, y: 733.1428}
+  m_AnchoredPosition: {x: -1259.6825, y: 738.2222}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: -0.14991182, y: 1.2194357}
+  m_Pivot: {x: -0.15608466, y: 1.2241379}
 --- !u!114 &607684532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4085,7 +4085,7 @@ MonoBehaviour:
   costText: {fileID: 1071444182}
   layoutElement: {fileID: 607684533}
   rectTransform: {fileID: 607684531}
-  tooltip: {fileID: 0}
+  tooltip: {fileID: 607684530}
 --- !u!114 &607684533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7489,13 +7489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2549e939671b7584d87cd9a591169e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionText: 'This cool new upgrade does something crazy! You''d never see
-    it coming.
-
-
-    Cost: 100 followers, 1.5x attention'
-  waitTime: 0.05
-  hovering: 0
 --- !u!114 &995646505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9212,7 +9205,7 @@ GameObject:
   - component: {fileID: 1164639174}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12625,9 +12618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2549e939671b7584d87cd9a591169e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  descriptionText: The settings menu!
-  waitTime: 0.05
-  hovering: 0
 --- !u!1 &1579394484
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,8 @@ public class Tooltip : MonoBehaviour
 
     public GameObject tooltip;
 
+    Vector2 position;
+
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -26,21 +28,7 @@ public class Tooltip : MonoBehaviour
     
     void Update()
     {
-        /*if (Application.isEditor)
-        {
-            int headerLength = headerText.text.Length;
-            int contentLength = contentText.text.Length;
-            int costLength = costText.text.Length;
-
-            layoutElement.enabled =
-                (headerLength > characterWrapLimit || contentLength > characterWrapLimit ||
-                 costLength > characterWrapLimit)
-                    ? true
-                    : false;
-        }
-        */
-
-        Vector2 position = Input.mousePosition;
+        position = Input.mousePosition;
 
         float pivotX = position.x / Screen.width;
         float pivotY = position.y / Screen.height;
@@ -78,10 +66,6 @@ public class Tooltip : MonoBehaviour
         int costLength = costText.text.Length;
 
         layoutElement.enabled = Math.Max(headerText.preferredWidth, contentText.preferredWidth) >= layoutElement.preferredWidth;
-
-        tooltip = this.gameObject;
-        tooltip.SetActive(true);
-
 
     }
 }

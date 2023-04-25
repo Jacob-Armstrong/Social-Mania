@@ -21,12 +21,11 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         upgrade = GetComponentInParent<UpgradeButton>();
         if (upgrade)
-        {
-            
+        { 
+            cost = "Cost: " + upgrade.getCost() + " followers";
+            content = upgrade.getDescription();
+            header = upgrade.getHeader();
         }
-        cost = "Cost: " + upgrade.getCost() + " followers";
-        content = upgrade.getDescription();
-        header = upgrade.getHeader();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
