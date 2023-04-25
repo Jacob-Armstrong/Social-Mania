@@ -98,6 +98,7 @@ public class Resources : MonoBehaviour
         textViewsCount.text = CalcUtils.FormatNumber(views);
         textAttentionCount.text = attention.ToString("0.00") + "x";
         textFollowersCount.text = CalcUtils.FormatNumber(followers);
+        slider.maxValue = (float)upgrades.maxAttention;
         slider.value = attention;
     }
 

@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UpgradeButton : MonoBehaviour
 {
@@ -14,6 +17,10 @@ public class UpgradeButton : MonoBehaviour
 
     double followerCost;
     double attentionCost;
+
+    string header;
+    string description;
+    string cost;
 
     private void Start()
     {
@@ -40,6 +47,53 @@ public class UpgradeButton : MonoBehaviour
         followerCost = upgrade.followerCost;
         attentionCost = upgrade.attentionCost;
         GetComponentInChildren<TextMeshProUGUI>().text = upgrade.buttonText;
+
+        header = upgrade.header;
+        description = upgrade.description;
+        cost = upgrade.optionalCostText;
+
+        if (cost == "")
+        { 
+            cost = costString();
+        }
+    }
+
+    string costString()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.Append("Cost: ");
+
+        if (followerCost != 0)
+        {
+            sb.Append(followerCost).Append(" followers");
+        }
+
+        // Implement when more costs
+        /*
+        if (attentionCost != 0)
+        {
+            if (followerCost != 0)
+            {
+                sb.Append(", ");
+            }
+
+            sb.Append(attentionCost).Append("x attention");
+        }
+        */
+
+        return sb.ToString();
+    }
+
+    public string getTooltipInfoText()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.Append(header).AppendLine();
+        sb.Append(description).AppendLine().AppendLine();
+        sb.Append(cost).AppendLine();
+
+        return sb.ToString();
     }
 
     public void ButtonClicked()
@@ -47,4 +101,5 @@ public class UpgradeButton : MonoBehaviour
         upgrades.PurchaseUpgrade(upgrade);
         Destroy(gameObject);
     }
+    
 }

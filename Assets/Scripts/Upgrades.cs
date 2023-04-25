@@ -22,7 +22,7 @@ public class Upgrades : MonoBehaviour
     [HideInInspector] public float attFloor = 0;
     [HideInInspector] public float attLossDelay = 5f; // Idle time in seconds before attention starts to drop off
     [HideInInspector] public int maxOfflineTime = 5;
-    [HideInInspector] public TimeSpan maxOfflineUpgrade = TimeSpan.FromMinutes(0);
+    [HideInInspector] public TimeSpan maxOfflineUpgrade = TimeSpan.Zero;
 
     /* ==== Default Stats ==== */
     public double d_maxAttention = 2.0d;
