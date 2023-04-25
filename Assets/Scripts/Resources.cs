@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using System.Text;
+using UnityEngine.UI;
 
 public class Resources : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class Resources : MonoBehaviour
     public TextMeshProUGUI textViewsCount;
     public TextMeshProUGUI textAttentionCount;
     public TextMeshProUGUI textFollowersCount;
-    
+    public Slider slider;
+
     /* ==== Local Variables ==== */
     int tickProgress;
     [SerializeField] double viewGain;
@@ -23,7 +25,6 @@ public class Resources : MonoBehaviour
     // Major Resource Variables
     public double views;
     public double followers;
-    public double haters;
     public float attention;
 
     // Attention Variables
@@ -38,7 +39,6 @@ public class Resources : MonoBehaviour
         // Initialize starting values of resource variables
         views = 0;
         followers = 0;
-        haters = 0;
         attention = 1.0f;
         attLossTimer = upgrades.attLossDelay;
     }
@@ -98,6 +98,7 @@ public class Resources : MonoBehaviour
         textViewsCount.text = CalcUtils.FormatNumber(views);
         textAttentionCount.text = attention.ToString("0.00") + "x";
         textFollowersCount.text = CalcUtils.FormatNumber(followers);
+        slider.value = attention;
     }
 
     void UpdateStats()
@@ -107,10 +108,8 @@ public class Resources : MonoBehaviour
 
     void AttentionDecay()
     {
-        attention -= attLossBase * upgrades.attLossMultiplier;
-
-        if (attention < upgrades.attFloor)
-            attention = upgrades.attFloor;
+        if(attention > upgrades.attFloor)
+            attention -= attLossBase * upgrades.attLossMultiplier;
     }
 
     public void AddFollowersAndAttention(double followerChange, float attChange)

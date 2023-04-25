@@ -19,4 +19,5 @@ public class Stats : MonoBehaviour
     public int lifetimeViews;
     
     public int numClicks;
+    public int totalNumUpgrades;
 }
