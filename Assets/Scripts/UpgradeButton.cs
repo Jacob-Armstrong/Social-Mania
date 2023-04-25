@@ -15,9 +15,8 @@ public class UpgradeButton : MonoBehaviour
     Upgrades upgrades;
     Upgrade upgrade;
 
-    string upgradeId;
     double followerCost;
-    double haterCost;
+    double attentionCost;
 
     string header;
     string description;
@@ -32,18 +31,20 @@ public class UpgradeButton : MonoBehaviour
 
     private void Update()
     {
-        if(!button.interactable && followerCost <= resources.followers && haterCost <= resources.haters)
+        if(!button.interactable && followerCost <= resources.followers && attentionCost <= resources.attention)
         {
             button.interactable = true;
+        }
+        else if(button.interactable && (followerCost > resources.followers || attentionCost > resources.attention))
+        {
+            button.interactable = false;
         }
     }
 
     public void Initialize(Upgrade _upgrade)
     {
         upgrade = _upgrade;
-        upgradeId = upgrade.id;
         followerCost = upgrade.followerCost;
-        haterCost = upgrade.haterCost;
         GetComponentInChildren<TextMeshProUGUI>().text = upgrade.buttonText;
 
         header = upgrade.header;
