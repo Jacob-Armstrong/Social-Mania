@@ -20,6 +20,7 @@ public class Profile : MonoBehaviour
     /* -- Scenes -- */
     public GameObject mainScene;
     public GameObject profileScene;
+    public GameObject settingsScene;
     
     /* -- Popups -- */
     public GameObject authPopup;
@@ -76,6 +77,7 @@ public class Profile : MonoBehaviour
     public void returnToMain()
     {
         profileScene.SetActive(false);
+        settingsScene.SetActive(false);
         mainScene.SetActive(true);
     }
 

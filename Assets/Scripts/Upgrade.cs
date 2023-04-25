@@ -13,6 +13,13 @@ public class Upgrade
     public double viewRequirement;
     public string buttonText;
 
+    [TextArea]
+    public string header;
+    [TextArea]
+    public string description;
+    [TextArea] 
+    public string optionalCostText;
+
     public double clickMultiplier;
     public float attentionFloor;
     public float attentionLossMultiplier;

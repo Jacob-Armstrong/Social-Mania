@@ -48,25 +48,29 @@ public class TimeManager : MonoBehaviour
         offlineTime = DateTime.Now - lastSeen;
         
         // Calculate offline earnings
-        
-        
-        Debug.Log("Time since last save: " + timespanFormat(offlineTime)); // replace with popup
-        offlineText[0].text = "You have been offline for " + timespanFormat(offlineTime) + ".";
-        offlineText[1].text = "Your max offline time is " + timespanFormat(upgrades.maxOfflineUpgrade) + ".";
-        if (offlineTime > upgrades.maxOfflineUpgrade)
-        {
-            offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)upgrades.maxOfflineUpgrade.TotalSeconds;
-            offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(upgrades.maxOfflineUpgrade) + " of offline time!";
-        }
-        else if (offlineTime < upgrades.maxOfflineUpgrade)
-        {
-            offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)offlineTime.TotalSeconds;
-            offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(offlineTime) + " of offline time!";
-        }
 
-        resources.views += offlineEarnings;
+        if (upgrades.maxOfflineUpgrade.TotalSeconds > 0)
+        {
+            Debug.Log("Time since last save: " + timespanFormat(offlineTime)); // replace with popup
+            offlineText[0].text = "You have been offline for " + timespanFormat(offlineTime) + ".";
+            offlineText[1].text = "Your max offline time is " + timespanFormat(upgrades.maxOfflineUpgrade) + ".";
+            if (offlineTime > upgrades.maxOfflineUpgrade)
+            {
+                offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)upgrades.maxOfflineUpgrade.TotalSeconds;
+                offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(upgrades.maxOfflineUpgrade) + " of offline time!";
+            }
+            else if (offlineTime < upgrades.maxOfflineUpgrade)
+            {
+                offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)offlineTime.TotalSeconds;
+                offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(offlineTime) + " of offline time!";
+            }
+
+            resources.views += offlineEarnings;
         
-        offlineTimePopup.SetActive(true);
+            offlineTimePopup.SetActive(true);
+        }
+        
+        
         // you have been offline for {2 hours, 10 minutes, 15 seconds}
         // your max offline upgrade is {30 minutes}
         // you have earned {40,293} views from {30 minutes} of offline time!
