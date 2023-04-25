@@ -1,49 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [TextArea]
-    public string header;
-    [TextArea]
-    public string content;
-    [TextArea]
-    public string cost;
 
-    UpgradeButton upgrade;
-
-    float delay = 0.5f;
+    //public TooltipPopup tooltipPopup;
+    UpgradeButton upgradeButton;
 
     void Update()
     {
-        upgrade = GetComponentInParent<UpgradeButton>();
-        if (upgrade)
-        { 
-            cost = "Cost: " + upgrade.getCost() + " followers";
-            content = upgrade.getDescription();
-            header = upgrade.getHeader();
-        }
+        //tooltipPopup = GetComponent<TooltipPopup>();
+        upgradeButton = GetComponentInParent<UpgradeButton>();
     }
-
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //StopAllCoroutines();
-        //StartCoroutine(timer());
-        TooltipSystem.Show(content, cost, header);
+        TooltipPopup.displayInfo(upgradeButton);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //StopAllCoroutines();
-        TooltipSystem.Hide();
-    }
-
-    IEnumerator timer()
-    {
-        yield return new WaitForSeconds(delay);
-        TooltipSystem.Show(content, cost, header);
+        TooltipPopup.hideInfo();
     }
 }
