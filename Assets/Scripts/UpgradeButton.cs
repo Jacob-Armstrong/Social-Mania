@@ -69,8 +69,7 @@ public class UpgradeButton : MonoBehaviour
             sb.Append(followerCost).Append(" followers");
         }
 
-        // Implement when more costs
-        /*
+        
         if (attentionCost != 0)
         {
             if (followerCost != 0)
@@ -80,7 +79,6 @@ public class UpgradeButton : MonoBehaviour
 
             sb.Append(attentionCost).Append("x attention");
         }
-        */
 
         return sb.ToString();
     }

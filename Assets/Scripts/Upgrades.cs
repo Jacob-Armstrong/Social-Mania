@@ -24,6 +24,7 @@ public class Upgrades : MonoBehaviour
     [HideInInspector] public int maxOfflineTime = 5;
     [HideInInspector] public TimeSpan maxOfflineUpgrade = TimeSpan.Zero;
     [HideInInspector] public TimeSpan eventTime = TimeSpan.FromSeconds(60);
+    [HideInInspector] public int eventChance = 75;
 
     /* ==== Default Stats ==== */
     public double d_maxAttention = 2.0d;
@@ -71,6 +72,7 @@ public class Upgrades : MonoBehaviour
         attLossDelay = d_attLossDelay;
         maxOfflineTime = d_maxOfflineTime;
         maxOfflineUpgrade = TimeSpan.FromMinutes(maxOfflineTime);
+        eventChance = 75;
     }
 
     public void PurchaseUpgrade(Upgrade upgrade)

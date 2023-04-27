@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class RandomEvents : MonoBehaviour
 {
-
-    int chance = 75;
-
     public Upgrades upgrades;
     void Start()
     {
-        //StartCoroutine(collabEvent());
+        StartCoroutine(collabEvent());
     }
 
     IEnumerator collabEvent()
@@ -18,20 +15,21 @@ public class RandomEvents : MonoBehaviour
         while (true)
         {
             eventPopup();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds((int)upgrades.eventTime.TotalSeconds);
         }
     }
 
     void eventPopup()
     {
+        Debug.Log("Event chance: " + upgrades.eventChance);
         int roll = Random.Range(0, 100);
-        if (roll < chance)
+        if (roll < upgrades.eventChance)
         {
-            Debug.Log("75% chance success! Value: " + roll + ". Chance floor: " + chance);
+            Debug.Log("75% chance success! Value: " + roll + ". Chance floor: " + upgrades.eventChance);
         }
         else
         {
-            Debug.Log("Failed. Value: " + roll + ". Chance floor: " + chance);
+            Debug.Log("Failed. Value: " + roll + ". Chance floor: " + upgrades.eventChance);
         }
     }
 }
