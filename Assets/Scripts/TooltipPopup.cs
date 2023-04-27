@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +15,7 @@ public class TooltipPopup : MonoBehaviour
     public TextMeshProUGUI infoText;
     public Vector3 offset;
     public float padding;
-    
+
     Canvas popupCanvas;
 
     static TooltipPopup tooltipPopup;
@@ -88,4 +89,5 @@ public class TooltipPopup : MonoBehaviour
     {
         tooltipPopup.popupCanvasObject.SetActive(false);
     }
+
 }

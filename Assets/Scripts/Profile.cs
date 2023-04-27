@@ -67,6 +67,7 @@ public class Profile : MonoBehaviour
         // Change scenes
         mainScene.SetActive(false);
         profileScene.SetActive(true);
+        enableButtons();
         if (dataManager.userAuth == "")
         {
             usernameInput.gameObject.SetActive(false);
