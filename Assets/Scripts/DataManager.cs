@@ -53,8 +53,9 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public void quitWithoutSave()
+    public void saveAndQuit()
     {
+        save();
         Application.Quit();
     }
     
