@@ -15,6 +15,7 @@ public class Profile : MonoBehaviour
     [SerializeField] Resources resources;
     [SerializeField] Upgrades upgrades;
     [SerializeField] DataManager dataManager;
+    [SerializeField] RandomEvents randomEvents;
     
     /* ==== Game Objects ==== */
     /* -- Scenes -- */
@@ -67,6 +68,7 @@ public class Profile : MonoBehaviour
         // Change scenes
         mainScene.SetActive(false);
         profileScene.SetActive(true);
+        randomEvents.declineCollab();
         enableButtons();
         if (dataManager.userAuth == "")
         {
