@@ -9,13 +9,21 @@ public class Upgrade
     public string id;
     public string prereqId;
     public double followerCost;
-    public double haterCost;
+    public float attentionCost;
     public double viewRequirement;
     public string buttonText;
+
+    [TextArea]
+    public string header;
+    [TextArea]
+    public string description;
+    [TextArea] 
+    public string optionalCostText;
 
     public double clickMultiplier;
     public float attentionFloor;
     public float attentionLossMultiplier;
     public float attentionLossDelay;
-    public float maxAttention;
+    public double maxAttention;
+    public int maxOfflineTime;
 }

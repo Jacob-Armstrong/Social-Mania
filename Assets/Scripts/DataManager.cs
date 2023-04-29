@@ -53,8 +53,9 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public void quitWithoutSave()
+    public void saveAndQuit()
     {
+        save();
         Application.Quit();
     }
     
@@ -141,11 +142,8 @@ public class DataManager : MonoBehaviour
         UserData response = new UserData();
         JsonUtility.FromJsonOverwrite(json, response);
 
-        Debug.Log("Response username: " + response.username);
         profile.username = response.username;
-        Debug.Log("Response followers: " + response.followers);
         resources.followers = response.followers;
-        Debug.Log("Loaded followers: " + resources.followers);
         resources.views = response.lifetimeViews;
         stats.numClicks = response.numClicks;
         upgrades.LoadPurchasedUpgrades(response.upgradesPurchased);
@@ -154,7 +152,6 @@ public class DataManager : MonoBehaviour
 
         // Calculate offline time, display relevant offline info
         timeManager.offlinePopup();
-        Debug.Log("Offline stuff done!");
     }
 
     // Load data from database, deconstruct response into saved data
@@ -174,9 +171,7 @@ public class DataManager : MonoBehaviour
             Debug.Log("Load successful.");
 
             // Load all information from database response (UserData class) into relevant player sources
-            Debug.Log("Response username: " + response.username);
             profile.username = response.username;
-            Debug.Log("Response followers: " + response.followers);
             resources.followers = response.followers;
             resources.views = response.lifetimeViews;
             stats.numClicks = response.numClicks;
@@ -186,7 +181,6 @@ public class DataManager : MonoBehaviour
 
             // Calculate offline time, display relevant offline info
             timeManager.offlinePopup();
-            Debug.Log("Offline stuff done!");
 
             profile.usernameInput.gameObject.SetActive(true);
             profile.submitUsernameButton.gameObject.SetActive(true);
