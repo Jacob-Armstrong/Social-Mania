@@ -10372,9 +10372,9 @@ MonoBehaviour:
   d_attFloor: 0
   d_attLossDelay: 5
   d_maxOfflineTime: 0
-  d_eventChance: 100
+  d_eventChance: 50
   d_successChance: 50
-  d_eventGainMultiplier: 0.5
+  d_eventGainMultiplier: 0.15
   d_eventLossMultiplier: 0.15
 --- !u!1 &1178021965
 GameObject:
@@ -13575,6 +13575,7 @@ MonoBehaviour:
   resources: {fileID: 2041848749}
   upgrades: {fileID: 1171571889}
   dataManager: {fileID: 708225160}
+  randomEvents: {fileID: 593223587}
   mainScene: {fileID: 1603022445}
   profileScene: {fileID: 1454000343}
   settingsScene: {fileID: 252787346}
