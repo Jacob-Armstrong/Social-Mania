@@ -1,7 +1,8 @@
 # Social Mania
+### A social media simulator!
 
-Tentative plan:
-* Idle game
-* Followers/haters mechanic used to gain views
-* Attention multiplier based on active gameplay
-* Views used to unlock tiers(?) of upgrades
+###Features:
+* "Post" to gain followers and maintain attention to gain views
+* Buy upgrades to improve your setup, gain more followers and more
+* Improve your selection of upgrades by gaining more views
+* Play the game from anywhere with Google sign in
