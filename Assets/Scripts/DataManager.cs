@@ -218,7 +218,7 @@ public class DataManager : MonoBehaviour
 
             for (int i = 0; i < 10; i++)
             {
-                profile.leaderboardPositions[i].text = userList[i].username + " - " + (int)userList[i].lifetimeViews + " views";
+                profile.leaderboardPositions[i].text = userList[i].username + " - " + CalcUtils.FormatNumber((int)userList[i].lifetimeViews) + " views";
             }
         });
     }
