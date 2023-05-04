@@ -22,6 +22,7 @@ public class Upgrades : MonoBehaviour
     [HideInInspector] public float attLossMultiplier = 1f;
     [HideInInspector] public float attFloor = 0;
     [HideInInspector] public float attLossDelay = 5f; // Idle time in seconds before attention starts to drop off
+    [HideInInspector] public float viewMultiplier = 1f; // Idle time in seconds before attention starts to drop off
     
     /* --- Offline time --- */
     [HideInInspector] public int maxOfflineTime = 5;
@@ -41,6 +42,7 @@ public class Upgrades : MonoBehaviour
     public float d_attFloor = 0;
     public float d_attLossDelay = 5f;
     public int d_maxOfflineTime = 0;
+    public int d_viewMultiplier = 1;
     public int d_eventChance = 100;
     public int d_successChance = 50;
     public double d_eventGainMultiplier = 0.50;
@@ -49,6 +51,11 @@ public class Upgrades : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        for(int i = 0; i < upgradeList.Count; ++i)
+        {
+            upgradeList[i].Initialize();
+        }
+
         upgrades = new List<Upgrade>(upgradeList);
         InitializeStats();
         StartCoroutine(UpdateUpgradeMenu());
@@ -84,6 +91,7 @@ public class Upgrades : MonoBehaviour
         attLossDelay = d_attLossDelay;
         maxOfflineTime = d_maxOfflineTime;
         maxOfflineUpgrade = TimeSpan.FromMinutes(maxOfflineTime);
+        viewMultiplier = d_viewMultiplier;
         eventChance = d_eventChance;
         successChance = d_successChance;
         eventGainMultiplier = d_eventGainMultiplier;
@@ -111,6 +119,7 @@ public class Upgrades : MonoBehaviour
         attLossDelay = Mathf.Max(upgrade.attentionLossDelay, attLossDelay);
         attFloor = Mathf.Max(upgrade.attentionFloor, attFloor);
         maxOfflineTime = Mathf.Max(upgrade.maxOfflineTime, maxOfflineTime);
+        viewMultiplier = Mathf.Max(upgrade.viewMultiplier, viewMultiplier);
 
         if (upgrade.maxOfflineTime > 0)
             maxOfflineUpgrade = TimeSpan.FromMinutes(maxOfflineTime);
