@@ -852,7 +852,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 720450040}
+<<<<<<< HEAD
   m_RootOrder: 9
+=======
+  m_RootOrder: 8
+>>>>>>> parent of cf63d33 (added assets)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6416,6 +6420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 562440738}
   mainButton: {fileID: 995646500}
+<<<<<<< HEAD
 --- !u!114 &854232472 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1835799315597971304, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
@@ -6427,6 +6432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of cf63d33 (added assets)
 --- !u!1 &857644776
 GameObject:
   m_ObjectHideFlags: 0
@@ -10210,6 +10217,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202748770}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!114 &1203669157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1835799314924938999, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
@@ -10221,6 +10229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of cf63d33 (added assets)
 --- !u!1 &1210848702
 GameObject:
   m_ObjectHideFlags: 0
@@ -13465,7 +13475,10 @@ RectTransform:
   - {fileID: 1456912080}
   - {fileID: 1759115021}
   - {fileID: 1642659092}
+<<<<<<< HEAD
   - {fileID: 1083432711}
+=======
+>>>>>>> parent of cf63d33 (added assets)
   m_Father: {fileID: 720450040}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
