@@ -9368,6 +9368,132 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 4
+  - id: max_attention_1
+    prereqId: 
+    buttonText: Max Attention 1
+    followerCostStr: 0
+    viewRequirementStr: 0
+    attentionCost: 2
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Max Attention: 2.5</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 2.5
+    maxOfflineTime: 0
+    viewMultiplier: 0
+  - id: max_attention_2
+    prereqId: max_attention_1
+    buttonText: Max Attention 2
+    followerCostStr: 0
+    viewRequirementStr: 0
+    attentionCost: 2.5
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Max Attention: 3</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 3
+    maxOfflineTime: 0
+    viewMultiplier: 0
+  - id: max_attention_3
+    prereqId: max_attention_2
+    buttonText: Max Attention 3
+    followerCostStr: 0
+    viewRequirementStr: 0
+    attentionCost: 3
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Max Attention: 3.5</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 3.5
+    maxOfflineTime: 0
+    viewMultiplier: 0
+  - id: attention_floor_1
+    prereqId: 
+    buttonText: Attention Floor 1
+    followerCostStr: 1k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Floor: 0.5</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0.5
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+  - id: attention_floor_2
+    prereqId: attention_floor_1
+    buttonText: Attention Floor 2
+    followerCostStr: 10k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Floor: 1</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 1
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+  - id: attention_floor_3
+    prereqId: attention_floor_2
+    buttonText: Attention Floor 3
+    followerCostStr: 50k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Floor: 1</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 1.5
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+  - id: attention_floor_4
+    prereqId: attention_floor_3
+    buttonText: Attention Floor 4
+    followerCostStr: 100k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Floor: 2</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 2
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
   maxAttention: 2
   clickMultiplier: 1
   attLossMultiplier: 1
