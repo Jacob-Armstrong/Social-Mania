@@ -9706,7 +9706,7 @@ MonoBehaviour:
     attentionFloor: 0
     attentionLossMultiplier: 0
     attentionLossDelay: 0
-    maxAttention: 0
+    maxAttention: 3
     maxOfflineTime: 0
   - id: 2
     prereqId: 
@@ -17402,6 +17402,30 @@ PrefabInstance:
     - target: {fileID: 1835799314893112797, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835799314929528942, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 593223587}
+    - target: {fileID: 1835799314929528942, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: acceptCollab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835799315358284724, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 593223587}
+    - target: {fileID: 1835799315358284724, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: declineCollab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835799315738263606, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 593223587}
+    - target: {fileID: 1835799315738263606, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: declineCollab
       objectReference: {fileID: 0}
     - target: {fileID: 1835799316581574959, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
       propertyPath: m_AnchorMax.y
