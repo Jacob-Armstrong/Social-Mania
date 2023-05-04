@@ -18843,10 +18843,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e0464d1f7587381927105ab7745552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefab: {fileID: 0}
   chatPanel: {fileID: 4834439846947545287}
   textObject: {fileID: 4834439846321491167}
-  profile: {fileID: 0}
+  profile: {fileID: 1562797022}
   chatListTextMesh: []
   textMeshProObject: {fileID: 4834439846321491161}
 --- !u!4 &4834439847884774023

@@ -9,20 +9,15 @@ using TMPro;
 
 public class ChatBox : MonoBehaviour
 {
-    private Resources resources;
+    private Resources resources; //for calling global variables
 
-    [SerializeField]
-    private GameObject buttonPrefab;
-
-    private string commentsFile = "comments.txt";
-
-    private int chatMax = 50;
-    public GameObject chatPanel, textObject;
-    private double viewGate = 0;
-    private int viewGateTier = 0;
-    private string[] comments;
-    private string username;
-    public GameObject profile;
+    private int chatMax = 50; //max strings in list
+    public GameObject chatPanel, textObject; //chatbox and text
+    private double viewGate = 0; //gating based on current view amount
+    private int viewGateTier = 0; //determining tier condition
+    private string[] comments; //array of possible comment output from file
+    private string usernameReplace; //username holder
+    public GameObject profile; //for obtaining username
 
     [SerializeField]
     List<MessageTextMesh> chatListTextMesh = new List<MessageTextMesh>();
@@ -33,7 +28,7 @@ public class ChatBox : MonoBehaviour
     void Start()
     {
         resources = new Resources();
-        username = "[name unknown]";
+        usernameReplace = "[name unknown]";
         viewGate = resources.views;
         if(viewGate < 100000)
         {
@@ -93,13 +88,21 @@ public class ChatBox : MonoBehaviour
         while (true)
         {
             resources = new Resources();
-            float waitTime = (UnityEngine.Random.Range(5f, 30f)/(0.8f + resources.attention));
+
+            //function timer
+            //float waitTime = ((UnityEngine.Random.Range(3f, 7f) - resources.attention )/(0.8f + resources.attention * resources.attention));
+            float waitTime = UnityEngine.Random.Range(0.1f, 3f);
+            
             //randomly select a string from list of strings
             string comment = comments[UnityEngine.Random.Range(0, comments.Length)];
             
-
+            //call function for comment posting
             AddChatTextMesh(comment);
+
+            //check changes to View gate conditions
             changeViewGate();
+
+            //repeat after calculated timer
             yield return new WaitForSeconds(waitTime);
         }
     }
@@ -117,14 +120,16 @@ public class ChatBox : MonoBehaviour
         // Create a new Message object to hold the new comment's information
         MessageTextMesh newComment = new MessageTextMesh();
 
+        
         if (profile.GetComponent<Profile>().username != "")
         {
-            username = profile.GetComponent<Profile>().username;
+            usernameReplace = profile.GetComponent<Profile>().username;
         }
+        
 
         // Set the text of the new comment
         //newComment.text = commentText;
-        newComment.text = commentText.Replace("#USERNAME#", username);
+        newComment.text = commentText.Replace("#USERNAME#", usernameReplace);
 
         // Instantiate a new text object using the TextMeshProUGUI object
         TextMeshProUGUI newTextMesh = Instantiate(textMeshProObject, chatPanel.transform);
@@ -137,8 +142,22 @@ public class ChatBox : MonoBehaviour
 
         // Add the new comment to the chat list
         chatListTextMesh.Add(newComment);
-    }
 
+        // Add a button component to the new text object
+        Button button = newTextMesh.gameObject.AddComponent<Button>();
+
+        // Add an event listener to the button component that listens for the click event
+        button.onClick.AddListener(() =>
+        {
+            // Perform the action you want to perform when the text is clicked
+            //Debug.Log("TextMeshPro object clicked!");
+
+            newComment.text = "<User banned>";
+
+            // Set the text of the new text object to the text of the new comment
+            newComment.textObject.text = newComment.text;
+        });
+    }
 
     private void changeViewGate()
     {
