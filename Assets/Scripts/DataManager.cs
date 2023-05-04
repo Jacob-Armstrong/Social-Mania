@@ -34,7 +34,7 @@ public class DataManager : MonoBehaviour
     public string userAuth;
     bool signedIn; // get rid of this and the implementation in save() when local save is implemented
 
-    List<UserData> loadedUserList;
+    public List<UserData> loadedUserList;
 
     void Awake()
     {
@@ -53,8 +53,9 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public void quitWithoutSave()
+    public void saveAndQuit()
     {
+        save();
         Application.Quit();
     }
     
@@ -215,14 +216,9 @@ public class DataManager : MonoBehaviour
             List<UserData> userList = usersDict.Values.ToList().OrderByDescending(userData => userData.lifetimeViews).ToList();
             loadedUserList = userList; // store this info somewhere so we don't have to keep calling the database!
 
-            /* for (int i = 0; i < userList.Count(); i++)
-            {
-                Debug.Log(i+1 + ": " + userList[i].username + " - " + (int)userList[i].lifetimeViews + " lifetime views");
-            } */
-
             for (int i = 0; i < 10; i++)
             {
-                profile.leaderboardPositions[i].text = /*i + 1 + ": " +*/ userList[i].username + " - " + (int)userList[i].lifetimeViews + " views";
+                profile.leaderboardPositions[i].text = userList[i].username + " - " + (int)userList[i].lifetimeViews + " views";
             }
         });
     }
