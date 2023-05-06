@@ -25,8 +25,8 @@ public class Upgrades : MonoBehaviour
     [HideInInspector] public float viewMultiplier = 1f; // Idle time in seconds before attention starts to drop off
     
     /* --- Offline time --- */
-    [HideInInspector] public int maxOfflineTime = 5;
-    [HideInInspector] public TimeSpan maxOfflineUpgrade = TimeSpan.Zero;
+    [HideInInspector] public int maxOfflineTime;
+    [HideInInspector] public TimeSpan maxOfflineUpgrade = TimeSpan.FromMinutes(1);
     
     /* --- Collab events --- */
     [HideInInspector] public TimeSpan eventTime = TimeSpan.FromSeconds(60);
