@@ -9523,19 +9523,55 @@ MonoBehaviour:
     viewMultiplier: 0
   - id: attention_loss_delay_2
     prereqId: attention_loss_delay_1
-    buttonText: Attention Loss Delay 1
-    followerCostStr: 500
+    buttonText: Attention Loss Delay 2
+    followerCostStr: 1.5k
     viewRequirementStr: 0
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 5 Seconds</size></color>'
+    header: '<color=green><size=35>Attention Loss Delay: 15 Seconds</size></color>'
     description: Buy this. It's worth it.
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
     attentionLossMultiplier: 0
-    attentionLossDelay: 5
+    attentionLossDelay: 15
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+  - id: attention_loss_delay_3
+    prereqId: attention_loss_delay_2
+    buttonText: Attention Loss Delay 3
+    followerCostStr: 4.5k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Loss Delay: 30 Seconds</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 30
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+  - id: attention_loss_delay_4
+    prereqId: attention_loss_delay_3
+    buttonText: Attention Loss Delay 4
+    followerCostStr: 10k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Loss Delay: 1 Minute</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 60
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
