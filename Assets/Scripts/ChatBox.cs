@@ -27,6 +27,7 @@ public class ChatBox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StopAllCoroutines();
         resources = new Resources();
         usernameReplace = "[name unknown]";
         viewGate = resources.views;
@@ -81,6 +82,11 @@ public class ChatBox : MonoBehaviour
                 AddChatTextMesh("Channel 3: connection lost");
             }
         }
+    }
+
+    void OnEnable()
+    {
+        Start();
     }
 
     private IEnumerator AddRandomText(string[] comments)
