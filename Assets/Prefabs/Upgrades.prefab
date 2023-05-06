@@ -68,6 +68,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 5
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: offline_time_2
     prereqId: offline_time_1
     buttonText: Offline Time 2
@@ -86,6 +90,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 30
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: offline_time_3
     prereqId: offline_time_2
     buttonText: Offline Time 3
@@ -104,6 +112,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 60
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: follower_click_1
     prereqId: 
     buttonText: Followers Per Click 1
@@ -122,6 +134,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: follower_click_2
     prereqId: follower_click_1
     buttonText: Followers Per Click 2
@@ -140,6 +156,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: follower_click_3
     prereqId: follower_click_2
     buttonText: Followers Per Click 3
@@ -158,6 +178,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: views_follower_1
     prereqId: 
     buttonText: Views Per Follower 1
@@ -176,6 +200,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 2
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: views_follower_2
     prereqId: views_follower_1
     buttonText: Views Per Follower 2
@@ -194,6 +222,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 3
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: views_follower_3
     prereqId: views_follower_2
     buttonText: Views Per Follower 3
@@ -212,6 +244,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 4
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: max_attention_1
     prereqId: 
     buttonText: Max Attention 1
@@ -230,6 +266,10 @@ MonoBehaviour:
     maxAttention: 2.5
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: max_attention_2
     prereqId: max_attention_1
     buttonText: Max Attention 2
@@ -248,6 +288,10 @@ MonoBehaviour:
     maxAttention: 3
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: max_attention_3
     prereqId: max_attention_2
     buttonText: Max Attention 3
@@ -266,6 +310,10 @@ MonoBehaviour:
     maxAttention: 3.5
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: attention_floor_1
     prereqId: 
     buttonText: Attention Floor 1
@@ -284,6 +332,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: attention_floor_2
     prereqId: attention_floor_1
     buttonText: Attention Floor 2
@@ -302,6 +354,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: attention_floor_3
     prereqId: attention_floor_2
     buttonText: Attention Floor 3
@@ -320,6 +376,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: attention_floor_4
     prereqId: attention_floor_3
     buttonText: Attention Floor 4
@@ -338,6 +398,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: attention_loss_delay_1
     prereqId: 
     buttonText: Attention Loss Delay 1
@@ -356,6 +420,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: attention_loss_delay_2
     prereqId: attention_loss_delay_1
     buttonText: Attention Loss Delay 2
@@ -374,6 +442,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: attention_loss_delay_3
     prereqId: attention_loss_delay_2
     buttonText: Attention Loss Delay 3
@@ -392,6 +464,10 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   - id: attention_loss_delay_4
     prereqId: attention_loss_delay_3
     buttonText: Attention Loss Delay 4
@@ -410,6 +486,208 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+  - id: event_reward_1
+    prereqId: 
+    buttonText: Event Reward 1
+    followerCostStr: 2.5k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Better Event Rewards!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0.2
+    eventLossMultiplier: 0.12
+  - id: event_reward_2
+    prereqId: event_reward_1
+    buttonText: Event Reward 2
+    followerCostStr: 7.5k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Better Event Rewards!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0.25
+    eventLossMultiplier: 0.1
+  - id: event_reward_3
+    prereqId: event_reward_2
+    buttonText: Event Reward 2
+    followerCostStr: 15k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Better Event Rewards!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0.3
+    eventLossMultiplier: 0.08
+  - id: event_chance_1
+    prereqId: 
+    buttonText: More Events 1
+    followerCostStr: 1k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>More Collaboration Events!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 60
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+  - id: event_chance_2
+    prereqId: event_chance_1
+    buttonText: More Events 2
+    followerCostStr: 5k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>More Collaboration Events!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 75
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+  - id: event_chance_3
+    prereqId: event_chance_2
+    buttonText: More Events 3
+    followerCostStr: 25k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>More Collaboration Events!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 100
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+  - id: event_success_chance_1
+    prereqId: 
+    buttonText: More Success 1
+    followerCostStr: 10k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 60
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+  - id: event_success_chance_2
+    prereqId: event_success_chance_1
+    buttonText: More Success 2
+    followerCostStr: 30k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 75
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+  - id: event_success_chance_3
+    prereqId: event_success_chance_2
+    buttonText: More Success 3
+    followerCostStr: 75k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 90
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
   maxAttention: 2
   clickMultiplier: 1
   attLossMultiplier: 1
@@ -428,7 +706,7 @@ MonoBehaviour:
   d_attLossDelay: 1
   d_maxOfflineTime: 0
   d_viewMultiplier: 1
-  d_eventChance: 100
+  d_eventChance: 50
   d_successChance: 50
-  d_eventGainMultiplier: 0.5
+  d_eventGainMultiplier: 0.15
   d_eventLossMultiplier: 0.15
