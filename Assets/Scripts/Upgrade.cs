@@ -37,6 +37,7 @@ public class Upgrade
     public int eventSuccessChance;
     public float eventGainMultiplier;
     public float eventLossMultiplier;
+    public float idleFollowerMultiplier;
 
     public void Initialize()
     {
