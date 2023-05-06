@@ -34,6 +34,7 @@ public class Upgrades : MonoBehaviour
     [HideInInspector] public int successChance;
     [HideInInspector] public float eventGainMultiplier;
     [HideInInspector] public float eventLossMultiplier;
+    [HideInInspector] public float idleFollowerMultiplier;
 
     /* ==== Default Stats ==== */
     public double d_maxAttention = 2.0d;
@@ -47,6 +48,7 @@ public class Upgrades : MonoBehaviour
     public int d_successChance = 50;
     public float d_eventGainMultiplier = 0.50f;
     public float d_eventLossMultiplier = 0.15f;
+    public float d_idleFollowerMultiplier = 1;
 
     // Start is called before the first frame update
     void Awake()
@@ -97,6 +99,7 @@ public class Upgrades : MonoBehaviour
         successChance = d_successChance;
         eventGainMultiplier = d_eventGainMultiplier;
         eventLossMultiplier = d_eventLossMultiplier;
+        idleFollowerMultiplier = d_idleFollowerMultiplier;
     }
 
     public void PurchaseUpgrade(Upgrade upgrade)
