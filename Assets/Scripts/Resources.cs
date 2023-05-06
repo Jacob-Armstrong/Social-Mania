@@ -109,6 +109,7 @@ public class Resources : MonoBehaviour
 
     void AttentionDecay()
     {
+
         if(attention > upgrades.attFloor)
             attention -= Mathf.Min(attLossBase * upgrades.attLossMultiplier, attention - upgrades.attFloor);
     }

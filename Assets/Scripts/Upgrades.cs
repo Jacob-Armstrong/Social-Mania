@@ -67,12 +67,13 @@ public class Upgrades : MonoBehaviour
         {
             for(int i = 0; i < upgrades.Count; ++i)
             {
-                if (resources.views >= upgrades[i].viewRequirement &&
-                    resources.followers >= upgrades[i].followerCost/2)
+                if (resources.views >= upgrades[i].viewRequirement && 
+                    resources.followers >= upgrades[i].followerCost/2 &&
+                    (upgrades[i].prereqId == "" || purchasedUpgrades.Contains(upgrades[i].prereqId)))
                 {
-                    upgradeMenu.SpawnUpgrade(upgrades[i]);
-                    upgrades.RemoveAt(i);
-                    --i;
+                        upgradeMenu.SpawnUpgrade(upgrades[i]);
+                        upgrades.RemoveAt(i);
+                        --i;
                 }
 
                 yield return null;
@@ -115,11 +116,13 @@ public class Upgrades : MonoBehaviour
     {
         maxAttention = Math.Max(upgrade.maxAttention, maxAttention);
         clickMultiplier = Math.Max(upgrade.clickMultiplier, clickMultiplier);
-        attLossMultiplier = Mathf.Min(upgrade.attentionLossMultiplier, attLossMultiplier);
         attLossDelay = Mathf.Max(upgrade.attentionLossDelay, attLossDelay);
         attFloor = Mathf.Max(upgrade.attentionFloor, attFloor);
         maxOfflineTime = Mathf.Max(upgrade.maxOfflineTime, maxOfflineTime);
         viewMultiplier = Mathf.Max(upgrade.viewMultiplier, viewMultiplier);
+
+        if(upgrade.attentionLossMultiplier > 0)
+            attLossMultiplier = upgrade.attentionLossMultiplier;
 
         if (upgrade.maxOfflineTime > 0)
             maxOfflineUpgrade = TimeSpan.FromMinutes(maxOfflineTime);
