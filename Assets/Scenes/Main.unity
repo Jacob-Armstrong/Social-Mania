@@ -2259,6 +2259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: randomEventPopup
       objectReference: {fileID: 0}
+    - target: {fileID: 1835799314893112794, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1835799314893112797, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2505,7 +2509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1835799316581574959, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aefe0589c9e451448e554b70edf3721, type: 3}
