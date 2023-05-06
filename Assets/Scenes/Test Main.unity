@@ -2733,10 +2733,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1603022446}
     m_Modifications:
-    - target: {fileID: 755476235104702052, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
-      propertyPath: buttonTemplate
-      value: 
-      objectReference: {fileID: 8724966835410542839, guid: b7c2e7b27b121bb4ba40a1e12e4e66b6, type: 3}
     - target: {fileID: 755476235104702053, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2836,6 +2832,18 @@ PrefabInstance:
     - target: {fileID: 755476236025020023, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902478058805805, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902478058805805, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902479517297215, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
@@ -4952,6 +4960,7 @@ MonoBehaviour:
   profile: {fileID: 1562797024}
   newUsernamePopup: {fileID: 1900390577}
   userAuth: 
+  loadedUserList: []
 --- !u!1 &708605600
 GameObject:
   m_ObjectHideFlags: 0
@@ -7517,7 +7526,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 108}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1014895581
@@ -9201,7 +9210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources: {fileID: 2041848749}
-  upgradeMenu: {fileID: 1759115022}
+  upgradeMenu: {fileID: 1261085696}
   upgradeList:
   - id: offline_time_1
     prereqId: 
@@ -9372,7 +9381,7 @@ MonoBehaviour:
     prereqId: 
     buttonText: Max Attention 1
     followerCostStr: 0
-    viewRequirementStr: 0
+    viewRequirementStr: 1k
     attentionCost: 2
     followerCost: 0
     viewRequirement: 100000
@@ -9390,7 +9399,7 @@ MonoBehaviour:
     prereqId: max_attention_1
     buttonText: Max Attention 2
     followerCostStr: 0
-    viewRequirementStr: 0
+    viewRequirementStr: 25k
     attentionCost: 2.5
     followerCost: 0
     viewRequirement: 100000
@@ -9408,7 +9417,7 @@ MonoBehaviour:
     prereqId: max_attention_2
     buttonText: Max Attention 3
     followerCostStr: 0
-    viewRequirementStr: 0
+    viewRequirementStr: 100k
     attentionCost: 3
     followerCost: 0
     viewRequirement: 100000
@@ -9501,6 +9510,10 @@ MonoBehaviour:
   attLossDelay: 5
   viewMultiplier: 1
   maxOfflineTime: 5
+  eventChance: 0
+  successChance: 0
+  eventGainMultiplier: 0
+  eventLossMultiplier: 0
   d_maxAttention: 2
   d_clickMultiplier: 1
   d_attLossMultiplier: 1
@@ -9508,6 +9521,10 @@ MonoBehaviour:
   d_attLossDelay: 5
   d_maxOfflineTime: 0
   d_viewMultiplier: 1
+  d_eventChance: 100
+  d_successChance: 50
+  d_eventGainMultiplier: 0.5
+  d_eventLossMultiplier: 0.15
 --- !u!1 &1178021965
 GameObject:
   m_ObjectHideFlags: 0
@@ -10230,6 +10247,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253228616}
   m_CullTransparentMesh: 1
+--- !u!224 &1261085695 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1539902479517297215, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+  m_PrefabInstance: {fileID: 391355622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1261085696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1539902479517297214, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+  m_PrefabInstance: {fileID: 391355622}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d6f68c0cca6ad4abf2021cd30f7c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1261674010
 GameObject:
   m_ObjectHideFlags: 0
@@ -12496,6 +12529,7 @@ MonoBehaviour:
   resources: {fileID: 2041848749}
   upgrades: {fileID: 1171571889}
   dataManager: {fileID: 708225160}
+  randomEvents: {fileID: 0}
   mainScene: {fileID: 1603022445}
   profileScene: {fileID: 1454000343}
   settingsScene: {fileID: 252787346}
@@ -13186,7 +13220,7 @@ RectTransform:
   - {fileID: 287193566}
   - {fileID: 1092703100}
   - {fileID: 1456912080}
-  - {fileID: 1759115021}
+  - {fileID: 1261085695}
   - {fileID: 1642659092}
   m_Father: {fileID: 720450040}
   m_RootOrder: 2
@@ -14310,22 +14344,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759003190}
   m_CullTransparentMesh: 1
---- !u!224 &1759115021 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 755476235104702053, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
-  m_PrefabInstance: {fileID: 391355622}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1759115022 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 755476235104702052, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
-  m_PrefabInstance: {fileID: 391355622}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0d6f68c0cca6ad4abf2021cd30f7c12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1786652169
 GameObject:
   m_ObjectHideFlags: 0

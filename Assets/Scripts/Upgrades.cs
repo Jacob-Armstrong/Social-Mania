@@ -67,12 +67,13 @@ public class Upgrades : MonoBehaviour
         {
             for(int i = 0; i < upgrades.Count; ++i)
             {
-                if (resources.views >= upgrades[i].viewRequirement &&
-                    resources.followers >= upgrades[i].followerCost/2)
+                if (resources.views >= upgrades[i].viewRequirement && 
+                    resources.followers >= upgrades[i].followerCost/2 &&
+                    (upgrades[i].prereqId == "" || purchasedUpgrades.Contains(upgrades[i].prereqId)))
                 {
-                    upgradeMenu.SpawnUpgrade(upgrades[i]);
-                    upgrades.RemoveAt(i);
-                    --i;
+                        upgradeMenu.SpawnUpgrade(upgrades[i]);
+                        upgrades.RemoveAt(i);
+                        --i;
                 }
 
                 yield return null;
