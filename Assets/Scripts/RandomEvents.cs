@@ -88,8 +88,18 @@ public class RandomEvents : MonoBehaviour
         lossValue = resources.followers * upgrades.eventLossMultiplier;
         string gainDelta = CalcUtils.FormatNumber(gainValue);
         string lossDelta = CalcUtils.FormatNumber(lossValue);
+
+        List<UserData> nonZeroList = new List<UserData>();
         
-        UserData randomUser = dataManager.loadedUserList[Random.Range(0, dataManager.loadedUserList.Count)];
+        foreach (UserData user in dataManager.loadedUserList)
+        {
+            if (user.lifetimeViews != 0)
+            {
+                nonZeroList.Add(user);
+            }
+        }
+        
+        UserData randomUser = nonZeroList[Random.Range(0, dataManager.loadedUserList.Count)];
         infoText.text = randomUser.username + ", a creator with " + CalcUtils.FormatNumber(randomUser.lifetimeViews) + " views, wants to collab!";
         valuesText.text = "Success: +" + gainDelta + " followers" + "\nFailure: -" + lossDelta + " followers";
         chanceText.text = "Chance of success: " + upgrades.successChance + "%";

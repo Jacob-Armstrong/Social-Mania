@@ -29,7 +29,7 @@ public class Upgrades : MonoBehaviour
     [HideInInspector] public TimeSpan maxOfflineUpgrade = TimeSpan.FromMinutes(1);
     
     /* --- Collab events --- */
-    [HideInInspector] public TimeSpan eventTime = TimeSpan.FromSeconds(60);
+    [HideInInspector] public TimeSpan eventTime = TimeSpan.FromSeconds(15);
     [HideInInspector] public int eventChance;
     [HideInInspector] public int successChance;
     [HideInInspector] public double eventGainMultiplier;

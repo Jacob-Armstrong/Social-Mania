@@ -35,7 +35,7 @@ public class ChatBox : MonoBehaviour
         {
             try
             {
-                comments = File.ReadAllLines(Application.dataPath + "/tier1.txt");
+                comments = File.ReadAllLines(Application.dataPath + "/StreamingAssets/tier1.txt");
                 //AddChatTextMesh("tier1.txt");
                 viewGateTier = 1;
                 StartCoroutine(AddRandomText(comments));
@@ -52,7 +52,7 @@ public class ChatBox : MonoBehaviour
         {
             try
             {
-                comments = File.ReadAllLines(Application.dataPath + "/tier2.txt");
+                comments = File.ReadAllLines(Application.dataPath + "/StreamingAssets/tier2.txt");
                 //AddChatTextMesh("tier2.txt");
                 viewGateTier = 2;
                 StartCoroutine(AddRandomText(comments));
@@ -69,7 +69,7 @@ public class ChatBox : MonoBehaviour
         {
             try
             {
-                comments = File.ReadAllLines(Application.dataPath + "/tier3.txt");
+                comments = File.ReadAllLines(Application.dataPath + "/StreamingAssets/tier3.txt");
                 //AddChatTextMesh("tier3.txt");
                 viewGateTier = 3;
                 StartCoroutine(AddRandomText(comments));
