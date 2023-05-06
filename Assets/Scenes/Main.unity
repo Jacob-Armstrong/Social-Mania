@@ -3886,7 +3886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 755476236025020023, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 755476236025020023, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
       propertyPath: m_LocalScale.x
@@ -3899,6 +3899,46 @@ PrefabInstance:
     - target: {fileID: 755476236025020023, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.00010681152
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902478058805805, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902478058805805, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902479394494001, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902479394494001, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1177.3699
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902479394494001, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 442.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902479394494001, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 34.8151
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902479394494001, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539902479517297215, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685867376626041225, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_Spacing.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4685867376626041225, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+      propertyPath: m_Spacing.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
@@ -6061,7 +6101,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1301967145}
+    m_TransformParent: {fileID: 2039398561}
     m_Modifications:
     - target: {fileID: 8724966835410542833, guid: b7c2e7b27b121bb4ba40a1e12e4e66b6, type: 3}
       propertyPath: m_Name
@@ -11730,7 +11770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources: {fileID: 2041848749}
-  upgradeMenu: {fileID: 1759115022}
+  upgradeMenu: {fileID: 2039398562}
   upgradeList:
   - id: offline_time_1
     prereqId: 
@@ -11780,6 +11820,42 @@ MonoBehaviour:
     followerCost: 50
     viewRequirement: 0
     header: <color=green><size=35>Upgrade?</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 20
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 60
+    viewMultiplier: 0
+  - id: 4
+    prereqId: 
+    buttonText: 20x click
+    followerCostStr: 
+    viewRequirementStr: 
+    attentionCost: 0
+    followerCost: 50
+    viewRequirement: 0
+    header: <color=green><size=35>Upgrade 4</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 20
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 60
+    viewMultiplier: 0
+  - id: 5
+    prereqId: 
+    buttonText: 20x click
+    followerCostStr: 
+    viewRequirementStr: 
+    attentionCost: 0
+    followerCost: 50
+    viewRequirement: 0
+    header: <color=green><size=35>Upgrade 4</size></color>
     description: Buy this. It's worth it.
     optionalCostText: 
     clickMultiplier: 20
@@ -12716,11 +12792,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &1301967145 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 755476236025020023, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
-  m_PrefabInstance: {fileID: 391355622}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1302747805
 GameObject:
   m_ObjectHideFlags: 0
@@ -15793,7 +15864,7 @@ RectTransform:
   - {fileID: 1456912080}
   - {fileID: 1642659092}
   - {fileID: 65768483}
-  - {fileID: 1759115021}
+  - {fileID: 2039398561}
   - {fileID: 1530860574}
   - {fileID: 649535432}
   m_Father: {fileID: 720450040}
@@ -16924,7 +16995,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1301967145}
+    m_TransformParent: {fileID: 2039398561}
     m_Modifications:
     - target: {fileID: 8724966835410542833, guid: b7c2e7b27b121bb4ba40a1e12e4e66b6, type: 3}
       propertyPath: m_Name
@@ -17154,22 +17225,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759003190}
   m_CullTransparentMesh: 1
---- !u!224 &1759115021 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 755476235104702053, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
-  m_PrefabInstance: {fileID: 391355622}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1759115022 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 755476235104702052, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
-  m_PrefabInstance: {fileID: 391355622}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0d6f68c0cca6ad4abf2021cd30f7c12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1786652169
 GameObject:
   m_ObjectHideFlags: 0
@@ -18804,7 +18859,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1301967145}
+    m_TransformParent: {fileID: 2039398561}
     m_Modifications:
     - target: {fileID: 8724966835410542833, guid: b7c2e7b27b121bb4ba40a1e12e4e66b6, type: 3}
       propertyPath: m_Name
@@ -19662,7 +19717,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1301967145}
+    m_TransformParent: {fileID: 2039398561}
     m_Modifications:
     - target: {fileID: 8724966835410542833, guid: b7c2e7b27b121bb4ba40a1e12e4e66b6, type: 3}
       propertyPath: m_Name
@@ -20085,6 +20140,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.055700302}
   m_SizeDelta: {x: -10, y: 0.3623}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &2039398561 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1539902479517297215, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+  m_PrefabInstance: {fileID: 391355622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2039398562 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1539902479517297214, guid: d723869f2f98f7b42a1e6baed1aa9bc3, type: 3}
+  m_PrefabInstance: {fileID: 391355622}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d6f68c0cca6ad4abf2021cd30f7c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2041848747
 GameObject:
   m_ObjectHideFlags: 0
