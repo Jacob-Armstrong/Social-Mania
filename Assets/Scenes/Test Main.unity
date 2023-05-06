@@ -9475,7 +9475,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 1</size></color>'
+    header: '<color=green><size=35>Attention Floor: 1.5</size></color>'
     description: Buy this. It's worth it.
     optionalCostText: 
     clickMultiplier: 0
@@ -9503,6 +9503,42 @@ MonoBehaviour:
     maxAttention: 0
     maxOfflineTime: 0
     viewMultiplier: 0
+  - id: attention_loss_delay_1
+    prereqId: 
+    buttonText: Attention Loss Delay 1
+    followerCostStr: 500
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Loss Delay: 5 Seconds</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 5
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+  - id: attention_loss_delay_2
+    prereqId: attention_loss_delay_1
+    buttonText: Attention Loss Delay 1
+    followerCostStr: 500
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Loss Delay: 5 Seconds</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 5
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
   maxAttention: 2
   clickMultiplier: 1
   attLossMultiplier: 1
@@ -9518,7 +9554,7 @@ MonoBehaviour:
   d_clickMultiplier: 1
   d_attLossMultiplier: 1
   d_attFloor: 0
-  d_attLossDelay: 5
+  d_attLossDelay: 1
   d_maxOfflineTime: 0
   d_viewMultiplier: 1
   d_eventChance: 100
