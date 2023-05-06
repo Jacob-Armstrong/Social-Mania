@@ -33,6 +33,10 @@ public class Upgrade
     public double maxAttention;
     public int maxOfflineTime;
     public float viewMultiplier;
+    public int eventChance;
+    public int eventSuccessChance;
+    public float eventGainMultiplier;
+    public float eventLossMultiplier;
 
     public void Initialize()
     {

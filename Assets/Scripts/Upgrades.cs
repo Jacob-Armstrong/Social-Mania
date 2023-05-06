@@ -32,8 +32,8 @@ public class Upgrades : MonoBehaviour
     [HideInInspector] public TimeSpan eventTime = TimeSpan.FromSeconds(60);
     [HideInInspector] public int eventChance;
     [HideInInspector] public int successChance;
-    [HideInInspector] public double eventGainMultiplier;
-    [HideInInspector] public double eventLossMultiplier;
+    [HideInInspector] public float eventGainMultiplier;
+    [HideInInspector] public float eventLossMultiplier;
 
     /* ==== Default Stats ==== */
     public double d_maxAttention = 2.0d;
@@ -45,8 +45,8 @@ public class Upgrades : MonoBehaviour
     public int d_viewMultiplier = 1;
     public int d_eventChance = 100;
     public int d_successChance = 50;
-    public double d_eventGainMultiplier = 0.50;
-    public double d_eventLossMultiplier = 0.15;
+    public float d_eventGainMultiplier = 0.50f;
+    public float d_eventLossMultiplier = 0.15f;
 
     // Start is called before the first frame update
     void Awake()
@@ -120,9 +120,15 @@ public class Upgrades : MonoBehaviour
         attFloor = Mathf.Max(upgrade.attentionFloor, attFloor);
         maxOfflineTime = Mathf.Max(upgrade.maxOfflineTime, maxOfflineTime);
         viewMultiplier = Mathf.Max(upgrade.viewMultiplier, viewMultiplier);
+        eventChance = Mathf.Max(upgrade.eventChance, eventChance);
+        successChance = Mathf.Max(upgrade.eventSuccessChance, successChance);
+        eventGainMultiplier = Mathf.Max(upgrade.eventGainMultiplier, eventGainMultiplier);
 
         if(upgrade.attentionLossMultiplier > 0)
             attLossMultiplier = upgrade.attentionLossMultiplier;
+
+        if (upgrade.eventLossMultiplier > 0)
+            eventLossMultiplier = upgrade.eventLossMultiplier;
 
         if (upgrade.maxOfflineTime > 0)
             maxOfflineUpgrade = TimeSpan.FromMinutes(maxOfflineTime);
