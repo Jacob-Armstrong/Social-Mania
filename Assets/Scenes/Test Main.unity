@@ -4959,6 +4959,7 @@ MonoBehaviour:
   upgrades: {fileID: 1171571889}
   profile: {fileID: 1562797024}
   newUsernamePopup: {fileID: 1900390577}
+  authFailedPopup: {fileID: 0}
   userAuth: 
   loadedUserList: []
 --- !u!1 &708605600
@@ -9165,438 +9166,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1171571887
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1171571888}
-  - component: {fileID: 1171571889}
-  m_Layer: 0
-  m_Name: Upgrades
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1171571888
+--- !u!4 &1171571888 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+  m_PrefabInstance: {fileID: 8453765103606519981}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171571887}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 112182216}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1171571889
+--- !u!114 &1171571889 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+  m_PrefabInstance: {fileID: 8453765103606519981}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171571887}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5d6e820e6ff17246acf58e879bb630c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources: {fileID: 2041848749}
-  upgradeMenu: {fileID: 1261085696}
-  upgradeList:
-  - id: offline_time_1
-    prereqId: 
-    buttonText: Offline Time 1
-    followerCostStr: 
-    viewRequirementStr: 100
-    attentionCost: 2
-    followerCost: 0
-    viewRequirement: 100
-    header: '<color=green><size=35>Offline Time: 5 Minutes</size></color>'
-    description: 'This is a really neat upgrade. It probably does something crazy!
-
-      Or
-      does it? Do you really want to find out?'
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 5
-    viewMultiplier: 0
-  - id: offline_time_2
-    prereqId: offline_time_1
-    buttonText: Offline Time 2
-    followerCostStr: 
-    viewRequirementStr: 1k
-    attentionCost: 3.5
-    followerCost: 0
-    viewRequirement: 1000
-    header: '<color=green><size=35>Offline Time: 30 Minutes</size></color>'
-    description: This is an even neater upgrade. Probably?
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 30
-    viewMultiplier: 0
-  - id: offline_time_3
-    prereqId: offline_time_2
-    buttonText: Offline Time 3
-    followerCostStr: 
-    viewRequirementStr: 100k
-    attentionCost: 5
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Offline Time: 60 Minutes</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 60
-    viewMultiplier: 0
-  - id: follower_click_1
-    prereqId: 
-    buttonText: Followers Per Click 1
-    followerCostStr: 100
-    viewRequirementStr: 500
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Followers Per Click: 2</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 2
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: follower_click_2
-    prereqId: follower_click_1
-    buttonText: Followers Per Click 2
-    followerCostStr: 300
-    viewRequirementStr: 1k
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Followers Per Click: 4</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 4
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: follower_click_3
-    prereqId: follower_click_2
-    buttonText: Followers Per Click 3
-    followerCostStr: 500
-    viewRequirementStr: 2.5k
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Followers Per Click: 6</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 6
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: views_follower_1
-    prereqId: 
-    buttonText: Views Per Follower 1
-    followerCostStr: 500
-    viewRequirementStr: 2k
-    attentionCost: 2
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Views Per Follower: 2</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 2
-  - id: views_follower_2
-    prereqId: views_follower_1
-    buttonText: Views Per Follower 2
-    followerCostStr: 1.5k
-    viewRequirementStr: 15k
-    attentionCost: 3.5
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Views Per Follower: 3</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 3
-  - id: views_follower_3
-    prereqId: views_follower_2
-    buttonText: Views Per Follower 3
-    followerCostStr: 5k
-    viewRequirementStr: 10k
-    attentionCost: 5
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Views Per Follower: 3</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 4
-  - id: max_attention_1
-    prereqId: 
-    buttonText: Max Attention 1
-    followerCostStr: 0
-    viewRequirementStr: 1k
-    attentionCost: 2
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Max Attention: 2.5</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 2.5
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: max_attention_2
-    prereqId: max_attention_1
-    buttonText: Max Attention 2
-    followerCostStr: 0
-    viewRequirementStr: 25k
-    attentionCost: 2.5
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Max Attention: 3</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 3
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: max_attention_3
-    prereqId: max_attention_2
-    buttonText: Max Attention 3
-    followerCostStr: 0
-    viewRequirementStr: 100k
-    attentionCost: 3
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Max Attention: 3.5</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 3.5
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: attention_floor_1
-    prereqId: 
-    buttonText: Attention Floor 1
-    followerCostStr: 1k
-    viewRequirementStr: 0
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 0.5</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0.5
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: attention_floor_2
-    prereqId: attention_floor_1
-    buttonText: Attention Floor 2
-    followerCostStr: 10k
-    viewRequirementStr: 0
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 1</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 1
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: attention_floor_3
-    prereqId: attention_floor_2
-    buttonText: Attention Floor 3
-    followerCostStr: 50k
-    viewRequirementStr: 0
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 1.5</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 1.5
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: attention_floor_4
-    prereqId: attention_floor_3
-    buttonText: Attention Floor 4
-    followerCostStr: 100k
-    viewRequirementStr: 0
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 2</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 2
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: attention_loss_delay_1
-    prereqId: 
-    buttonText: Attention Loss Delay 1
-    followerCostStr: 500
-    viewRequirementStr: 0
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 5 Seconds</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 5
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: attention_loss_delay_2
-    prereqId: attention_loss_delay_1
-    buttonText: Attention Loss Delay 2
-    followerCostStr: 1.5k
-    viewRequirementStr: 0
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 15 Seconds</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 15
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: attention_loss_delay_3
-    prereqId: attention_loss_delay_2
-    buttonText: Attention Loss Delay 3
-    followerCostStr: 4.5k
-    viewRequirementStr: 0
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 30 Seconds</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 30
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: attention_loss_delay_4
-    prereqId: attention_loss_delay_3
-    buttonText: Attention Loss Delay 4
-    followerCostStr: 10k
-    viewRequirementStr: 0
-    attentionCost: 0
-    followerCost: 0
-    viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 1 Minute</size></color>'
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 0
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 60
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  maxAttention: 2
-  clickMultiplier: 1
-  attLossMultiplier: 1
-  attFloor: 0
-  attLossDelay: 5
-  viewMultiplier: 1
-  maxOfflineTime: 5
-  eventChance: 0
-  successChance: 0
-  eventGainMultiplier: 0
-  eventLossMultiplier: 0
-  d_maxAttention: 2
-  d_clickMultiplier: 1
-  d_attLossMultiplier: 1
-  d_attFloor: 0
-  d_attLossDelay: 1
-  d_maxOfflineTime: 0
-  d_viewMultiplier: 1
-  d_eventChance: 100
-  d_successChance: 50
-  d_eventGainMultiplier: 0.5
-  d_eventLossMultiplier: 0.15
 --- !u!1 &1178021965
 GameObject:
   m_ObjectHideFlags: 0
@@ -12610,11 +12195,13 @@ MonoBehaviour:
   userLengthPopup: {fileID: 367288891}
   offlinePopup: {fileID: 703295401}
   newUsernamePopup: {fileID: 1900390577}
+  deleteLocalSavePopup: {fileID: 0}
   googleSignInButton: {fileID: 5257743}
   returnToGameButton: {fileID: 1501906400}
   submitUsernameButton: {fileID: 1054025499}
   updateLeaderboardButton: {fileID: 1826788063}
   hardResetButton: {fileID: 1759003192}
+  saveButton: {fileID: 0}
   googleSignInText: {fileID: 1092703101}
   lifetimeViewsValue: {fileID: 485759661}
   numClicksValue: {fileID: 870051531}
@@ -17675,3 +17262,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143922300}
   m_CullTransparentMesh: 1
+--- !u!1001 &8453765103606519981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 112182216}
+    m_Modifications:
+    - target: {fileID: 8453765102462278658, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_Name
+      value: Upgrades
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: resources
+      value: 
+      objectReference: {fileID: 2041848749}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeMenu
+      value: 
+      objectReference: {fileID: 1261085696}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}

@@ -1128,13 +1128,13 @@ Transform:
   - {fileID: 2041848748}
   - {fileID: 775816142}
   - {fileID: 700280363}
-  - {fileID: 1171571888}
   - {fileID: 1562797023}
   - {fileID: 562440737}
   - {fileID: 843961939}
   - {fileID: 708225159}
   - {fileID: 1365729711}
   - {fileID: 593223586}
+  - {fileID: 1632295490}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5624,7 +5624,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 112182216}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &562440738
 MonoBehaviour:
@@ -5711,7 +5711,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 112182216}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &593223587
 MonoBehaviour:
@@ -5725,7 +5725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d3a9ccdfd001b49819b71d3d6fa68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrades: {fileID: 1171571889}
+  upgrades: {fileID: 1632295491}
   dataManager: {fileID: 708225160}
   resources: {fileID: 2041848749}
   randomEventPopup: {fileID: 649535431}
@@ -6476,7 +6476,7 @@ MonoBehaviour:
   stats: {fileID: 562440738}
   resources: {fileID: 2041848749}
   profile: {fileID: 1562797024}
-  upgrades: {fileID: 1171571889}
+  upgrades: {fileID: 1632295491}
   textTimeElapsed: {fileID: 914306806}
   offlineTimePopup: {fileID: 703295401}
   offlineText:
@@ -6618,7 +6618,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 112182216}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &708225160
 MonoBehaviour:
@@ -6635,7 +6635,7 @@ MonoBehaviour:
   timeManager: {fileID: 700280364}
   stats: {fileID: 562440738}
   resources: {fileID: 2041848749}
-  upgrades: {fileID: 1171571889}
+  upgrades: {fileID: 1632295491}
   profile: {fileID: 1562797024}
   newUsernamePopup: {fileID: 1900390577}
   authFailedPopup: {fileID: 176063444}
@@ -7275,7 +7275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources: {fileID: 2041848749}
-  upgrades: {fileID: 1171571889}
+  upgrades: {fileID: 1632295491}
   mainButton: {fileID: 995646500}
 --- !u!1 &802632909
 GameObject:
@@ -7847,7 +7847,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 112182216}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &843961940
 MonoBehaviour:
@@ -11737,168 +11737,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1171571887
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1171571888}
-  - component: {fileID: 1171571889}
-  m_Layer: 0
-  m_Name: Upgrades
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1171571888
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171571887}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 112182216}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1171571889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171571887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5d6e820e6ff17246acf58e879bb630c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resources: {fileID: 2041848749}
-  upgradeMenu: {fileID: 2039398562}
-  upgradeList:
-  - id: offline_time_1
-    prereqId: 
-    buttonText: 10x click
-    followerCostStr: 
-    viewRequirementStr: 
-    attentionCost: 0.5
-    followerCost: 10
-    viewRequirement: 0
-    header: <color=green><size=35>Upgrade</size></color>
-    description: 'This is a really neat upgrade. It probably does something crazy!
-
-      Or
-      does it? Do you really want to find out?'
-    optionalCostText: 
-    clickMultiplier: 10
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: 2
-    prereqId: 
-    buttonText: 20x click
-    followerCostStr: 
-    viewRequirementStr: 
-    attentionCost: 0
-    followerCost: 20
-    viewRequirement: 0
-    header: <color=green><size=35>Upgrade</size></color>
-    description: This is an even neater upgrade. Probably?
-    optionalCostText: 
-    clickMultiplier: 20
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 0
-    viewMultiplier: 0
-  - id: 3
-    prereqId: 
-    buttonText: 20x click
-    followerCostStr: 
-    viewRequirementStr: 
-    attentionCost: 0
-    followerCost: 50
-    viewRequirement: 0
-    header: <color=green><size=35>Upgrade?</size></color>
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 20
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 60
-    viewMultiplier: 0
-  - id: 4
-    prereqId: 
-    buttonText: 20x click
-    followerCostStr: 
-    viewRequirementStr: 
-    attentionCost: 0
-    followerCost: 50
-    viewRequirement: 0
-    header: <color=green><size=35>Upgrade 4</size></color>
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 20
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 60
-    viewMultiplier: 0
-  - id: 5
-    prereqId: 
-    buttonText: 20x click
-    followerCostStr: 
-    viewRequirementStr: 
-    attentionCost: 0
-    followerCost: 50
-    viewRequirement: 0
-    header: <color=green><size=35>Upgrade 4</size></color>
-    description: Buy this. It's worth it.
-    optionalCostText: 
-    clickMultiplier: 20
-    attentionFloor: 0
-    attentionLossMultiplier: 0
-    attentionLossDelay: 0
-    maxAttention: 0
-    maxOfflineTime: 60
-    viewMultiplier: 0
-  maxAttention: 2
-  clickMultiplier: 1
-  attLossMultiplier: 1
-  attFloor: 0
-  attLossDelay: 5
-  viewMultiplier: 1
-  maxOfflineTime: 5
-  eventChance: 75
-  successChance: 0
-  eventGainMultiplier: 0
-  eventLossMultiplier: 0
-  d_maxAttention: 2
-  d_clickMultiplier: 1
-  d_attLossMultiplier: 1
-  d_attFloor: 0
-  d_attLossDelay: 5
-  d_maxOfflineTime: 1
-  d_viewMultiplier: 1
-  d_eventChance: 100
-  d_successChance: 50
-  d_eventGainMultiplier: 0.5
-  d_eventLossMultiplier: 0.15
 --- !u!1 &1178021965
 GameObject:
   m_ObjectHideFlags: 0
@@ -12923,7 +12761,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 112182216}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1365729712
 MonoBehaviour:
@@ -15168,7 +15006,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 112182216}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1562797024
 MonoBehaviour:
@@ -15185,7 +15023,7 @@ MonoBehaviour:
   timeManager: {fileID: 700280364}
   stats: {fileID: 562440738}
   resources: {fileID: 2041848749}
-  upgrades: {fileID: 1171571889}
+  upgrades: {fileID: 1632295491}
   dataManager: {fileID: 708225160}
   randomEvents: {fileID: 593223587}
   mainScene: {fileID: 1603022445}
@@ -15887,6 +15725,87 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1632295489
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 112182216}
+    m_Modifications:
+    - target: {fileID: 8453765102462278658, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_Name
+      value: Upgrades
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: resources
+      value: 
+      objectReference: {fileID: 2041848749}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeMenu
+      value: 
+      objectReference: {fileID: 2039398562}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 56.840137
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8019371
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 174.11945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+--- !u!4 &1632295490 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+  m_PrefabInstance: {fileID: 1632295489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1632295491 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+  m_PrefabInstance: {fileID: 1632295489}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d6e820e6ff17246acf58e879bb630c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1637379823
 GameObject:
   m_ObjectHideFlags: 0
@@ -20212,7 +20131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59cf286307d3c804296487d8fde5175f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrades: {fileID: 1171571889}
+  upgrades: {fileID: 1632295491}
   stats: {fileID: 562440738}
   textViewsCount: {fileID: 502036698}
   textAttentionCount: {fileID: 1074496788}
