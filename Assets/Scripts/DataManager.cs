@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 using System;
+using System.Data;
 using System.Linq;
 using System.Net.Security;
 using FullSerializer;
@@ -25,6 +26,7 @@ public class DataManager : MonoBehaviour
 
     /* ==== Game Objects ==== */
     public GameObject newUsernamePopup;
+    public GameObject authFailedPopup;
 
     /* ==== Local Variables ==== */
     const string ProjectId = "Social-Mania";
@@ -33,20 +35,19 @@ public class DataManager : MonoBehaviour
 
     public string userAuth;
     bool signedIn; // get rid of this and the implementation in save() when local save is implemented
+    string path;
 
-    List<UserData> loadedUserList;
+    public List<UserData> loadedUserList;
 
     void Awake()
     {
         InvokeRepeating(nameof(getUsers), 0, 180); // Update leaderboard every 3 minutes
-        // InvokeRepeating("save", 0, 60) -- add auto save after local save implemented
-
-
+        // InvokeRepeating("save", 60, 60); // TODO: auto save?
+        path = Path.Combine(Application.persistentDataPath, "SaveData.Dat");
     }
 
     public void Start()
     {
-        string path = Path.Combine(Application.persistentDataPath, "SaveData.Dat");
         if (File.Exists(path))
         {
             localLoad();
@@ -73,8 +74,7 @@ public class DataManager : MonoBehaviour
         userAuth = FirebaseAuthHandler.localId;
         if (userAuth == null)
         {
-            profile.enableButtons();
-            Debug.Log("Sign in failed -- Please make sure you are signed in properly!"); // replace with proper in-game error popup!
+            authFailedPopup.SetActive(true);
         }
         else
         {
@@ -93,7 +93,7 @@ public class DataManager : MonoBehaviour
     {
         if (!signedIn)
         {
-            Debug.Log("Local save"); // REPLACE WITH LOCAL SAVE
+            Debug.Log("Local save");
             UserData user = new UserData();
             saveData(user);
             localSave(user);
@@ -131,13 +131,11 @@ public class DataManager : MonoBehaviour
     void localSave(UserData user)
     {
         string json = JsonUtility.ToJson(user);
-        string path = Path.Combine(Application.persistentDataPath, "SaveData.dat");
         File.WriteAllText(path, json);
     }
 
     void localLoad()
     {
-        string path = Path.Combine(Application.persistentDataPath, "SaveData.dat");
         string json = File.ReadAllText(path);
         UserData response = new UserData();
         JsonUtility.FromJsonOverwrite(json, response);
@@ -185,17 +183,10 @@ public class DataManager : MonoBehaviour
             profile.usernameInput.gameObject.SetActive(true);
             profile.submitUsernameButton.gameObject.SetActive(true);
         });
-
-        // IF LOCAL SAVE EXISTS
-        // --------------------
-        // You are converting your save to your Google account!
-        // Do you want to delete your local data?
-        //      [Yes]                [No]
-
+        
         yield return new WaitForSeconds(0.5f);
         if (profile.username == "")
         {
-            Debug.Log("Username is: {" + profile.username + "} <--- should be blank!");
             newUsernamePopup.SetActive(true);
             profile.disableButtons();
         }
@@ -214,18 +205,23 @@ public class DataManager : MonoBehaviour
             var usersDict = deserialized as Dictionary<string, UserData>;
 
             List<UserData> userList = usersDict.Values.ToList().OrderByDescending(userData => userData.lifetimeViews).ToList();
-            loadedUserList = userList; // store this info somewhere so we don't have to keep calling the database!
-
-            /* for (int i = 0; i < userList.Count(); i++)
-            {
-                Debug.Log(i+1 + ": " + userList[i].username + " - " + (int)userList[i].lifetimeViews + " lifetime views");
-            } */
+            loadedUserList = userList;
 
             for (int i = 0; i < 10; i++)
             {
-                profile.leaderboardPositions[i].text = /*i + 1 + ": " +*/ userList[i].username + " - " + (int)userList[i].lifetimeViews + " views";
+                profile.leaderboardPositions[i].text = userList[i].username + " - " + CalcUtils.FormatNumber((int)userList[i].lifetimeViews) + " views";
             }
         });
+    }
+
+    public bool localSaveFileExists()
+    {
+        return File.Exists(path);
+    }
+
+    public void deleteLocalSaveFile()
+    {
+        File.Delete(path);
     }
 
     public bool checkUsernameTaken(string usernameInput)

@@ -1,0 +1,812 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8453765102462278658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8453765102462278685}
+  - component: {fileID: 8453765102462278684}
+  m_Layer: 0
+  m_Name: Upgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8453765102462278685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453765102462278658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8453765102462278684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8453765102462278658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d6e820e6ff17246acf58e879bb630c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resources: {fileID: 0}
+  upgradeMenu: {fileID: 0}
+  upgradeList:
+  - id: offline_time_1
+    prereqId: 
+    buttonText: Offline Time 1
+    followerCostStr: 
+    viewRequirementStr: 1k
+    attentionCost: 2
+    followerCost: 0
+    viewRequirement: 100
+    header: '<color=green><size=35>Offline Time: 5 Minutes</size></color>'
+    description: 'This is a really neat upgrade. It probably does something crazy!
+
+      Or
+      does it? Do you really want to find out?'
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 5
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: offline_time_2
+    prereqId: offline_time_1
+    buttonText: Offline Time 2
+    followerCostStr: 
+    viewRequirementStr: 25k
+    attentionCost: 3.5
+    followerCost: 0
+    viewRequirement: 1000
+    header: '<color=green><size=35>Offline Time: 30 Minutes</size></color>'
+    description: This is an even neater upgrade. Probably?
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 30
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: offline_time_3
+    prereqId: offline_time_2
+    buttonText: Offline Time 3
+    followerCostStr: 
+    viewRequirementStr: 100k
+    attentionCost: 5
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Offline Time: 60 Minutes</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 60
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: follower_click_1
+    prereqId: 
+    buttonText: Followers Per Click 1
+    followerCostStr: 100
+    viewRequirementStr: 500
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Followers Per Click: 2</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 2
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: follower_click_2
+    prereqId: follower_click_1
+    buttonText: Followers Per Click 2
+    followerCostStr: 300
+    viewRequirementStr: 1k
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Followers Per Click: 4</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 4
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: follower_click_3
+    prereqId: follower_click_2
+    buttonText: Followers Per Click 3
+    followerCostStr: 500
+    viewRequirementStr: 2.5k
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Followers Per Click: 6</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 6
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: views_follower_1
+    prereqId: 
+    buttonText: Views Per Follower 1
+    followerCostStr: 500
+    viewRequirementStr: 2k
+    attentionCost: 2
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Views Per Follower: 2</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 2
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: views_follower_2
+    prereqId: views_follower_1
+    buttonText: Views Per Follower 2
+    followerCostStr: 1.5k
+    viewRequirementStr: 15k
+    attentionCost: 3.5
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Views Per Follower: 3</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 3
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: views_follower_3
+    prereqId: views_follower_2
+    buttonText: Views Per Follower 3
+    followerCostStr: 5k
+    viewRequirementStr: 10k
+    attentionCost: 5
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Views Per Follower: 3</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 4
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: max_attention_1
+    prereqId: 
+    buttonText: Max Attention 1
+    followerCostStr: 0
+    viewRequirementStr: 1k
+    attentionCost: 2
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Max Attention: 2.5</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 2.5
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: max_attention_2
+    prereqId: max_attention_1
+    buttonText: Max Attention 2
+    followerCostStr: 0
+    viewRequirementStr: 25k
+    attentionCost: 2.5
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Max Attention: 3</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 3
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: max_attention_3
+    prereqId: max_attention_2
+    buttonText: Max Attention 3
+    followerCostStr: 0
+    viewRequirementStr: 100k
+    attentionCost: 3
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Max Attention: 3.5</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 3.5
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: attention_floor_1
+    prereqId: 
+    buttonText: Attention Floor 1
+    followerCostStr: 1k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Floor: 0.5</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0.5
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: attention_floor_2
+    prereqId: attention_floor_1
+    buttonText: Attention Floor 2
+    followerCostStr: 10k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Floor: 1</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 1
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: attention_floor_3
+    prereqId: attention_floor_2
+    buttonText: Attention Floor 3
+    followerCostStr: 50k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Floor: 1.5</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 1.5
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: attention_floor_4
+    prereqId: attention_floor_3
+    buttonText: Attention Floor 4
+    followerCostStr: 100k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Floor: 2</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 2
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: attention_loss_delay_1
+    prereqId: 
+    buttonText: Attention Loss Delay 1
+    followerCostStr: 500
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Loss Delay: 5 Seconds</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 5
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: attention_loss_delay_2
+    prereqId: attention_loss_delay_1
+    buttonText: Attention Loss Delay 2
+    followerCostStr: 1.5k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Loss Delay: 15 Seconds</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 15
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: attention_loss_delay_3
+    prereqId: attention_loss_delay_2
+    buttonText: Attention Loss Delay 3
+    followerCostStr: 4.5k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Loss Delay: 30 Seconds</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 30
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: attention_loss_delay_4
+    prereqId: attention_loss_delay_3
+    buttonText: Attention Loss Delay 4
+    followerCostStr: 10k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: '<color=green><size=35>Attention Loss Delay: 1 Minute</size></color>'
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 60
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: event_reward_1
+    prereqId: 
+    buttonText: Event Reward 1
+    followerCostStr: 2.5k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Better Event Rewards!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0.2
+    eventLossMultiplier: 0.12
+    idleFollowerMultiplier: 0
+  - id: event_reward_2
+    prereqId: event_reward_1
+    buttonText: Event Reward 2
+    followerCostStr: 7.5k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Better Event Rewards!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0.25
+    eventLossMultiplier: 0.1
+    idleFollowerMultiplier: 0
+  - id: event_reward_3
+    prereqId: event_reward_2
+    buttonText: Event Reward 2
+    followerCostStr: 15k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Better Event Rewards!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0.3
+    eventLossMultiplier: 0.08
+    idleFollowerMultiplier: 0
+  - id: event_chance_1
+    prereqId: 
+    buttonText: More Events 1
+    followerCostStr: 1k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>More Collaboration Events!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 60
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: event_chance_2
+    prereqId: event_chance_1
+    buttonText: More Events 2
+    followerCostStr: 5k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>More Collaboration Events!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 75
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: event_chance_3
+    prereqId: event_chance_2
+    buttonText: More Events 3
+    followerCostStr: 25k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>More Collaboration Events!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 100
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: event_success_chance_1
+    prereqId: 
+    buttonText: More Success 1
+    followerCostStr: 10k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 60
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: event_success_chance_2
+    prereqId: event_success_chance_1
+    buttonText: More Success 2
+    followerCostStr: 30k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 75
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: event_success_chance_3
+    prereqId: event_success_chance_2
+    buttonText: More Success 3
+    followerCostStr: 75k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 90
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 0
+  - id: idle_followers_1
+    prereqId: 
+    buttonText: Followers For Attention 1
+    followerCostStr: 25
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Gain Followers For Attention!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 1
+  - id: idle_followers_2
+    prereqId: idle_followers_1
+    buttonText: Followers For Attention 2
+    followerCostStr: 500
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Gain Followers For Attention!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 2
+  - id: idle_followers_3
+    prereqId: idle_followers_2
+    buttonText: Followers For Attention 3
+    followerCostStr: 2k
+    viewRequirementStr: 0
+    attentionCost: 0
+    followerCost: 0
+    viewRequirement: 100000
+    header: <color=green><size=35>Gain Followers For Attention!</size></color>
+    description: Buy this. It's worth it.
+    optionalCostText: 
+    clickMultiplier: 0
+    attentionFloor: 0
+    attentionLossMultiplier: 0
+    attentionLossDelay: 0
+    maxAttention: 0
+    maxOfflineTime: 0
+    viewMultiplier: 0
+    eventChance: 0
+    eventSuccessChance: 0
+    eventGainMultiplier: 0
+    eventLossMultiplier: 0
+    idleFollowerMultiplier: 4
+  maxAttention: 2
+  clickMultiplier: 1
+  attLossMultiplier: 1
+  attFloor: 0
+  attLossDelay: 5
+  viewMultiplier: 1
+  maxOfflineTime: 5
+  eventChance: 0
+  successChance: 0
+  eventGainMultiplier: 0
+  eventLossMultiplier: 0
+  idleFollowerMultiplier: 0
+  d_maxAttention: 2
+  d_clickMultiplier: 1
+  d_attLossMultiplier: 1
+  d_attFloor: 0
+  d_attLossDelay: 1
+  d_maxOfflineTime: 0
+  d_viewMultiplier: 1
+  d_eventChance: 50
+  d_successChance: 50
+  d_eventGainMultiplier: 0.15
+  d_eventLossMultiplier: 0.15
+  d_idleFollowerMultiplier: 0

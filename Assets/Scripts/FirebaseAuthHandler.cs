@@ -7,7 +7,7 @@ using UnityEngine;
 
 public static class FirebaseAuthHandler
 {
-    private const string ApiKey = "AIzaSyD7l-171C5Ey5MN7JU7pwcRyyrQWXqZpN4"; //TODO: Change [API_KEY] to your API_KEY
+    private const string ApiKey = "AIzaSyD7l-171C5Ey5MN7JU7pwcRyyrQWXqZpN4";
     public static string localId;
     
     /// <summary>

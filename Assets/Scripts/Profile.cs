@@ -15,6 +15,7 @@ public class Profile : MonoBehaviour
     [SerializeField] Resources resources;
     [SerializeField] Upgrades upgrades;
     [SerializeField] DataManager dataManager;
+    [SerializeField] RandomEvents randomEvents;
     
     /* ==== Game Objects ==== */
     /* -- Scenes -- */
@@ -28,6 +29,7 @@ public class Profile : MonoBehaviour
     public GameObject userLengthPopup;
     public GameObject offlinePopup;
     public GameObject newUsernamePopup;
+    public GameObject deleteLocalSavePopup;
     
     /* -- Buttons -- */
     public Button googleSignInButton;
@@ -35,6 +37,7 @@ public class Profile : MonoBehaviour
     public Button submitUsernameButton;
     public Button updateLeaderboardButton;
     public Button hardResetButton;
+    public Button saveButton;
     
     /* -- Text -- */
     public TextMeshProUGUI googleSignInText;
@@ -67,6 +70,7 @@ public class Profile : MonoBehaviour
         // Change scenes
         mainScene.SetActive(false);
         profileScene.SetActive(true);
+        randomEvents.declineCollab();
         enableButtons();
         if (dataManager.userAuth == "")
         {
@@ -89,6 +93,7 @@ public class Profile : MonoBehaviour
         submitUsernameButton.interactable = false;
         updateLeaderboardButton.interactable = false;
         hardResetButton.interactable = false;
+        saveButton.interactable = false;
     }
 
     public void enableButtons()
@@ -98,6 +103,7 @@ public class Profile : MonoBehaviour
         submitUsernameButton.interactable = true;
         updateLeaderboardButton.interactable = true;
         hardResetButton.interactable = true;
+        saveButton.interactable = true;
     }
 
     public void setUsername(string buttonValue)
@@ -165,16 +171,23 @@ public class Profile : MonoBehaviour
         }
     }
 
-    public void closeOfflinePopup()
-    {
-        offlinePopup.SetActive(false);
-        enableButtons();
-    }
-
     public void closeNewUsernamePopup()
     {
         newUsernamePopup.SetActive(false);
-        enableButtons();
+        if (dataManager.localSaveFileExists())
+        {
+            showDeleteLocalSavePopup();
+        }
+        else
+        {
+            enableButtons();
+        }
+    }
+
+    public void showDeleteLocalSavePopup()
+    {
+        disableButtons();
+        deleteLocalSavePopup.SetActive(true);
     }
 
     public void hardReset()

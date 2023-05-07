@@ -50,6 +50,9 @@ public class TimeManager : MonoBehaviour
         
         // Calculate offline earnings
 
+
+        Debug.Log("Total seconds offline time: " + upgrades.maxOfflineUpgrade.TotalSeconds);
+        Debug.Log("Total minutes offline time : " + upgrades.maxOfflineUpgrade.TotalMinutes);
         if (upgrades.maxOfflineUpgrade.TotalSeconds > 0)
         {
             Debug.Log("Time since last save: " + timespanFormat(offlineTime)); // replace with popup

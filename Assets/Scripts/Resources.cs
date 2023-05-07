@@ -21,6 +21,7 @@ public class Resources : MonoBehaviour
     /* ==== Local Variables ==== */
     int tickProgress;
     [SerializeField] double viewGain;
+    double followerGain;
     
     // Major Resource Variables
     public double views;
@@ -72,6 +73,7 @@ public class Resources : MonoBehaviour
     void Tick()
     {
         ViewGains();
+        FollowerGains();
         UpdateDisplay();
         UpdateStats();
 
@@ -89,8 +91,14 @@ public class Resources : MonoBehaviour
     
     void ViewGains()
     {
-        viewGain = (followers/10.0d) * (double)attention;
+        viewGain = (followers/10.0d) * attention * upgrades.viewMultiplier;
         views += viewGain;
+    }
+
+    void FollowerGains()
+    {
+        followerGain = (attention / 10.0d) * upgrades.idleFollowerMultiplier;
+        followers += followerGain;
     }
 
     void UpdateDisplay()    // Refreshes on-screen numbers (views, attention...)
@@ -109,6 +117,7 @@ public class Resources : MonoBehaviour
 
     void AttentionDecay()
     {
+
         if(attention > upgrades.attFloor)
             attention -= Mathf.Min(attLossBase * upgrades.attLossMultiplier, attention - upgrades.attFloor);
     }
