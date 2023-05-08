@@ -126,6 +126,7 @@ public class Upgrades : MonoBehaviour
         eventChance = Mathf.Max(upgrade.eventChance, eventChance);
         successChance = Mathf.Max(upgrade.eventSuccessChance, successChance);
         eventGainMultiplier = Mathf.Max(upgrade.eventGainMultiplier, eventGainMultiplier);
+        idleFollowerMultiplier = Mathf.Max(upgrade.idleFollowerMultiplier, idleFollowerMultiplier);
 
         if(upgrade.attentionLossMultiplier > 0)
             attLossMultiplier = upgrade.attentionLossMultiplier;

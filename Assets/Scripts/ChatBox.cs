@@ -93,6 +93,7 @@ public class ChatBox : MonoBehaviour
     {
         while (true)
         {
+            
             resources = new Resources();
 
             //function timer
@@ -101,7 +102,10 @@ public class ChatBox : MonoBehaviour
             
             //randomly select a string from list of strings
             string comment = comments[UnityEngine.Random.Range(0, comments.Length)];
-            
+
+            //call function for adding comment spacing
+            chatSpacing();
+
             //call function for comment posting
             AddChatTextMesh(comment);
 
@@ -115,6 +119,9 @@ public class ChatBox : MonoBehaviour
 
     public void AddChatTextMesh(string commentText)
     {
+        //string of current time
+        string time = DateTime.Now.ToString("hh:mm tt");
+
         // Check if the chat list has reached its maximum capacity
         if(chatListTextMesh.Count >= chatMax)
         {
@@ -135,7 +142,7 @@ public class ChatBox : MonoBehaviour
 
         // Set the text of the new comment
         //newComment.text = commentText;
-        newComment.text = commentText.Replace("#USERNAME#", usernameReplace);
+        newComment.text = time + " - " + commentText.Replace("#USERNAME#", usernameReplace);
 
         // Instantiate a new text object using the TextMeshProUGUI object
         TextMeshProUGUI newTextMesh = Instantiate(textMeshProObject, chatPanel.transform);
@@ -163,6 +170,40 @@ public class ChatBox : MonoBehaviour
             // Set the text of the new text object to the text of the new comment
             newComment.textObject.text = newComment.text;
         });
+    }
+
+    public void chatSpacing()
+    {
+        // Check if the chat list has reached its maximum capacity
+        if(chatListTextMesh.Count >= chatMax)
+        {
+            // Destroy the oldest message in the chat list
+            Destroy(chatListTextMesh[0].textObject.gameObject);
+            chatListTextMesh.Remove(chatListTextMesh[0]);
+        }
+
+        // Create a new Message object to hold the new comment's information
+        MessageTextMesh newComment = new MessageTextMesh();
+
+
+        // Set the text of the new comment
+        newComment.text = "\n";
+
+        // Instantiate a new text object using the TextMeshProUGUI object
+        TextMeshProUGUI newTextMesh = Instantiate(textMeshProObject, chatPanel.transform);
+
+        // Get the TextMeshProUGUI component of the new text object and assign it to the new comment's textObject property
+        newComment.textObject = newTextMesh.GetComponent<TextMeshProUGUI>();
+
+        // Set the text of the new text object to the text of the new comment
+        newComment.textObject.text = newComment.text;
+
+        // Add the new comment to the chat list
+        chatListTextMesh.Add(newComment);
+
+        // Add a button component to the new text object
+        Button button = newTextMesh.gameObject.AddComponent<Button>();
+
     }
 
     private void changeViewGate()
