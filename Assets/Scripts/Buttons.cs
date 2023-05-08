@@ -13,6 +13,7 @@ public class Buttons : MonoBehaviour
     /* ==== References ==== */
     public Resources resources;
     public Upgrades upgrades;
+    public AudioSource clickSFX;
 
     /* ==== Game Objects ==== */
     public Button mainButton;
@@ -32,5 +33,8 @@ public class Buttons : MonoBehaviour
         button.interactable = true;
     }
     
-    
+    public void playClickSFX()
+    {
+        clickSFX.Play();
+    }
 }
