@@ -55,7 +55,7 @@ MonoBehaviour:
     attentionCost: 2
     followerCost: 0
     viewRequirement: 100
-    header: '<color=green><size=35>Offline Time: 5 Minutes</size></color>'
+    header: 'Offline Time: 5 Minutes'
     description: 'People will watch more of your content
 
       while you''re away!'
@@ -80,7 +80,7 @@ MonoBehaviour:
     attentionCost: 3.5
     followerCost: 0
     viewRequirement: 1000
-    header: '<color=green><size=35>Offline Time: 30 Minutes</size></color>'
+    header: 'Offline Time: 30 Minutes'
     description: 'People will watch even more of your content
 
       while you''re
@@ -106,7 +106,7 @@ MonoBehaviour:
     attentionCost: 5
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Offline Time: 60 Minutes</size></color>'
+    header: 'Offline Time: 60 Minutes'
     description: 'People will watch your content
 
       to fall asleep, generating
@@ -132,7 +132,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Followers Per Click: 2</size></color>'
+    header: 'Followers Per Click: 2'
     description: 'Your content becomes higher quality, and generate
 
       more followers
@@ -158,7 +158,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Followers Per Click: 4</size></color>'
+    header: 'Followers Per Click: 4'
     description: 'Higher quality content generates
 
       even more followers per
@@ -184,7 +184,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Followers Per Click: 6</size></color>'
+    header: 'Followers Per Click: 6'
     description: 'Higher quality content. More followers.
 
       Bigger number, better
@@ -210,7 +210,7 @@ MonoBehaviour:
     attentionCost: 2
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Views Per Follower: 2</size></color>'
+    header: 'Views Per Follower: 2'
     description: 'Your followers watch more of your content overall.
 
       Generates
@@ -236,7 +236,7 @@ MonoBehaviour:
     attentionCost: 3.5
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Views Per Follower: 3</size></color>'
+    header: 'Views Per Follower: 3'
     description: 'Your followers like your content so much,
 
       new followers
@@ -262,7 +262,7 @@ MonoBehaviour:
     attentionCost: 5
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Views Per Follower: 3</size></color>'
+    header: 'Views Per Follower: 3'
     description: 'Your content retention rate is so high, people are
 
       starting
@@ -288,7 +288,7 @@ MonoBehaviour:
     attentionCost: 2
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Max Attention: 2.5</size></color>'
+    header: 'Max Attention: 2.5'
     description: You can only get so popular. Until you get even more popular.
     optionalCostText: 
     clickMultiplier: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
     attentionCost: 2.5
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Max Attention: 3</size></color>'
+    header: 'Max Attention: 3'
     description: 'Your market reach expands. You start trending on
 
       social
@@ -337,7 +337,7 @@ MonoBehaviour:
     attentionCost: 3
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Max Attention: 3.5</size></color>'
+    header: 'Max Attention: 3.5'
     description: MORE ATTENTION. MORE VIEWS. BIGGER NUMBER.
     optionalCostText: 
     clickMultiplier: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 0.5</size></color>'
+    header: 'Attention Floor: 0.5'
     description: 'You''re so popular that at least a few people will always
 
       be
@@ -386,7 +386,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 1</size></color>'
+    header: 'Attention Floor: 1'
     description: 'You''re always going to be relevant. Maybe not famous,
 
       but
@@ -412,7 +412,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 1.5</size></color>'
+    header: 'Attention Floor: 1.5'
     description: People know your name. It's written in the streets.
     optionalCostText: 
     clickMultiplier: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 2</size></color>'
+    header: 'Attention Floor: 2'
     description: 'Yeah, you''re cool.
 
 
@@ -461,7 +461,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 5 Seconds</size></color>'
+    header: 'Attention Loss Delay: 5 Seconds'
     description: 'People will watch your content for longer when you''re
 
       not
@@ -487,7 +487,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 15 Seconds</size></color>'
+    header: 'Attention Loss Delay: 15 Seconds'
     description: 'Your viewers will talk about you for longer after you post.
 
       Take
@@ -513,7 +513,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 30 Seconds</size></color>'
+    header: 'Attention Loss Delay: 30 Seconds'
     description: 'People are still talking about you. You haven''t posted in like
 
       12
@@ -539,7 +539,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 1 Minute</size></color>'
+    header: 'Attention Loss Delay: 1 Minute'
     description: 'You could probably die and people would still be
 
       writing
@@ -565,7 +565,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Better Event Rewards!</size></color>
+    header: Better Event Rewards!
     description: 'You collab with slightly less controversial people,
 
       so bad
@@ -591,7 +591,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Better Event Rewards!</size></color>
+    header: Better Event Rewards!
     description: 'Viewers from your collaborator will come watch your content
 
       sometimes,
@@ -617,7 +617,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Better Event Rewards!</size></color>
+    header: Better Event Rewards!
     description: 'Even if your collab doesn''t go well, you know the saying.
 
       Any
@@ -647,7 +647,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>More Collaboration Events!</size></color>
+    header: More Collaboration Events!
     description: 'Spread your name around so more people are willing
 
       to come
@@ -673,7 +673,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>More Collaboration Events!</size></color>
+    header: More Collaboration Events!
     description: Most content creators want to hang and make content with you.
     optionalCostText: 
     clickMultiplier: 0
@@ -696,7 +696,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>More Collaboration Events!</size></color>
+    header: More Collaboration Events!
     description: 'Everyone wants a chance to get their name on your content.
 
       This
@@ -722,7 +722,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
+    header: Collaboration Events Succeed More!
     description: Collabs are less likely to get you cancelled. Probably.
     optionalCostText: 
     clickMultiplier: 0
@@ -745,7 +745,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
+    header: Collaboration Events Succeed More!
     description: Most of the collabs you do with other creators will succeed.
     optionalCostText: 
     clickMultiplier: 0
@@ -768,7 +768,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
+    header: Collaboration Events Succeed More!
     description: 'You''re basically cancel-proof.
 
 
@@ -794,7 +794,7 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Gain Followers For Attention!</size></color>
+    header: Gain Followers For Attention!
     description: 'Even if you''re not posting, people hear about your content.
 
       Gain
@@ -811,7 +811,7 @@ MonoBehaviour:
     eventSuccessChance: 0
     eventGainMultiplier: 0
     eventLossMultiplier: 0
-    idleFollowerMultiplier: 2
+    idleFollowerMultiplier: 1
   - id: idle_followers_2
     prereqId: idle_followers_1
     buttonText: Followers For Attention 2
@@ -834,7 +834,7 @@ MonoBehaviour:
     eventSuccessChance: 0
     eventGainMultiplier: 0
     eventLossMultiplier: 0
-    idleFollowerMultiplier: 4
+    idleFollowerMultiplier: 2
   - id: idle_followers_3
     prereqId: idle_followers_2
     buttonText: Followers For Attention 3
@@ -866,7 +866,7 @@ MonoBehaviour:
     eventSuccessChance: 0
     eventGainMultiplier: 0
     eventLossMultiplier: 0
-    idleFollowerMultiplier: 8
+    idleFollowerMultiplier: 4
   maxAttention: 2
   clickMultiplier: 1
   attLossMultiplier: 1
@@ -884,7 +884,7 @@ MonoBehaviour:
   d_attLossMultiplier: 1
   d_attFloor: 0
   d_attLossDelay: 1
-  d_maxOfflineTime: 1
+  d_maxOfflineTime: 0
   d_viewMultiplier: 1
   d_eventChance: 50
   d_successChance: 50
