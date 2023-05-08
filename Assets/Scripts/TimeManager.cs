@@ -66,7 +66,7 @@ public class TimeManager : MonoBehaviour
             else if (offlineTime < upgrades.maxOfflineUpgrade)
             {
                 offlineEarnings = ((resources.followers * 0.5f) / 5) * (float)offlineTime.TotalSeconds;
-                offlineText[2].text = "You have earned " + (int)offlineEarnings + " views from " + timespanFormat(offlineTime) + " of offline time!";
+                offlineText[2].text = "You have earned " + CalcUtils.FormatNumber((int)offlineEarnings) + " views from " + timespanFormat(offlineTime) + " of offline time!";
             }
 
             resources.views += offlineEarnings;
