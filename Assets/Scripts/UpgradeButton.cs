@@ -48,7 +48,7 @@ public class UpgradeButton : MonoBehaviour
         attentionCost = upgrade.attentionCost;
         GetComponentInChildren<TextMeshProUGUI>().text = upgrade.buttonText;
 
-        header = upgrade.header;
+        header = "<color=#547ce8><size=35>" + upgrade.header + "</size></color>";
         description = upgrade.description;
         cost = upgrade.optionalCostText;
 
