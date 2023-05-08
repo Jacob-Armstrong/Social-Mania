@@ -811,7 +811,7 @@ MonoBehaviour:
     eventSuccessChance: 0
     eventGainMultiplier: 0
     eventLossMultiplier: 0
-    idleFollowerMultiplier: 1
+    idleFollowerMultiplier: 2
   - id: idle_followers_2
     prereqId: idle_followers_1
     buttonText: Followers For Attention 2
@@ -834,7 +834,7 @@ MonoBehaviour:
     eventSuccessChance: 0
     eventGainMultiplier: 0
     eventLossMultiplier: 0
-    idleFollowerMultiplier: 2
+    idleFollowerMultiplier: 4
   - id: idle_followers_3
     prereqId: idle_followers_2
     buttonText: Followers For Attention 3
@@ -866,7 +866,7 @@ MonoBehaviour:
     eventSuccessChance: 0
     eventGainMultiplier: 0
     eventLossMultiplier: 0
-    idleFollowerMultiplier: 4
+    idleFollowerMultiplier: 8
   maxAttention: 2
   clickMultiplier: 1
   attLossMultiplier: 1
