@@ -7530,7 +7530,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 285dce6cd6bd0174c9016b62235f7638, type: 2}
-  m_audioClip: {fileID: 8300000, guid: dd0d5d58c2f8ff04d9b6caa1420eb844, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0cfa35cb547401c4fb00cc119bdc7a13, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -16183,6 +16183,217 @@ PrefabInstance:
     - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
       propertyPath: d_maxOfflineTime
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[0].description
+      value: 'People will watch more of your content
+
+        while you''re away!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[1].description
+      value: 'People will watch even more of your content
+
+        while you''re
+        away!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[2].description
+      value: 'People will watch your content
+
+        to fall asleep, generating
+        many offline views.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[3].description
+      value: 'Your content becomes higher quality, and generate
+
+        more followers
+        every time you post!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[4].description
+      value: 'Higher quality content generates
+
+        even more followers per post.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[5].description
+      value: 'Higher quality content. More followers.
+
+        Bigger number, better
+        person.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[6].description
+      value: 'Your followers watch more of your content overall.
+
+        Generates
+        more views from each follower.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[7].description
+      value: 'Your followers like your content so much,
+
+        new followers will
+        watch most of your content after following!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[8].description
+      value: 'Your content retention rate is so high, people are
+
+        starting
+        to think you''re viewbotting.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[9].description
+      value: You can only get so popular. Until you get even more popular.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[10].description
+      value: 'Your market reach expands. You start trending on
+
+        social media
+        sites.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[11].description
+      value: MORE ATTENTION. MORE VIEWS. BIGGER NUMBER.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[12].description
+      value: 'You''re so popular that at least a few people will always
+
+        be
+        talking about you -- even if you don''t post!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[13].description
+      value: 'You''re always going to be relevant. Maybe not famous,
+
+        but
+        people will always watch your content.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[14].description
+      value: People know your name. It's written in the streets.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[15].description
+      value: 'Yeah, you''re cool.
+
+
+        B)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[16].description
+      value: 'People will watch your content for longer when you''re
+
+        not
+        posting.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[17].description
+      value: 'Your viewers will talk about you for longer after you post.
+
+        Take
+        a vacation! You deserve the rest. It''s a hard job.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[18].description
+      value: 'People are still talking about you. You haven''t posted in like
+
+        12
+        weeks. How are you doing this?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[19].description
+      value: 'You could probably die and people would still be
+
+        writing forum
+        posts about your most recent content.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[20].description
+      value: 'You collab with slightly less controversial people,
+
+        so bad
+        content doesn''t get you cancelled as much.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[21].description
+      value: 'Viewers from your collaborator will come watch your content
+
+        sometimes,
+        too! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[22].description
+      value: 'Even if your collab doesn''t go well, you know the saying.
+
+        Any
+        publicity is good publicity.
+
+
+        ...well, unless you collab with <i>that<\i>
+        guy. You know who.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[23].description
+      value: 'Spread your name around so more people are willing
+
+        to come
+        make content with you.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[24].description
+      value: Most content creators want to hang and make content with you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[25].description
+      value: 'Everyone wants a chance to get their name on your content.
+
+        This
+        is where people make a name for themselves!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[26].description
+      value: Collabs are less likely to get you cancelled. Probably.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[27].description
+      value: Most of the collabs you do with other creators will succeed.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[28].description
+      value: 'You''re basically cancel-proof.
+
+
+        But no one is safe forever.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[29].description
+      value: 'Even if you''re not posting, people hear about your content.
+
+        Gain
+        followers just for being in the spotlight!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[30].description
+      value: Being popular makes you more popular.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453765102462278684, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
+      propertyPath: upgradeList.Array.data[31].description
+      value: 'People talk about your videos so people follow you and then
+
+        more
+        people watch your videos and then follow you and then
+
+        more people
+        talk about ----
+
+
+        You get it.'
       objectReference: {fileID: 0}
     - target: {fileID: 8453765102462278685, guid: 432ed31fb98f97c4a9a7825736d60a18, type: 3}
       propertyPath: m_RootOrder

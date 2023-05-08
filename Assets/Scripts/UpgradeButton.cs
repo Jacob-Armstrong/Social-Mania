@@ -22,8 +22,6 @@ public class UpgradeButton : MonoBehaviour
     string description;
     string cost;
 
-    public AudioSource upgradeClickSFX;
-
     private void Start()
     {
         button = GetComponent<Button>();
@@ -68,7 +66,7 @@ public class UpgradeButton : MonoBehaviour
 
         if (followerCost != 0)
         {
-            sb.Append(followerCost).Append(" followers");
+            sb.Append(CalcUtils.FormatNumber(followerCost)).Append(" followers");
         }
 
         
@@ -99,13 +97,8 @@ public class UpgradeButton : MonoBehaviour
     public void ButtonClicked()
     {
         upgrades.PurchaseUpgrade(upgrade);
-        playUpgradeClickSFX();
         Destroy(gameObject);
     }
-
-    public void playUpgradeClickSFX()
-    {
-        upgradeClickSFX.Play();
-    }
+    
     
 }
