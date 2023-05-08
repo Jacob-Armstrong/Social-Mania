@@ -55,11 +55,10 @@ MonoBehaviour:
     attentionCost: 2
     followerCost: 0
     viewRequirement: 100
-    header: '<color=green><size=35>Offline Time: 5 Minutes</size></color>'
-    description: 'This is a really neat upgrade. It probably does something crazy!
+    header: 'Offline Time: 5 Minutes'
+    description: 'People will watch more of your content
 
-      Or
-      does it? Do you really want to find out?'
+      while you''re away!'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -81,8 +80,11 @@ MonoBehaviour:
     attentionCost: 3.5
     followerCost: 0
     viewRequirement: 1000
-    header: '<color=green><size=35>Offline Time: 30 Minutes</size></color>'
-    description: This is an even neater upgrade. Probably?
+    header: 'Offline Time: 30 Minutes'
+    description: 'People will watch even more of your content
+
+      while you''re
+      away!'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -104,8 +106,11 @@ MonoBehaviour:
     attentionCost: 5
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Offline Time: 60 Minutes</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Offline Time: 60 Minutes'
+    description: 'People will watch your content
+
+      to fall asleep, generating
+      many offline views.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -127,8 +132,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Followers Per Click: 2</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Followers Per Click: 2'
+    description: 'Your content becomes higher quality, and generate
+
+      more followers
+      every time you post!'
     optionalCostText: 
     clickMultiplier: 2
     attentionFloor: 0
@@ -150,8 +158,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Followers Per Click: 4</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Followers Per Click: 4'
+    description: 'Higher quality content generates
+
+      even more followers per
+      post.'
     optionalCostText: 
     clickMultiplier: 4
     attentionFloor: 0
@@ -173,8 +184,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Followers Per Click: 6</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Followers Per Click: 6'
+    description: 'Higher quality content. More followers.
+
+      Bigger number, better
+      person.'
     optionalCostText: 
     clickMultiplier: 6
     attentionFloor: 0
@@ -196,8 +210,11 @@ MonoBehaviour:
     attentionCost: 2
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Views Per Follower: 2</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Views Per Follower: 2'
+    description: 'Your followers watch more of your content overall.
+
+      Generates
+      more views from each follower.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -219,8 +236,11 @@ MonoBehaviour:
     attentionCost: 3.5
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Views Per Follower: 3</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Views Per Follower: 3'
+    description: 'Your followers like your content so much,
+
+      new followers
+      will watch most of your content after following!'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -242,8 +262,11 @@ MonoBehaviour:
     attentionCost: 5
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Views Per Follower: 3</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Views Per Follower: 3'
+    description: 'Your content retention rate is so high, people are
+
+      starting
+      to think you''re viewbotting.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -265,8 +288,8 @@ MonoBehaviour:
     attentionCost: 2
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Max Attention: 2.5</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Max Attention: 2.5'
+    description: You can only get so popular. Until you get even more popular.
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -288,8 +311,11 @@ MonoBehaviour:
     attentionCost: 2.5
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Max Attention: 3</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Max Attention: 3'
+    description: 'Your market reach expands. You start trending on
+
+      social
+      media sites.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -311,8 +337,8 @@ MonoBehaviour:
     attentionCost: 3
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Max Attention: 3.5</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Max Attention: 3.5'
+    description: MORE ATTENTION. MORE VIEWS. BIGGER NUMBER.
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -334,8 +360,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 0.5</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Attention Floor: 0.5'
+    description: 'You''re so popular that at least a few people will always
+
+      be
+      talking about you -- even if you don''t post!'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0.5
@@ -357,8 +386,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 1</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Attention Floor: 1'
+    description: 'You''re always going to be relevant. Maybe not famous,
+
+      but
+      people will always watch your content.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 1
@@ -380,8 +412,8 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 1.5</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Attention Floor: 1.5'
+    description: People know your name. It's written in the streets.
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 1.5
@@ -403,8 +435,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Floor: 2</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Attention Floor: 2'
+    description: 'Yeah, you''re cool.
+
+
+      B)'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 2
@@ -426,8 +461,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 5 Seconds</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Attention Loss Delay: 5 Seconds'
+    description: 'People will watch your content for longer when you''re
+
+      not
+      posting.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -449,8 +487,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 15 Seconds</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Attention Loss Delay: 15 Seconds'
+    description: 'Your viewers will talk about you for longer after you post.
+
+      Take
+      a vacation! You deserve the rest. It''s a hard job.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -472,8 +513,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 30 Seconds</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Attention Loss Delay: 30 Seconds'
+    description: 'People are still talking about you. You haven''t posted in like
+
+      12
+      weeks. How are you doing this?'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -495,8 +539,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: '<color=green><size=35>Attention Loss Delay: 1 Minute</size></color>'
-    description: Buy this. It's worth it.
+    header: 'Attention Loss Delay: 1 Minute'
+    description: 'You could probably die and people would still be
+
+      writing
+      forum posts about your most recent content.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -518,8 +565,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Better Event Rewards!</size></color>
-    description: Buy this. It's worth it.
+    header: Better Event Rewards!
+    description: 'You collab with slightly less controversial people,
+
+      so bad
+      content doesn''t get you cancelled as much.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -541,8 +591,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Better Event Rewards!</size></color>
-    description: Buy this. It's worth it.
+    header: Better Event Rewards!
+    description: 'Viewers from your collaborator will come watch your content
+
+      sometimes,
+      too! '
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -564,8 +617,15 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Better Event Rewards!</size></color>
-    description: Buy this. It's worth it.
+    header: Better Event Rewards!
+    description: 'Even if your collab doesn''t go well, you know the saying.
+
+      Any
+      publicity is good publicity.
+
+
+      ...well, unless you collab with <i>that<\i>
+      guy. You know who.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -587,8 +647,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>More Collaboration Events!</size></color>
-    description: Buy this. It's worth it.
+    header: More Collaboration Events!
+    description: 'Spread your name around so more people are willing
+
+      to come
+      make content with you.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -610,8 +673,8 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>More Collaboration Events!</size></color>
-    description: Buy this. It's worth it.
+    header: More Collaboration Events!
+    description: Most content creators want to hang and make content with you.
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -633,8 +696,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>More Collaboration Events!</size></color>
-    description: Buy this. It's worth it.
+    header: More Collaboration Events!
+    description: 'Everyone wants a chance to get their name on your content.
+
+      This
+      is where people make a name for themselves!'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -656,8 +722,8 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
-    description: Buy this. It's worth it.
+    header: Collaboration Events Succeed More!
+    description: Collabs are less likely to get you cancelled. Probably.
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -679,8 +745,8 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
-    description: Buy this. It's worth it.
+    header: Collaboration Events Succeed More!
+    description: Most of the collabs you do with other creators will succeed.
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -702,8 +768,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Collaboration Events Succeed More!</size></color>
-    description: Buy this. It's worth it.
+    header: Collaboration Events Succeed More!
+    description: 'You''re basically cancel-proof.
+
+
+      But no one is safe forever.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -725,8 +794,11 @@ MonoBehaviour:
     attentionCost: 0
     followerCost: 0
     viewRequirement: 100000
-    header: <color=green><size=35>Gain Followers For Attention!</size></color>
-    description: Buy this. It's worth it.
+    header: Gain Followers For Attention!
+    description: 'Even if you''re not posting, people hear about your content.
+
+      Gain
+      followers just for being in the spotlight!'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -749,7 +821,7 @@ MonoBehaviour:
     followerCost: 0
     viewRequirement: 100000
     header: <color=green><size=35>Gain Followers For Attention!</size></color>
-    description: Buy this. It's worth it.
+    description: Being popular makes you more popular.
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
@@ -772,7 +844,16 @@ MonoBehaviour:
     followerCost: 0
     viewRequirement: 100000
     header: <color=green><size=35>Gain Followers For Attention!</size></color>
-    description: Buy this. It's worth it.
+    description: 'People talk about your videos so people follow you and then
+
+      more
+      people watch your videos and then follow you and then
+
+      more people talk
+      about ----
+
+
+      You get it.'
     optionalCostText: 
     clickMultiplier: 0
     attentionFloor: 0
