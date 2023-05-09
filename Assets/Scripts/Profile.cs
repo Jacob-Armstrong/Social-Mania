@@ -61,8 +61,8 @@ public class Profile : MonoBehaviour
     
     void FixedUpdate()
     {
-        lifetimeViewsValue.text = stats.lifetimeViews.ToString();
-        numClicksValue.text = stats.numClicks.ToString();
+        lifetimeViewsValue.text = CalcUtils.FormatNumber(stats.lifetimeViews);
+        numClicksValue.text = CalcUtils.FormatNumber(stats.numClicks);
     }
     
     public void visitProfile() // Profile button clicked
