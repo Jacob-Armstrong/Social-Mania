@@ -1,5 +1,5 @@
 # Social Mania
-### A social media simulator!
+### A social media simulator in the form of an idle game!
 
 ### Features:
 * "Post" to gain followers and maintain attention to gain views
