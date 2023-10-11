@@ -5,4 +5,6 @@
 * "Post" to gain followers and maintain attention to gain views
 * Buy upgrades to improve your setup, gain more followers and more
 * Improve your selection of upgrades by gaining more views
-* Play the game from anywhere with Google sign in [Note -- this feature may be deprecated at the time of reading due to Firebase API changes]
+* Save your data locally between sessions, or play from anywhere with Google sign in!
+
+[Note -- As of 10/11/23, Google sign in has been deprecated for security reasons (API key changes)]
